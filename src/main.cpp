@@ -70,7 +70,7 @@ map<uint256, map<uint256, CDataStream*> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "NovaCoin Signed Message:\n";
+const string strMessageMagic = "HashCoin Signed Message:\n";
 
 double dHashesPerSec;
 int64 nHPSTimerStart;
@@ -479,7 +479,7 @@ bool CTransaction::CheckTransaction() const
         if (txout.IsEmpty() && !IsCoinBase() && !IsCoinStake())
             return DoS(100, error("CTransaction::CheckTransaction() : txout empty for user transaction"));
 
-        // NovaCoin: enforce minimum output amount for user transactions
+        // HashCoin: enforce minimum output amount for user transactions
         // (and for all transactions until 20 Sep 2013)
         if ((!IsCoinBase() || nTime < CHAINCHECKS_SWITCH_TIME)
                 && (!txout.IsEmpty()) && txout.nValue < MIN_TXOUT_AMOUNT)
@@ -966,7 +966,7 @@ int64 GetProofOfWorkReward(unsigned int nBits)
     CBigNum bnTargetLimit = bnProofOfWorkLimit;
     bnTargetLimit.SetCompact(bnTargetLimit.GetCompact());
 
-    // NovaCoin: subsidy is cut in half every 64x multiply of PoW difficulty
+    // HashCoin: subsidy is cut in half every 64x multiply of PoW difficulty
     // A reasonably continuous curve is used to avoid shock to market
     // (nSubsidyLimit / nSubsidy) ** 6 == bnProofOfWorkLimit / bnTarget
     //
@@ -1010,7 +1010,7 @@ int64 GetProofOfStakeReward(int64 nCoinAge, unsigned int nBits, unsigned int nTi
         CBigNum bnTargetLimit = GetProofOfStakeLimit(0, nTime);
         bnTargetLimit.SetCompact(bnTargetLimit.GetCompact());
 
-        // NovaCoin: A reasonably continuous curve is used to avoid shock to market
+        // HashCoin: A reasonably continuous curve is used to avoid shock to market
 
         CBigNum bnLowerBound = 1 * CENT, // Lower interest bound is 1% per year
             bnUpperBound = bnRewardCoinYearLimit, // Upper interest bound is 100% per year
@@ -1601,8 +1601,8 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
     // Now that the whole chain is irreversibly beyond that time it is applied to all blocks except the
     // two in the chain that violate it. This prevents exploiting the issue against nodes in their
     // initial block download.
-    bool fEnforceBIP30 = true; // Always active in NovaCoin
-    bool fStrictPayToScriptHash = true; // Always active in NovaCoin
+    bool fEnforceBIP30 = true; // Always active in HashCoin
+    bool fStrictPayToScriptHash = true; // Always active in HashCoin
 
     //// issue here: it doesn't know the version
     unsigned int nTxPos;
@@ -1954,7 +1954,7 @@ bool CBlock::SetBestChain(CTxDB& txdb, CBlockIndex* pindexNew)
 // ppcoin: total coin age spent in transaction, in the unit of coin-days.
 // Only those coins meeting minimum age requirement counts. As those
 // transactions not in main chain are not currently indexed so we
-// might not find out about their coin age. Older transactions are 
+// might not find out about their coin age. Older transactions are
 // guaranteed to be in main chain by sync-checkpoint. This rule is
 // introduced to help nodes establish a consistent view of the coin
 // age (trust score) of competing branches.
@@ -2207,7 +2207,7 @@ bool CBlock::CheckBlock(bool fCheckPOW, bool fCheckMerkleRoot) const
     if (fCheckMerkleRoot && hashMerkleRoot != BuildMerkleTree())
         return DoS(100, error("CheckBlock() : hashMerkleRoot mismatch"));
 
-    // NovaCoin: check proof-of-stake block signature
+    // HashCoin: check proof-of-stake block signature
     if (IsProofOfStake() || (!fTestNet && GetBlockTime() < CHAINCHECKS_SWITCH_TIME))
     {
         if (!CheckBlockSignature())
@@ -2627,7 +2627,7 @@ bool CheckDiskSpace(uint64 nAdditionalBytes)
         string strMessage = _("Warning: Disk space is low!");
         strMiscWarning = strMessage;
         printf("*** %s\n", strMessage.c_str());
-        uiInterface.ThreadSafeMessageBox(strMessage, "NovaCoin", CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
+        uiInterface.ThreadSafeMessageBox(strMessage, "HashCoin", CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
         StartShutdown();
         return false;
     }
@@ -3355,7 +3355,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
                     if (inv.hash == pfrom->hashContinue)
                     {
                         // ppcoin: send latest proof-of-work block to allow the
-                        // download node to accept as orphan (proof-of-stake 
+                        // download node to accept as orphan (proof-of-stake
                         // block might be rejected by stake connection check)
                         vector<CInv> vInv;
                         vInv.push_back(CInv(MSG_BLOCK, GetLastBlockIndex(pindexBest, false)->GetBlockHash()));
@@ -4077,7 +4077,7 @@ public:
 uint64 nLastBlockTx = 0;
 uint64 nLastBlockSize = 0;
 int64 nLastCoinStakeSearchInterval = 0;
- 
+
 // We want to sort transactions by priority and fee, so:
 typedef boost::tuple<double, double, CTransaction*> TxPriority;
 class TxPriorityCompare
@@ -4542,7 +4542,7 @@ void BitcoinMiner(CWallet *pwallet, bool fProofOfStake)
                     continue;
                 }
                 strMintWarning = "";
-                printf("StakeMiner : proof-of-stake block found %s\n", pblock->GetHash().ToString().c_str()); 
+                printf("StakeMiner : proof-of-stake block found %s\n", pblock->GetHash().ToString().c_str());
                 SetThreadPriority(THREAD_PRIORITY_NORMAL);
                 CheckWork(pblock.get(), *pwalletMain, reservekey);
                 SetThreadPriority(THREAD_PRIORITY_LOWEST);

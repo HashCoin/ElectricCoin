@@ -1,6 +1,6 @@
 [Protocol]
-exec=novacoin-qt '%u'
-protocol=novacoin
+exec=hashcoin-qt '%u'
+protocol=hashcoin
 input=none
 output=none
 helper=true

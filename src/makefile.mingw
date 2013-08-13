@@ -6,21 +6,21 @@ USE_UPNP:=0
 USE_IPV6:=1
 
 INCLUDEPATHS= \
- -I"C:\boost-1.50.0-mgw" \
- -I"C:\db-4.8.30.NC-mgw\build_unix" \
- -I"C:\openssl-1.0.1c-mgw\include"
+ -I"/c/boost_1_54_0" \
+ -I"/c/db-4.8.30.NC\build_unix" \
+ -I"/c/openssl-1.0.1e\include"
 
 LIBPATHS= \
- -L"C:\boost-1.50.0-mgw\stage\lib" \
- -L"C:\db-4.8.30.NC-mgw\build_unix" \
- -L"C:\openssl-1.0.1c-mgw"
+ -L"/c/boost_1_54_0\stage\lib" \
+ -L"/c/db-4.8.30.NC\build_unix" \
+ -L"/c/openssl-1.0.1e"
 
 LIBS= \
- -l boost_system-mgw44-mt-1_53 \
- -l boost_filesystem-mgw44-mt-1_53 \
- -l boost_program_options-mgw44-mt-1_53 \
- -l boost_thread-mgw44-mt-1_53 \
- -l boost_chrono-mgw44-mt-1_53 \
+ -l boost_system-mgw46-mt-1_54 \
+ -l boost_filesystem-mgw46-mt-1_54 \
+ -l boost_program_options-mgw46-mt-1_54 \
+ -l boost_thread-mgw46-mt-1_54 \
+ -l boost_chrono-mgw46-mt-1_54 \
  -l db_cxx \
  -l ssl \
  -l crypto
@@ -36,8 +36,8 @@ ifndef USE_UPNP
 	override USE_UPNP = -
 endif
 ifneq (${USE_UPNP}, -)
- INCLUDEPATHS += -I"C:\miniupnpc-1.6-mgw"
- LIBPATHS += -L"C:\miniupnpc-1.6-mgw"
+ INCLUDEPATHS += -I"/c/miniupnpc-1.6"
+ LIBPATHS += -L"/c/miniupnpc-1.6"
  LIBS += -l miniupnpc -l iphlpapi
  DEFS += -DSTATICLIB -DUSE_UPNP=$(USE_UPNP)
 endif
@@ -85,10 +85,10 @@ OBJS= \
     obj/scrypt-x86.o \
     obj/scrypt-x86_64.o
 
-all: novacoind.exe
+all: hashcoind.exe
 
-test check: test_novacoin.exe FORCE
-	test_novacoin.exe
+test check: test_hashcoin.exe FORCE
+	test_hashcoin.exe
 
 obj/%.o: %.cpp $(HEADERS)
 	g++ -c $(CFLAGS) -o $@ $<
@@ -99,7 +99,7 @@ obj/scrypt-x86.o: scrypt-x86.S
 obj/scrypt-x86_64.o: scrypt-x86_64.S
 	$(CXX) -c $(xCXXFLAGS) -MMD -o $@ $<
 
-novacoind.exe: $(OBJS:obj/%=obj/%)
+hashcoind.exe: $(OBJS:obj/%=obj/%)
 	g++ $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
 TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
@@ -111,7 +111,7 @@ test_bitcoin.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	g++ $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ -lboost_unit_test_framework $(LIBS)
 
 clean:
-	-del /Q novacoind test_novacoin
+	-del /Q hashcoind test_hashcoin
 	-del /Q obj\*
 	-del /Q obj-test\*
 

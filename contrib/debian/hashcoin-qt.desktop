@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=HashCoin
+Comment=HashCoin P2P Cryptocurrency
+Comment[fr]=HashCoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=HashCoin, eşten eşe kriptografik sanal para birimi
+Exec=/usr/bin/hashcoin-qt
+Terminal=false
+Type=Application
+Icon=/usr/share/pixmaps/bitcoin80.xpm
+MimeType=x-scheme-handler/hashcoin;
+Categories=Office;
