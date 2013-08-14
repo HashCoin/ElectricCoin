@@ -44,7 +44,7 @@
         </widget>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_Main">
+        <layout class="QHBoxLayout" name="horizontalLayout_1_Main">
          <item>
           <widget class="QLabel" name="transactionFeeLabel">
            <property name="text">
@@ -62,7 +62,7 @@
           <widget class="BitcoinAmountField" name="transactionFee"/>
          </item>
          <item>
-          <spacer name="horizontalSpacer_Main">
+          <spacer name="horizontalSpacer_1_Main">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
@@ -79,20 +79,10 @@
        <item>
         <widget class="QCheckBox" name="bitcoinAtStartup">
          <property name="toolTip">
-          <string>Automatically start HashCoin after logging in to the system.</string>
+          <string>Automatically start Bitcoin after logging in to the system.</string>
          </property>
          <property name="text">
-          <string>&amp;Start HashCoin on system login</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="detachDatabases">
-         <property name="toolTip">
-          <string>Detach block and address databases at shutdown. This means they can be moved to another data directory, but it slows down shutdown. The wallet is always detached.</string>
-         </property>
-         <property name="text">
-          <string>&amp;Detach databases at shutdown</string>
+          <string>&amp;Start Bitcoin on system login</string>
          </property>
         </widget>
        </item>
@@ -109,6 +99,36 @@
          </property>
         </spacer>
        </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2_Main">
+         <item>
+          <spacer name="horizontalSpacer_2_Main">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="resetButton">
+           <property name="toolTip">
+            <string>Reset all client options to default.</string>
+           </property>
+           <property name="text">
+            <string>&amp;Reset Options</string>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="tabNetwork">
@@ -119,7 +139,7 @@
        <item>
         <widget class="QCheckBox" name="mapPortUpnp">
          <property name="toolTip">
-          <string>Automatically open the HashCoin client port on the router. This only works when your router supports UPnP and it is enabled.</string>
+          <string>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</string>
          </property>
          <property name="text">
           <string>Map port using &amp;UPnP</string>
@@ -129,7 +149,7 @@
        <item>
         <widget class="QCheckBox" name="connectSocks">
          <property name="toolTip">
-          <string>Connect to the HashCoin network through a SOCKS proxy (e.g. when connecting through Tor).</string>
+          <string>Connect to the Bitcoin network through a SOCKS proxy (e.g. when connecting through Tor).</string>
          </property>
          <property name="text">
           <string>&amp;Connect through SOCKS proxy:</string>
@@ -303,7 +323,7 @@
          <item>
           <widget class="QValueComboBox" name="lang">
            <property name="toolTip">
-            <string>The user interface language can be set here. This setting will take effect after restarting HashCoin.</string>
+            <string>The user interface language can be set here. This setting will take effect after restarting Bitcoin.</string>
            </property>
           </widget>
          </item>
@@ -336,7 +356,7 @@
        <item>
         <widget class="QCheckBox" name="displayAddresses">
          <property name="toolTip">
-          <string>Whether to show HashCoin addresses in the transaction list or not.</string>
+          <string>Whether to show Bitcoin addresses in the transaction list or not.</string>
          </property>
          <property name="text">
           <string>&amp;Display addresses in transaction list</string>
@@ -345,6 +365,36 @@
        </item>
        <item>
         <spacer name="verticalSpacer_Display">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabMining">
+      <attribute name="title">
+       <string>Mining</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_Display">
+       <item>
+        <widget class="QCheckBox" name="autoMining">
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="text">
+          <string>&amp;Start mining larks on start application</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_Mining">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>

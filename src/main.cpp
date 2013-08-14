@@ -32,14 +32,14 @@ unsigned int nTransactionsUpdated = 0;
 map<uint256, CBlockIndex*> mapBlockIndex;
 set<pair<COutPoint, unsigned int> > setStakeSeen;
 
-CBigNum bnProofOfWorkLimit(~uint256(0) >> 31); // "standard" sha target limit for proof of work, results with 2.44140625 proof-of-work difficulty
+CBigNum bnProofOfWorkLimit(~uint256(0) >> 31); // "standard" sha target limit for proof of work, results with 2.5 proof-of-work difficulty
 CBigNum bnProofOfStakeLegacyLimit(~uint256(0) >> 24); // proof of stake target limit from block #15000 and until 20 June 2013, results with 0,00390625 proof of stake difficulty
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 27); // proof of stake target limit since 20 June 2013, equal to 0.03125  proof of stake difficulty
 CBigNum bnProofOfStakeHardLimit(~uint256(0) >> 30); // disabled temporarily, will be used in the future to fix minimal proof of stake difficulty at 0.25
 uint256 nPoWBase = uint256("0x00000000ffff0000000000000000000000000000000000000000000000000000"); // difficulty-1 target
 
-static const int64 nChainStartTime = 1376215200; // 2013-08-10 8:00:00 GMT
 static const bool fCalculatingGenesisBlockHash = false;
+static const int64 nChainStartTime = 1376460000; // 2013-08-14 6:00:00 GMT
 
 CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
 
@@ -2730,7 +2730,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nVersion = 1;
         block.nTime    = nChainStartTime;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 1575379;
+        block.nNonce   = 1492723403;
 
 		// Try to calculate GB
         if (fCalculatingGenesisBlockHash && (block.GetHash() != hashGenesisBlock)) {
@@ -2763,8 +2763,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.nBits = %u \n", block.nBits);
 
 		// Result verify
-        assert(block.hashMerkleRoot == uint256("0x4cb33b3b6a861dcbc685d3e614a9cafb945738d6833f182855679f2fad02057b"));
-        block.print();
+        assert(block.hashMerkleRoot == uint256("0x83ce21a9b887815f99b2e3d2f5e0db5e1683df875d14aaa7d2330d0ffc3da184"));
         assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
         assert(block.CheckBlock());
 

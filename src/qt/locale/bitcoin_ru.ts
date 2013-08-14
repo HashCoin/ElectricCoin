@@ -5,120 +5,139 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About HashCoin</source>
-        <translation>О HashCoin</translation>
+        <source>About Bitcoin</source>
+        <translation type="obsolete">О CopperLark</translation>
     </message>
     <message>
-        <location line="+39"/>
-        <source>&lt;b&gt;HashCoin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;HashCoin&lt;/b&gt; версия</translation>
+        <location filename="../forms/aboutdialog.ui" line="+26"/>
+        <source>Dialog</source>
+        <translation></translation>
     </message>
     <message>
-        <location line="+41"/>
-        <source>Copyright © 2013 The HashCoin developers</source>
-        <translation>Все права защищены © 2013 Разработчики HashCoin</translation>
+        <location line="+104"/>
+        <source>Information about program</source>
+        <translation>Информация о программе</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+91"/>
+        <source>&lt;b&gt;Bitcoin&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;CopperLark&lt;/b&gt; версия</translation>
+    </message>
+    <message>
+        <location line="+288"/>
+        <source>OK</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Copyright © 2009-2012 The Bitcoin developers</source>
+        <translation type="obsolete">Все права защищены © 2009-2012 Разработчики Bitcoin</translation>
+    </message>
+    <message>
+        <location line="-118"/>
         <source>
 This is experimental software.
 
 Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
-        <translation>
-Это экспериментальная программа.
-
-Распространяется на правах лицензии MIT/X11, см. файл license.txt или http://www.opensource.org/licenses/mit-license.php.
+        <translation>Распространяется на правах лицензии MIT/X11, см. файл license.txt или http://www.opensource.org/licenses/mit-license.php.
 
 Этот продукт включает ПО, разработанное OpenSSL Project для использования в OpenSSL Toolkit (http://www.openssl.org/) и криптографическое ПО, написанное Eric Young (eay@cryptsoft.com) и ПО для работы с UPnP, написанное Thomas Bernard.</translation>
+    </message>
+    <message>
+        <location filename="../aboutdialog.cpp" line="+21"/>
+        <source>Copyright</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>2013-%1 The Copper Lark</source>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>AddressBookPage</name>
     <message>
-        <location filename="../forms/addressbookpage.ui" line="+14"/>
+        <location filename="../forms/addressbookpage.ui" line="+159"/>
+        <location line="+132"/>
         <source>Address Book</source>
         <translation>Адресная книга</translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location line="+48"/>
         <source>Double-click to edit address or label</source>
         <translation>Для того, чтобы изменить адрес или метку давжды кликните по изменяемому объекту</translation>
     </message>
     <message>
-        <location line="+27"/>
         <source>Create a new address</source>
-        <translation>Создать новый адрес</translation>
+        <translation type="obsolete">Создать новый адрес</translation>
     </message>
     <message>
-        <location line="+14"/>
         <source>Copy the currently selected address to the system clipboard</source>
-        <translation>Копировать текущий выделенный адрес в буфер обмена</translation>
+        <translation type="obsolete">Копировать текущий выделенный адрес в буфер обмена</translation>
     </message>
     <message>
-        <location line="-11"/>
         <source>&amp;New Address</source>
-        <translation>&amp;Новый адрес</translation>
+        <translation type="obsolete">&amp;Новый адрес</translation>
     </message>
     <message>
-        <location line="-46"/>
-        <source>These are your HashCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Это Ваши адреса для получения платежей. Вы можете дать разные адреса отправителям, чтобы отслеживать, кто именно вам платит.</translation>
+        <source>These are your Bitcoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation type="obsolete">Это Ваши адреса для получения платежей. Вы можете дать разные адреса отправителям, чтобы отслеживать, кто именно вам платит.</translation>
     </message>
     <message>
-        <location line="+60"/>
+        <location filename="../addressbookpage.cpp" line="+74"/>
         <source>&amp;Copy Address</source>
         <translation>&amp;Копировать адрес</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location filename="../forms/addressbookpage.ui" line="+215"/>
         <source>Show &amp;QR Code</source>
         <translation>Показать &amp;QR код</translation>
     </message>
     <message>
-        <location line="+11"/>
-        <source>Sign a message to prove you own a HashCoin address</source>
-        <translation>Подписать сообщение, чтобы доказать владение адресом HashCoin</translation>
+        <source>Sign a message to prove you own a Bitcoin address</source>
+        <translation type="obsolete">Подписать сообщение, чтобы доказать владение адресом CopperLark</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location filename="../addressbookpage.cpp" line="+4"/>
         <source>Sign &amp;Message</source>
         <translation>&amp;Подписать сообщение</translation>
     </message>
     <message>
-        <location line="+25"/>
         <source>Delete the currently selected address from the list</source>
-        <translation>Удалить выбранный адрес из списка</translation>
+        <translation type="obsolete">Удалить выбранный адрес из списка</translation>
     </message>
     <message>
-        <location line="-14"/>
-        <source>Verify a message to ensure it was signed with a specified HashCoin address</source>
-        <translation>Проверить сообщение, чтобы убедиться, что оно было подписано указанным адресом HashCoin</translation>
+        <source>Verify a message to ensure it was signed with a specified Bitcoin address</source>
+        <translation type="obsolete">Проверить сообщение, чтобы убедиться, что оно было подписано указанным адресом CopperLark</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+1"/>
         <source>&amp;Verify Message</source>
         <translation>&amp;Проверить сообщение</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+1"/>
         <source>&amp;Delete</source>
         <translation>&amp;Удалить</translation>
     </message>
     <message>
-        <location filename="../addressbookpage.cpp" line="+65"/>
+        <location line="-5"/>
         <source>Copy &amp;Label</source>
         <translation>Копировать &amp;метку</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="-9"/>
+        <source>Adress for receiving Lark</source>
+        <translation>Адреса для получения Lark&apos;ов</translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>&amp;Edit</source>
         <translation>&amp;Правка</translation>
     </message>
     <message>
-        <location line="+250"/>
+        <location line="+259"/>
         <source>Export Address Book Data</source>
         <translation>Экспортировать адресную книгу</translation>
     </message>
@@ -141,7 +160,7 @@ This product includes software developed by the OpenSSL Project for use in the O
 <context>
     <name>AddressTableModel</name>
     <message>
-        <location filename="../addresstablemodel.cpp" line="+142"/>
+        <location filename="../addresstablemodel.cpp" line="+146"/>
         <source>Label</source>
         <translation>Метка</translation>
     </message>
@@ -164,7 +183,12 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Диалог ввода пароля</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+113"/>
+        <source>Change password</source>
+        <translation>Изменить пароль</translation>
+    </message>
+    <message>
+        <location line="+69"/>
         <source>Enter passphrase</source>
         <translation>Введите пароль</translation>
     </message>
@@ -179,11 +203,12 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Повторите новый пароль</translation>
     </message>
     <message>
-        <location filename="../askpassphrasedialog.cpp" line="+33"/>
+        <location filename="../askpassphrasedialog.cpp" line="+37"/>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
         <translation>Введите новый пароль для бумажника. &lt;br/&gt; Пожалуйста, используйте фразы из &lt;b&gt;10 или более случайных символов,&lt;/b&gt; или &lt;b&gt;восьми и более слов.&lt;/b&gt;</translation>
     </message>
     <message>
+        <location line="+1"/>
         <location line="+1"/>
         <source>Encrypt wallet</source>
         <translation>Зашифровать бумажник</translation>
@@ -195,6 +220,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+5"/>
+        <location line="+1"/>
         <source>Unlock wallet</source>
         <translation>Разблокировать бумажник</translation>
     </message>
@@ -205,11 +231,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+5"/>
+        <location line="+1"/>
         <source>Decrypt wallet</source>
         <translation>Расшифровать бумажник</translation>
     </message>
     <message>
         <location line="+3"/>
+        <location line="+1"/>
         <source>Change passphrase</source>
         <translation>Сменить пароль</translation>
     </message>
@@ -219,13 +247,13 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Введите старый и новый пароль для бумажника.</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+49"/>
         <source>Confirm wallet encryption</source>
         <translation>Подтвердите шифрование бумажника</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR COINS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
         <translation>Внимание: если вы зашифруете бумажник и потеряете пароль, вы &lt;b&gt;ПОТЕРЯЕТЕ ВСЕ ВАШИ МОНЕТЫ&lt;/b&gt;!</translation>
     </message>
     <message>
@@ -252,8 +280,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-56"/>
-        <source>HashCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>Сейчас программа закроется для завершения процесса шифрования. Помните, что шифрование вашего бумажника не может полностью защитить ваши монеты от кражи с помощью инфицирования вашего компьютера вредоносным ПО.</translation>
+        <source>Bitcoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
+        <translation>Сейчас программа закроется для завершения процесса шифрования. Помните, что шифрование вашего бумажника не может полностью защитить ваши Larks от кражи с помощью инфицирования вашего компьютера вредоносным ПО.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -300,47 +328,51 @@ This product includes software developed by the OpenSSL Project for use in the O
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <location filename="../bitcoingui.cpp" line="+257"/>
+        <location filename="../bitcoingui.cpp" line="+318"/>
+        <location line="+700"/>
         <source>Sign &amp;message...</source>
         <translation>&amp;Подписать сообщение</translation>
     </message>
     <message>
-        <location line="+237"/>
+        <location line="-443"/>
         <source>Synchronizing with network...</source>
         <translation>Синхронизация с сетью...</translation>
     </message>
     <message>
-        <location line="-299"/>
+        <location line="-327"/>
+        <location line="+720"/>
         <source>&amp;Overview</source>
         <translation>О&amp;бзор</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="-719"/>
         <source>Show general overview of wallet</source>
         <translation>Показать общий обзор действий с бумажником</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+20"/>
+        <location line="+744"/>
         <source>&amp;Transactions</source>
         <translation>&amp;Транзакции</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="-743"/>
         <source>Browse transaction history</source>
         <translation>Показать историю транзакций</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+6"/>
+        <location line="+738"/>
         <source>&amp;Address Book</source>
         <translation>&amp;Адресная книга</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="-737"/>
         <source>Edit the list of stored addresses and labels</source>
         <translation>Изменить список сохранённых адресов и меток к ним</translation>
     </message>
     <message>
-        <location line="-13"/>
+        <location line="-15"/>
         <source>&amp;Receive coins</source>
         <translation>&amp;Получение монет</translation>
     </message>
@@ -350,24 +382,25 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Показать список адресов для получения платежей</translation>
     </message>
     <message>
-        <location line="-7"/>
+        <location line="-8"/>
         <source>&amp;Send coins</source>
         <translation>Отп&amp;равка монет</translation>
     </message>
     <message>
-        <location line="+35"/>
+        <location line="+41"/>
+        <location line="+675"/>
         <source>E&amp;xit</source>
         <translation>В&amp;ыход</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="-674"/>
         <source>Quit application</source>
         <translation>Закрыть приложение</translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about HashCoin</source>
-        <translation>Показать информацию о HashCoin&apos;е</translation>
+        <source>Show information about Bitcoin</source>
+        <translation>Показать информацию о CopperLark&apos;е</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -385,22 +418,34 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Оп&amp;ции...</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
+        <location line="+704"/>
         <source>&amp;Encrypt Wallet...</source>
         <translation>&amp;Зашифровать бумажник</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="-701"/>
         <source>&amp;Backup Wallet...</source>
         <translation>&amp;Сделать резервную копию бумажника</translation>
     </message>
     <message>
         <location line="+2"/>
+        <location line="+701"/>
         <source>&amp;Change Passphrase...</source>
         <translation>&amp;Изменить пароль</translation>
     </message>
+    <message>
+        <location line="-439"/>
+        <source>Importing blocks from disk...</source>
+        <translation>Импортируются блоки с диска...</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Reindexing blocks on disk...</source>
+        <translation>Идёт переиндексация блоков на диске...</translation>
+    </message>
     <message numerus="yes">
-        <location line="+241"/>
+        <location line="+10"/>
         <source>~%n block(s) remaining</source>
         <translation>
             <numerusform>остался ~%n блок</numerusform>
@@ -409,37 +454,28 @@ This product includes software developed by the OpenSSL Project for use in the O
         </translation>
     </message>
     <message>
-        <location line="+6"/>
-        <source>Downloaded %1 of %2 blocks of transaction history (%3% done).</source>
-        <translation>Загружено %1 из %2 блоков истории операций (%3% завершено).</translation>
-    </message>
-    <message>
-        <location line="-242"/>
+        <location line="-268"/>
+        <location line="+647"/>
         <source>&amp;Export...</source>
         <translation>&amp;Экспорт...</translation>
     </message>
     <message>
-        <location line="-58"/>
-        <source>Send coins to a HashCoin address</source>
-        <translation>Отправить монеты на указанный адрес HashCoin</translation>
+        <location line="-714"/>
+        <source>Send coins to a Bitcoin address</source>
+        <translation>Отправить монеты на указанный адрес CopperLark</translation>
     </message>
     <message>
-        <location line="+45"/>
-        <source>Modify configuration options for HashCoin</source>
-        <translation>Изменить параметры конфигурации HashCoin</translation>
+        <location line="+51"/>
+        <source>Modify configuration options for Bitcoin</source>
+        <translation>Изменить параметры конфигурации CopperLark</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+17"/>
         <source>Export the data in the current tab to a file</source>
         <translation>Экспортировать данные из вкладки в файл</translation>
     </message>
     <message>
-        <location line="-10"/>
-        <source>Encrypt or decrypt wallet</source>
-        <translation>Зашифровать или расшифровать бумажник</translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="-9"/>
         <source>Backup wallet to another location</source>
         <translation>Сделать резервную копию бумажника в другом месте</translation>
     </message>
@@ -449,7 +485,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Изменить пароль шифрования бумажника</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+9"/>
         <source>&amp;Debug window</source>
         <translation>&amp;Окно отладки</translation>
     </message>
@@ -459,32 +495,55 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Открыть консоль отладки и диагностики</translation>
     </message>
     <message>
-        <location line="-5"/>
+        <location line="-7"/>
+        <location line="+699"/>
         <source>&amp;Verify message...</source>
         <translation>&amp;Проверить сообщение...</translation>
     </message>
     <message>
-        <location line="-186"/>
-        <source>HashCoin</source>
-        <translation>HashCoin</translation>
+        <location line="-934"/>
+        <location line="+584"/>
+        <source>Bitcoin</source>
+        <translation>CopperLark</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-584"/>
         <source>Wallet</source>
         <translation>Бумажник</translation>
     </message>
     <message>
-        <location line="+168"/>
-        <source>&amp;About HashCoin</source>
-        <translation>&amp;О HashCoin</translation>
+        <location line="+215"/>
+        <location line="+773"/>
+        <source>&amp;About Bitcoin</source>
+        <translation>&amp;О CopperLark</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="-764"/>
         <source>&amp;Show / Hide</source>
         <translation>&amp;Показать / Скрыть</translation>
     </message>
     <message>
-        <location line="+39"/>
+        <location line="+1"/>
+        <source>Show or hide the main Window</source>
+        <translation>Показать или скрыть главное окно</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Encrypt the private keys that belong to your wallet</source>
+        <translation>Зашифровать приватные ключи, принадлежащие вашему бумажнику</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
+        <translation>Подписать сообщения вашим адресом Bitcoin, чтобы доказать, что вы им владеете</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
+        <translation>Проверить сообщения, чтобы удостовериться, что они были подписаны определённым адресом Bitcoin</translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>&amp;File</source>
         <translation>&amp;Файл</translation>
     </message>
@@ -510,32 +569,100 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+13"/>
-        <location line="+9"/>
+        <location line="+10"/>
         <source>[testnet]</source>
         <translation>[тестовая сеть]</translation>
     </message>
     <message>
-        <location line="+0"/>
-        <location line="+60"/>
-        <source>HashCoin client</source>
-        <translation>HashCoin клиент</translation>
+        <location line="+64"/>
+        <source>Bitcoin client</source>
+        <translation>CopperLark клиент</translation>
     </message>
     <message numerus="yes">
-        <location line="+69"/>
-        <source>%n active connection(s) to HashCoin network</source>
+        <location line="+79"/>
+        <source>%n active connection(s) to Bitcoin network</source>
         <translation>
             <numerusform>%n активное соединение с сетью</numerusform>
             <numerusform>%n активных соединений с сетью</numerusform>
             <numerusform>%n активных соединений с сетью</numerusform>
         </translation>
     </message>
+    <message numerus="yes">
+        <location line="+46"/>
+        <source>%n blocks</source>
+        <translation>
+            <numerusform>%n блоков</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
-        <location line="+40"/>
-        <source>Downloaded %1 blocks of transaction history.</source>
-        <translation>Загружено %1 блоков истории транзакций.</translation>
+        <location line="+3"/>
+        <source>Processed %1 of %2 blocks of transaction history (%3% done).</source>
+        <translation>Обработано %1 из %2 блоков истории транзакций (%3% выполнено).</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Processed %1 blocks of transaction history.</source>
+        <translation>Обработано %1 блоков истории транзакций.</translation>
+    </message>
+    <message>
+        <location line="+71"/>
+        <source>Error</source>
+        <translation>Ошибка</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Warning</source>
+        <translation>Внимание</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Information</source>
+        <translation>Информация</translation>
+    </message>
+    <message>
+        <location line="+68"/>
+        <source>This transaction is over the size limit. You can still send it for a fee of %1, which goes to the nodes that process your transaction and helps to support the network. Do you want to pay the fee?</source>
+        <translation>Транзакция превышает максимальный размер. Вы можете провести её, заплатив комиссию %1, которая достанется узлам, обрабатывающим эту транзакцию, и поможет работе сети. Вы действительно хотите заплатить комиссию?</translation>
+    </message>
+    <message>
+        <location line="+218"/>
+        <source>Service messages</source>
+        <translation>Сообщения сервиса</translation>
+    </message>
+    <message>
+        <location line="+42"/>
+        <source>Send Larks</source>
+        <translation>Отправить Lark&apos;и</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Receive Larks</source>
+        <translation>Получить Lark&apos;и</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Mining</source>
+        <translation>Добыча монет</translation>
+    </message>
+    <message>
+        <location line="+56"/>
+        <source>Common, Network</source>
+        <translation>Основные, Сеть</translation>
+    </message>
+    <message>
+        <location line="+73"/>
+        <source>Backup Successful</source>
+        <translation>Резервное копирование успешно завершено</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The wallet data was successfully saved to the new location.</source>
+        <translation>Данные бумажника успешно сохранены в новое местоположение</translation>
     </message>
     <message numerus="yes">
-        <location line="+22"/>
+        <location line="-525"/>
         <source>%n second(s) ago</source>
         <translation>
             <numerusform>%n секунду назад</numerusform>
@@ -581,27 +708,22 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Синхронизируется...</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+11"/>
         <source>Last received block was generated %1.</source>
         <translation>Последний полученный блок был сгенерирован %1.</translation>
     </message>
     <message>
-        <location line="+59"/>
-        <source>This transaction is over the size limit.  You can still send it for a fee of %1, which goes to the nodes that process your transaction and helps to support the network.  Do you want to pay the fee?</source>
-        <translation>Данная транзакция превышает предельно допустимый размер.  Но Вы можете всё равно совершить её, добавив комиссию в %1, которая отправится тем узлам, которые обработают Вашу транзакцию, и поможет поддержать сеть.  Вы хотите добавить комиссию?</translation>
-    </message>
-    <message>
-        <location line="+5"/>
+        <location line="+99"/>
         <source>Confirm transaction fee</source>
         <translation>Подтвердите комиссию</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+23"/>
         <source>Sent transaction</source>
         <translation>Исходящая транзакция</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+0"/>
         <source>Incoming transaction</source>
         <translation>Входящая транзакция</translation>
     </message>
@@ -619,19 +741,19 @@ Address: %4
 </translation>
     </message>
     <message>
-        <location line="+100"/>
-        <location line="+15"/>
+        <location line="+107"/>
+        <location line="+75"/>
         <source>URI handling</source>
         <translation>Обработка URI</translation>
     </message>
     <message>
-        <location line="-15"/>
-        <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid HashCoin address or malformed URI parameters.</source>
-        <translation>Не удалось обработать URI! Это может быть связано с неверным адресом HashCoin или неправильными параметрами URI.</translation>
+        <location line="-75"/>
+        <location line="+75"/>
+        <source>URI can not be parsed! This can be caused by an invalid Bitcoin address or malformed URI parameters.</source>
+        <translation>Не удалось обработать URI! Это может быть связано с неверным адресом Bitcoin или неправильными параметрами URI.</translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+146"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
         <translation>Бумажник &lt;b&gt;зашифрован&lt;/b&gt; и в настоящее время &lt;b&gt;разблокирован&lt;/b&gt;</translation>
     </message>
@@ -661,17 +783,22 @@ Address: %4
         <translation>При попытке сохранения данных бумажника в новое место произошла ошибка.</translation>
     </message>
     <message>
-        <location filename="../bitcoin.cpp" line="+109"/>
-        <source>A fatal error occurred. HashCoin can no longer continue safely and will quit.</source>
-        <translation>Произошла неисправимая ошибка. HashCoin не может безопасно продолжать работу и будет закрыт.</translation>
+        <location filename="../bitcoin.cpp" line="+115"/>
+        <source>A fatal error occurred. Bitcoin can no longer continue safely and will quit.</source>
+        <translation>Произошла неисправимая ошибка. CopperLark не может безопасно продолжать работу и будет закрыт.</translation>
     </message>
 </context>
 <context>
     <name>ClientModel</name>
     <message>
-        <location filename="../clientmodel.cpp" line="+87"/>
+        <location filename="../clientmodel.cpp" line="+90"/>
         <source>Network Alert</source>
         <translation>Сетевая Тревога</translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Incoming News</source>
+        <translation>Новая новость</translation>
     </message>
 </context>
 <context>
@@ -682,7 +809,12 @@ Address: %4
         <translation>Изменить адрес</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+102"/>
+        <source>Edit record</source>
+        <translation>Редактировать запись</translation>
+    </message>
+    <message>
+        <location line="+65"/>
         <source>&amp;Label</source>
         <translation>&amp;Метка</translation>
     </message>
@@ -702,37 +834,41 @@ Address: %4
         <translation>Адрес, связанный с данной записью.</translation>
     </message>
     <message>
-        <location filename="../editaddressdialog.cpp" line="+20"/>
+        <location filename="../editaddressdialog.cpp" line="+24"/>
+        <location line="+1"/>
         <source>New receiving address</source>
         <translation>Новый адрес для получения</translation>
     </message>
     <message>
         <location line="+4"/>
+        <location line="+1"/>
         <source>New sending address</source>
         <translation>Новый адрес для отправки</translation>
     </message>
     <message>
         <location line="+3"/>
+        <location line="+1"/>
         <source>Edit receiving address</source>
         <translation>Изменение адреса для получения</translation>
     </message>
     <message>
         <location line="+4"/>
+        <location line="+1"/>
         <source>Edit sending address</source>
         <translation>Изменение адреса для отправки</translation>
     </message>
     <message>
-        <location line="+60"/>
+        <location line="+79"/>
         <source>The entered address &quot;%1&quot; is already in the address book.</source>
         <translation>Введённый адрес «%1» уже находится в адресной книге.</translation>
     </message>
     <message>
-        <location line="+5"/>
-        <source>The entered address &quot;%1&quot; is not a valid HashCoin address.</source>
-        <translation>Введённый адрес &quot;%1&quot; не является правильным HashCoin-адресом.</translation>
+        <location line="-5"/>
+        <source>The entered address &quot;%1&quot; is not a valid Bitcoin address.</source>
+        <translation>Введённый адрес &quot;%1&quot; не является правильным CopperLark-адресом.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+10"/>
         <source>Could not unlock wallet.</source>
         <translation>Не удается разблокировать бумажник.</translation>
     </message>
@@ -745,10 +881,10 @@ Address: %4
 <context>
     <name>GUIUtil::HelpMessageBox</name>
     <message>
-        <location filename="../guiutil.cpp" line="+419"/>
+        <location filename="../guiutil.cpp" line="+420"/>
         <location line="+12"/>
-        <source>HashCoin-Qt</source>
-        <translation>HashCoin-Qt</translation>
+        <source>Bitcoin-Qt</source>
+        <translation>CopperLark</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -787,6 +923,152 @@ Address: %4
     </message>
 </context>
 <context>
+    <name>MainWindow</name>
+    <message>
+        <location filename="../forms/mainwindow.ui" line="+19"/>
+        <source>MainWindow</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location line="+287"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Welcome to payment system Copper Lark. This is your personal account&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Добро пожаловать в платёжную систему Copper Lark. Это ваш индивидуальный электронный счёт&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location line="+72"/>
+        <source>Copper Lark</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>crypted money</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location line="+51"/>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <location line="+52"/>
+        <source>Operations</source>
+        <translation>Операции</translation>
+    </message>
+    <message>
+        <location line="+52"/>
+        <source>Settings</source>
+        <translation>Настройки</translation>
+    </message>
+    <message>
+        <location line="+237"/>
+        <source>Mining</source>
+        <translation>Добыча</translation>
+    </message>
+    <message>
+        <location line="+53"/>
+        <source>Send Larks</source>
+        <translation>Отправить Lark&apos;и</translation>
+    </message>
+    <message>
+        <location line="+47"/>
+        <source>Transactions</source>
+        <translation>Транзакции</translation>
+    </message>
+    <message>
+        <location line="+47"/>
+        <source>Sign Message</source>
+        <translation>Подписать сообщение</translation>
+    </message>
+    <message>
+        <location line="+47"/>
+        <source>Receive Larks</source>
+        <translation>Получить Lark&apos;и</translation>
+    </message>
+    <message>
+        <location line="+47"/>
+        <source>Address Book</source>
+        <translation>Адресная книга</translation>
+    </message>
+    <message>
+        <location line="+47"/>
+        <source>Verify Message</source>
+        <translation>Проверить сообщение</translation>
+    </message>
+    <message>
+        <location line="+200"/>
+        <source>Synchronization</source>
+        <translation>Синхронизация</translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>10549874 blocks</source>
+        <translation></translation>
+    </message>
+</context>
+<context>
+    <name>MiningPage</name>
+    <message>
+        <location filename="../forms/miningpage.ui" line="+132"/>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <location line="+102"/>
+        <source>Mining coins</source>
+        <translation>Добыча монет</translation>
+    </message>
+    <message>
+        <location line="+173"/>
+        <source>Start</source>
+        <translation>Запустить</translation>
+    </message>
+    <message>
+        <location line="+60"/>
+        <source>Stop</source>
+        <translation>Остановить</translation>
+    </message>
+    <message>
+        <location line="+135"/>
+        <source>0 MH/S</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../miningpage.cpp" line="+64"/>
+        <source>Mining coins started!</source>
+        <translation>Добыча монет запущена!</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Used threads %1</source>
+        <translation>Иcпользуется потоков %1</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Mining coins stopped!</source>
+        <translation>Добыча монет остановлена!</translation>
+    </message>
+    <message>
+        <location line="+46"/>
+        <source>Running mining coins...</source>
+        <translation>Запускаем добычу монет...</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Start error!</source>
+        <translation>Ошибка запуска!</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Stop mining coins...</source>
+        <translation>Останавливаем добычу монет...</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Stop error!</source>
+        <translation>Ошибка остановки!</translation>
+    </message>
+</context>
+<context>
     <name>OptionsDialog</name>
     <message>
         <location filename="../forms/optionsdialog.ui" line="+14"/>
@@ -810,33 +1092,33 @@ Address: %4
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start HashCoin after logging in to the system.</source>
-        <translation>Автоматически запускать HashCoin после входа в систему</translation>
+        <source>Automatically start Bitcoin after logging in to the system.</source>
+        <translation>Автоматически запускать Bitcoin после входа в систему</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start HashCoin on system login</source>
-        <translation>&amp;Запускать HashCoin при входе в систему</translation>
+        <source>&amp;Start Bitcoin on system login</source>
+        <translation>&amp;Запускать CopperLark при входе в систему</translation>
     </message>
     <message>
-        <location line="+7"/>
-        <source>Detach block and address databases at shutdown. This means they can be moved to another data directory, but it slows down shutdown. The wallet is always detached.</source>
-        <translation>Отключить базы данных блоков и адресов при выходе. Это означает, что их можно будет переместить в другой каталог данных, но завершение работы будет медленнее. Бумажник всегда отключается.</translation>
+        <location line="+35"/>
+        <source>Reset all client options to default.</source>
+        <translation>Сбросить все опции клиента на значения по умолчанию.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Detach databases at shutdown</source>
-        <translation>&amp;Отключать базы данных при выходе</translation>
+        <source>&amp;Reset Options</source>
+        <translation>&amp;Сбросить опции</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+13"/>
         <source>&amp;Network</source>
         <translation>&amp;Сеть</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the HashCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Автоматически открыть порт для HashCoin-клиента на роутере. Работает только если Ваш роутер поддерживает UPnP, и данная функция включена.</translation>
+        <source>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Автоматически открыть порт для Bitcoin-клиента на роутере. Работает только если Ваш роутер поддерживает UPnP, и данная функция включена.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -845,8 +1127,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the HashCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Подключаться к сети HashCoin через прокси SOCKS (например, при подключении через Tor).</translation>
+        <source>Connect to the Bitcoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Подключаться к сети CopperLark через прокси SOCKS (например, при подключении через Tor).</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -920,8 +1202,8 @@ Address: %4
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting HashCoin.</source>
-        <translation>Здесь можно выбрать язык интерфейса. Настройки вступят в силу после перезапуска HashCoin.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting Bitcoin.</source>
+        <translation>Здесь можно выбрать язык интерфейса. Настройки вступят в силу после перезапуска CopperLark.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -935,13 +1217,23 @@ Address: %4
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show HashCoin addresses in the transaction list or not.</source>
-        <translation>Показывать ли адреса HashCoin в списке транзакций.</translation>
+        <source>Whether to show Bitcoin addresses in the transaction list or not.</source>
+        <translation>Показывать ли адреса Bitcoin в списке транзакций.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>&amp;Display addresses in transaction list</source>
         <translation>&amp;Показывать адреса в списке транзакций</translation>
+    </message>
+    <message>
+        <location line="+21"/>
+        <source>Mining</source>
+        <translation>Добыча монет</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>&amp;Start mining larks on start application</source>
+        <translation>&amp;Запускать добычу при старте приложения</translation>
     </message>
     <message>
         <location line="+71"/>
@@ -964,7 +1256,22 @@ Address: %4
         <translation>по умолчанию</translation>
     </message>
     <message>
-        <location line="+147"/>
+        <location line="+133"/>
+        <source>Confirm options reset</source>
+        <translation>Подтвердите сброс опций</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Some settings may require a client restart to take effect.</source>
+        <translation>Некоторые настройки могут потребовать перезапуск клиента, чтобы вступить в силу.</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Do you want to proceed?</source>
+        <translation>Желаете продолжить?</translation>
+    </message>
+    <message>
+        <location line="+42"/>
         <location line="+9"/>
         <source>Warning</source>
         <translation>Внимание</translation>
@@ -972,8 +1279,8 @@ Address: %4
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting HashCoin.</source>
-        <translation>Эта настройка вступит в силу после перезапуска HashCoin</translation>
+        <source>This setting will take effect after restarting Bitcoin.</source>
+        <translation>Эта настройка вступит в силу после перезапуска Bitcoin</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -984,81 +1291,77 @@ Address: %4
 <context>
     <name>OverviewPage</name>
     <message>
-        <location filename="../forms/overviewpage.ui" line="+14"/>
+        <location filename="../forms/overviewpage.ui" line="+159"/>
         <source>Form</source>
         <translation>Форма</translation>
     </message>
     <message>
-        <location line="+33"/>
-        <location line="+183"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the HashCoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Отображаемая информация может быть устаревшей. Ваш бумажник автоматически синхронизируется с сетью HashCoin после подключения, но этот процесс пока не завершён.</translation>
+        <location line="+128"/>
+        <source>Account status</source>
+        <translation>Состояние счета</translation>
     </message>
     <message>
-        <location line="-141"/>
+        <location line="+35"/>
+        <location line="+46"/>
+        <location line="+46"/>
+        <source>0 Lrks</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location line="+286"/>
+        <source>Last transactions</source>
+        <translation>Последние транзакции</translation>
+    </message>
+    <message>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
+        <translation type="obsolete">Отображаемая информация может быть устаревшей. Ваш бумажник автоматически синхронизируется с сетью CopperLark после подключения, но этот процесс пока не завершён.</translation>
+    </message>
+    <message>
+        <location line="-222"/>
         <source>Balance:</source>
         <translation>Баланс:</translation>
     </message>
     <message>
-        <location line="+118"/>
-        <source>Stake:</source>
-        <translation>Доля:</translation>
-    </message>
-    <message>
-        <location line="+58"/>
         <source>Number of transactions:</source>
-        <translation>Количество транзакций:</translation>
+        <translation type="obsolete">Количество транзакций:</translation>
     </message>
     <message>
-        <location line="-29"/>
+        <location line="+47"/>
         <source>Unconfirmed:</source>
         <translation>Не подтверждено:</translation>
     </message>
     <message>
-        <location line="-78"/>
         <source>Wallet</source>
-        <translation>Бумажник</translation>
+        <translation type="obsolete">Бумажник</translation>
     </message>
     <message>
-        <location line="+124"/>
+        <location line="+47"/>
         <source>Immature:</source>
         <translation>Незрелые:</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>Mined balance that has not yet matured</source>
-        <translation>Баланс добытых монет, который ещё не созрел</translation>
+        <translation type="obsolete">Баланс добытых монет, который ещё не созрел</translation>
     </message>
     <message>
-        <location line="+46"/>
         <source>&lt;b&gt;Recent transactions&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Последние транзакции&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;Последние транзакции&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="-118"/>
         <source>Your current balance</source>
-        <translation>Ваш текущий баланс</translation>
+        <translation type="obsolete">Ваш текущий баланс</translation>
     </message>
     <message>
-        <location line="+29"/>
         <source>Total of transactions that have yet to be confirmed, and do not yet count toward the current balance</source>
-        <translation>Общая сумма всех транзакций, которые до сих пор не подтверждены, и до сих пор не учитываются в текущем балансе</translation>
+        <translation type="obsolete">Общая сумма всех транзакций, которые до сих пор не подтверждены, и до сих пор не учитываются в текущем балансе</translation>
     </message>
     <message>
-        <location line="+134"/>
-        <source>Total of coins that was staked, and do not yet count toward the current balance</source>
-        <translation>Общая сумма всех монет, используемых для Proof-of-Stake, и не учитывающихся на балансе</translation>
-    </message>
-    <message>
-        <location line="+20"/>
         <source>Total number of transactions in wallet</source>
-        <translation>Общее количество транзакций в Вашем бумажнике</translation>
+        <translation type="obsolete">Общее количество транзакций в Вашем бумажнике</translation>
     </message>
     <message>
-        <location filename="../overviewpage.cpp" line="+112"/>
-        <location line="+1"/>
         <source>out of sync</source>
-        <translation>не синхронизировано</translation>
+        <translation type="obsolete">не синхронизировано</translation>
     </message>
 </context>
 <context>
@@ -1136,7 +1439,7 @@ Address: %4
         <location line="+53"/>
         <location line="+23"/>
         <location line="+23"/>
-        <location filename="../rpcconsole.cpp" line="+348"/>
+        <location filename="../rpcconsole.cpp" line="+344"/>
         <source>N/A</source>
         <translation>Н/Д</translation>
     </message>
@@ -1207,8 +1510,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the HashCoin-Qt help message to get a list with possible HashCoin command-line options.</source>
-        <translation>Показать помощь по HashCoin-Qt, чтобы получить список доступных параметров командной строки.</translation>
+        <source>Show the Bitcoin-Qt help message to get a list with possible Bitcoin command-line options.</source>
+        <translation>Показать помощь по CopperLark, чтобы получить список доступных параметров командной строки.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1227,13 +1530,13 @@ Address: %4
     </message>
     <message>
         <location line="-104"/>
-        <source>HashCoin - Debug window</source>
-        <translation>HashCoin - Окно отладки</translation>
+        <source>Bitcoin - Debug window</source>
+        <translation>CopperLark - Окно отладки</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>HashCoin Core</source>
-        <translation>Ядро HashCoin</translation>
+        <source>Bitcoin Core</source>
+        <translation>Ядро CopperLark</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1242,8 +1545,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the HashCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Открыть отладочный лог-файл HashCoin из текущего каталога данных. Это может занять несколько секунд для больших лог-файлов.</translation>
+        <source>Open the Bitcoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Открыть отладочный лог-файл Bitcoin из текущего каталога данных. Это может занять несколько секунд для больших лог-файлов.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1251,9 +1554,9 @@ Address: %4
         <translation>Очистить консоль</translation>
     </message>
     <message>
-        <location filename="../rpcconsole.cpp" line="-33"/>
-        <source>Welcome to the HashCoin RPC console.</source>
-        <translation>Добро пожаловать в RPC-консоль HashCoin.</translation>
+        <location filename="../rpcconsole.cpp" line="-30"/>
+        <source>Welcome to the Bitcoin RPC console.</source>
+        <translation>Добро пожаловать в RPC-консоль CopperLark.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1269,8 +1572,9 @@ Address: %4
 <context>
     <name>SendCoinsDialog</name>
     <message>
-        <location filename="../forms/sendcoinsdialog.ui" line="+14"/>
+        <location filename="../forms/sendcoinsdialog.ui" line="+105"/>
         <location filename="../sendcoinsdialog.cpp" line="+124"/>
+        <location line="+6"/>
         <location line="+5"/>
         <location line="+5"/>
         <location line="+5"/>
@@ -1281,7 +1585,12 @@ Address: %4
         <translation>Отправка</translation>
     </message>
     <message>
-        <location line="+50"/>
+        <location line="+93"/>
+        <source>Send Larks</source>
+        <translation>Отправить Lark&apos;и</translation>
+    </message>
+    <message>
+        <location line="+54"/>
         <source>Send to multiple recipients at once</source>
         <translation>Отправить нескольким получателям одновременно</translation>
     </message>
@@ -1308,7 +1617,7 @@ Address: %4
     <message>
         <location line="+10"/>
         <source>123.456 BTC</source>
-        <translation>123.456 BTC</translation>
+        <translation>123.456 Larks</translation>
     </message>
     <message>
         <location line="+31"/>
@@ -1316,12 +1625,12 @@ Address: %4
         <translation>Подтвердить отправку</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+26"/>
         <source>S&amp;end</source>
         <translation>&amp;Отправить</translation>
     </message>
     <message>
-        <location filename="../sendcoinsdialog.cpp" line="-59"/>
+        <location filename="../sendcoinsdialog.cpp" line="-65"/>
         <source>&lt;b&gt;%1&lt;/b&gt; to %2 (%3)</source>
         <translation>&lt;b&gt;%1&lt;/b&gt; адресату %2 (%3)</translation>
     </message>
@@ -1342,6 +1651,11 @@ Address: %4
     </message>
     <message>
         <location line="+23"/>
+        <source>Send Larks will be avaible after creating 16200 blocks. Current block %1. (about next %2 day(s)).</source>
+        <translation>Отправка монет будет доступна после создания 16200 блока. Текущий блок %1. (примерно через %2 дня/дней).</translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>The recipient address is not valid, please recheck.</source>
         <translation>Адрес получателя неверный, пожалуйста, перепроверьте.</translation>
     </message>
@@ -1367,8 +1681,8 @@ Address: %4
     </message>
     <message>
         <location line="+5"/>
-        <source>Error: Transaction creation failed.</source>
-        <translation>Ошибка: не удалось создать транзакцию.</translation>
+        <source>Error: Transaction creation failed!</source>
+        <translation>Ошибка: не удалось создать транзакцию!</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -1394,89 +1708,122 @@ Address: %4
         <translation>Полу&amp;чатель:</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+34"/>
+        <source>The address to send the payment to (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
+        <translation>Адрес, на который будет выслан платёж (например CNS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
+    </message>
+    <message>
+        <location line="+165"/>
         <location filename="../sendcoinsentry.cpp" line="+25"/>
         <source>Enter a label for this address to add it to your address book</source>
         <translation>Введите метку для данного адреса (для добавления в адресную книгу)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="-183"/>
         <source>&amp;Label:</source>
         <translation>&amp;Метка:</translation>
     </message>
     <message>
-        <location line="+18"/>
-        <source>The address to send the payment to  (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</source>
-        <translation>Адрес получателя платежа (например 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
-    </message>
-    <message>
-        <location line="+10"/>
+        <location line="+46"/>
         <source>Choose address from address book</source>
         <translation>Выберите адрес из адресной книги</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+24"/>
         <source>Alt+A</source>
         <translation>Alt+A</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+28"/>
         <source>Paste address from clipboard</source>
         <translation>Вставить адрес из буфера обмена</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+24"/>
         <source>Alt+P</source>
         <translation>Alt+P</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+28"/>
         <source>Remove this recipient</source>
         <translation>Удалить этого получателя</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a HashCoin address (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</source>
-        <translation>Введите HashCoin-адрес (например 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
+        <source>Enter a Bitcoin address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
+        <translation>Введите CopperLark-адрес (например CLA5FtQhnnWnkK6zjFfutR7Stiit4wKd63)</translation>
+    </message>
+</context>
+<context>
+    <name>ServiceMessagesPage</name>
+    <message>
+        <location filename="../forms/servicemessagespage.ui" line="+159"/>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <location line="+107"/>
+        <source>Messages from Copper Lark</source>
+        <translation>Сообщения от Copper Lark</translation>
+    </message>
+    <message>
+        <location line="+60"/>
+        <source>Date</source>
+        <translation>Дата</translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Message content</source>
+        <translation>Содержание сообщения</translation>
+    </message>
+    <message>
+        <location filename="../servicemessagespage.cpp" line="+33"/>
+        <source>17:56, 01.03.2012</source>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
         <location filename="../forms/signverifymessagedialog.ui" line="+14"/>
+        <location filename="../signverifymessagedialog.cpp" line="+28"/>
         <source>Signatures - Sign / Verify a Message</source>
         <translation>Подписи - подписать/проверить сообщение</translation>
     </message>
     <message>
-        <location line="+13"/>
-        <location line="+124"/>
+        <location line="+105"/>
+        <source>Edit record</source>
+        <translation>Редактировать запись</translation>
+    </message>
+    <message>
+        <location line="+49"/>
         <source>&amp;Sign Message</source>
         <translation>&amp;Подписать сообщение</translation>
     </message>
     <message>
-        <location line="-118"/>
+        <location line="+6"/>
         <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>Вы можете подписывать сообщения своими адресами, чтобы доказать владение ими. Будьте осторожны, не подписывайте что-то неопределённое, так как фишинговые атаки могут обманным путём заставить вас подписать нежелательные сообщения. Подписывайте только те сообщения, с которыми вы согласны вплоть до мелочей.</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to sign the message with (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</source>
-        <translation>Адрес, которым вы хотите подписать сообщение  (напр. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
+        <source>The address to sign the message with (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
+        <translation>Адрес, которым вы хотите подписать сообщение  (напр. CNS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location line="+203"/>
+        <location line="+213"/>
         <source>Choose an address from the address book</source>
         <translation>Выберите адрес из адресной книги</translation>
     </message>
     <message>
-        <location line="-193"/>
-        <location line="+203"/>
+        <location line="-203"/>
+        <location line="+213"/>
         <source>Alt+A</source>
         <translation>Alt+A</translation>
     </message>
     <message>
-        <location line="-193"/>
+        <location line="-203"/>
         <source>Paste address from clipboard</source>
         <translation>Вставить адрес из буфера обмена</translation>
     </message>
@@ -1491,17 +1838,27 @@ Address: %4
         <translation>Введите сообщение для подписи</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+7"/>
+        <source>Signature</source>
+        <translation>Подпись</translation>
+    </message>
+    <message>
+        <location line="+27"/>
         <source>Copy the current signature to the system clipboard</source>
         <translation>Скопировать текущую подпись в системный буфер обмена</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this HashCoin address</source>
-        <translation>Подписать сообщение, чтобы доказать владение адресом HashCoin</translation>
+        <source>Sign the message to prove you own this Bitcoin address</source>
+        <translation>Подписать сообщение, чтобы доказать владение адресом Bitcoin</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+3"/>
+        <source>Sign &amp;Message</source>
+        <translation>Подписать &amp;Сообщение</translation>
+    </message>
+    <message>
+        <location line="+14"/>
         <source>Reset all sign message fields</source>
         <translation>Сбросить значения всех полей подписывания сообщений</translation>
     </message>
@@ -1513,35 +1870,39 @@ Address: %4
     </message>
     <message>
         <location line="-87"/>
-        <location line="+70"/>
         <source>&amp;Verify Message</source>
         <translation>&amp;Проверить сообщение</translation>
     </message>
     <message>
-        <location line="-64"/>
+        <location line="+6"/>
         <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
         <translation>Введите ниже адрес для подписи, сообщение (убедитесь, что переводы строк, пробелы, табы и т.п. в точности скопированы) и подпись, чтобы проверить сообщение. Убедитесь, что не скопировали лишнего в подпись, по сравнению с самим подписываемым сообщением, чтобы не стать жертвой атаки &quot;man-in-the-middle&quot;.</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>The address the message was signed with (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</source>
-        <translation>Адрес, которым было подписано сообщение (напр. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
+        <source>The address the message was signed with (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
+        <translation>Адрес, которым было подписано сообщение (напр. CNS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified HashCoin address</source>
-        <translation>Проверить сообщение, чтобы убедиться, что оно было подписано указанным адресом HashCoin</translation>
+        <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
+        <translation>Проверить сообщение, чтобы убедиться, что оно было подписано указанным адресом Bitcoin</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+3"/>
+        <source>Verify &amp;Message</source>
+        <translation>Проверить &amp;Сообщение</translation>
+    </message>
+    <message>
+        <location line="+14"/>
         <source>Reset all verify message fields</source>
         <translation>Сбросить все поля проверки сообщения</translation>
     </message>
     <message>
-        <location filename="../signverifymessagedialog.cpp" line="+27"/>
+        <location filename="../signverifymessagedialog.cpp" line="+4"/>
         <location line="+3"/>
-        <source>Enter a HashCoin address (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</source>
-        <translation>Введите адрес HashCoin (напр. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
+        <source>Enter a Bitcoin address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
+        <translation>Введите адрес CopperLark (напр. CNS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -1550,11 +1911,11 @@ Address: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter HashCoin signature</source>
-        <translation>Введите подпись HashCoin</translation>
+        <source>Enter Bitcoin signature</source>
+        <translation>Введите подпись CopperLark</translation>
     </message>
     <message>
-        <location line="+82"/>
+        <location line="+90"/>
         <location line="+81"/>
         <source>The entered address is invalid.</source>
         <translation>Введённый адрес неверен</translation>
@@ -1627,17 +1988,8 @@ Address: %4
         <source>Open until %1</source>
         <translation>Открыто до %1</translation>
     </message>
-    <message numerus="yes">
-        <location line="-2"/>
-        <source>Open for %n block(s)</source>
-        <translation>
-            <numerusform>Открыто для %n блока</numerusform>
-            <numerusform>Открыто для %n блоков</numerusform>
-            <numerusform>Открыто для %n блоков</numerusform>
-        </translation>
-    </message>
     <message>
-        <location line="+8"/>
+        <location line="+6"/>
         <source>%1/offline</source>
         <translation>%1/отключен</translation>
     </message>
@@ -1762,13 +2114,8 @@ Address: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Generated coins must mature 520 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Сгенерированные монеты должны подождать 520 блоков, прежде чем они могут быть потрачены. Когда Вы сгенерировали этот блок, он был отправлен в сеть для добавления в цепочку блоков. Если данная процедура не удастся, статус изменится на «не подтверждено», и монеты будут недействительны. Это иногда происходит в случае, если другой узел сгенерирует блок на несколько секунд раньше вас.</translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Staked coins must wait 520 blocks before they can return to balance and be spent.  When you generated this proof-of-stake block, it was broadcast to the network to be added to the block chain.  If it fails to get into the chain, it will change to \"not accepted\" and not be a valid stake.  This may occasionally happen if another node generates a proof-of-stake block within a few seconds of yours.</source>
-        <translation>Использованные в Proof-of-Stake монеты должны подождать 520 блоков, прежде чем они вернутся на баланс и смогут быть потрачены. Когда вы сгенерировали этот proof-of-stake блок, он был отправлен в сеть для добавления в цепочку блоков. Если данная процедура не удается, статус изменится на \"не подтверждени\" и блок будет недействителен. Это иногда происходит в случае, если другой узел сгенерирует блок на несколько секунд раньше вас.</translation>
+        <source>Generated coins must mature 120 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
+        <translation>Сгенерированные монеты должны подождать 120 блоков, прежде чем они могут быть потрачены. Когда Вы сгенерировали этот блок, он был отправлен в сеть для добавления в цепочку блоков. Если данная процедура не удастся, статус изменится на «не подтверждено», и монеты будут недействительны. Это иногда происходит в случае, если другой узел сгенерирует блок на несколько секунд раньше вас.</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -1781,7 +2128,7 @@ Address: %4
         <translation>Транзакция</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+3"/>
         <source>Inputs</source>
         <translation>Входы</translation>
     </message>
@@ -1801,12 +2148,21 @@ Address: %4
         <translation>ложь</translation>
     </message>
     <message>
-        <location line="-211"/>
+        <location line="-209"/>
         <source>, has not been successfully broadcast yet</source>
         <translation>, ещё не было успешно разослано</translation>
     </message>
+    <message numerus="yes">
+        <location line="-35"/>
+        <source>Open for %n more block(s)</source>
+        <translation>
+            <numerusform>Открыто для ещё %n блока</numerusform>
+            <numerusform>Открыто для ещё %n блоков</numerusform>
+            <numerusform>Открыто для ещё %n блоков</numerusform>
+        </translation>
+    </message>
     <message>
-        <location line="+35"/>
+        <location line="+70"/>
         <source>unknown</source>
         <translation>неизвестно</translation>
     </message>
@@ -1814,12 +2170,12 @@ Address: %4
 <context>
     <name>TransactionDescDialog</name>
     <message>
-        <location filename="../forms/transactiondescdialog.ui" line="+14"/>
+        <location filename="../forms/transactiondescdialog.ui" line="+105"/>
         <source>Transaction details</source>
         <translation>Детали транзакции</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+76"/>
         <source>This pane shows a detailed description of the transaction</source>
         <translation>Данный диалог показывает детализированную статистику по выбранной транзакции</translation>
     </message>
@@ -1827,7 +2183,7 @@ Address: %4
 <context>
     <name>TransactionTableModel</name>
     <message>
-        <location filename="../transactiontablemodel.cpp" line="+226"/>
+        <location filename="../transactiontablemodel.cpp" line="+230"/>
         <source>Date</source>
         <translation>Дата</translation>
     </message>
@@ -1848,11 +2204,11 @@ Address: %4
     </message>
     <message numerus="yes">
         <location line="+57"/>
-        <source>Open for %n block(s)</source>
+        <source>Open for %n more block(s)</source>
         <translation>
-            <numerusform>Открыто для %n блока</numerusform>
-            <numerusform>Открыто для %n блоков</numerusform>
-            <numerusform>Открыто для %n блоков</numerusform>
+            <numerusform>Открыто для ещё %n блока</numerusform>
+            <numerusform>Открыто для ещё %n блоков</numerusform>
+            <numerusform>Открыто для ещё %n блоков</numerusform>
         </translation>
     </message>
     <message>
@@ -1920,12 +2276,12 @@ Address: %4
         <translation>Добыто</translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+40"/>
         <source>(n/a)</source>
         <translation>[не доступно]</translation>
     </message>
     <message>
-        <location line="+199"/>
+        <location line="+201"/>
         <source>Transaction status. Hover over this field to show number of confirmations.</source>
         <translation>Статус транзакции. Подведите курсор к нужному полю для того, чтобы увидеть количество подтверждений.</translation>
     </message>
@@ -1953,13 +2309,13 @@ Address: %4
 <context>
     <name>TransactionView</name>
     <message>
-        <location filename="../transactionview.cpp" line="+55"/>
-        <location line="+16"/>
+        <location filename="../transactionview.cpp" line="+62"/>
+        <location line="+17"/>
         <source>All</source>
         <translation>Все</translation>
     </message>
     <message>
-        <location line="-15"/>
+        <location line="-16"/>
         <source>Today</source>
         <translation>Сегодня</translation>
     </message>
@@ -1989,7 +2345,7 @@ Address: %4
         <translation>Промежуток...</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+12"/>
         <source>Received with</source>
         <translation>Получено на</translation>
     </message>
@@ -2014,17 +2370,17 @@ Address: %4
         <translation>Другое</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+9"/>
         <source>Enter address or label to search</source>
         <translation>Введите адрес или метку для поиска</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+8"/>
         <source>Min amount</source>
         <translation>Мин. сумма</translation>
     </message>
     <message>
-        <location line="+34"/>
+        <location line="+37"/>
         <source>Copy address</source>
         <translation>Копировать адрес</translation>
     </message>
@@ -2040,11 +2396,6 @@ Address: %4
     </message>
     <message>
         <location line="+1"/>
-        <source>Copy transaction ID</source>
-        <translation>Скопировать ID транзакции</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Edit label</source>
         <translation>Изменить метку</translation>
     </message>
@@ -2054,7 +2405,7 @@ Address: %4
         <translation>Показать подробности транзакции</translation>
     </message>
     <message>
-        <location line="+142"/>
+        <location line="+149"/>
         <source>Export Transaction Data</source>
         <translation>Экспортировать данные транзакций</translation>
     </message>
@@ -2120,32 +2471,37 @@ Address: %4
     </message>
 </context>
 <context>
-    <name>WalletModel</name>
+    <name>TransactionsPage</name>
     <message>
-        <location filename="../walletmodel.cpp" line="+192"/>
-        <source>Sending...</source>
-        <translation>Отправка....</translation>
+        <location filename="../forms/transactionspage.ui" line="+159"/>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <location line="+101"/>
+        <source>Transactions</source>
+        <translation>Транзакции</translation>
     </message>
 </context>
 <context>
     <name>bitcoin-core</name>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="+82"/>
-        <source>HashCoin version</source>
+        <location filename="../bitcoinstrings.cpp" line="+90"/>
+        <source>Bitcoin version</source>
         <translation>Версия</translation>
     </message>
     <message>
-        <location line="+82"/>
+        <location line="+96"/>
         <source>Usage:</source>
         <translation>Использование:</translation>
     </message>
     <message>
-        <location line="-25"/>
+        <location line="-24"/>
         <source>Send command to -server or bitcoind</source>
-        <translation>Отправить команду на -server или bitcoind</translation>
+        <translation>Отправить команду на -server или copperlarkd</translation>
     </message>
     <message>
-        <location line="-19"/>
+        <location line="-22"/>
         <source>List commands</source>
         <translation>Список команд
 </translation>
@@ -2156,159 +2512,169 @@ Address: %4
         <translation>Получить помощь по команде</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+22"/>
         <source>Options:</source>
         <translation>Опции:</translation>
     </message>
     <message>
-        <location line="+23"/>
-        <source>Specify configuration file (default: HashCoin.conf)</source>
-        <translation>Указать конфигурационный файл (по умолчанию: HashCoin.conf)</translation>
+        <location line="+22"/>
+        <source>Specify configuration file (default: bitcoin.conf)</source>
+        <translation>Указать конфигурационный файл (по умолчанию: copperlark.conf)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: hashcoind.pid)</source>
-        <translation>Указать pid-файл (по умолчанию: hashcoin.pid)</translation>
+        <source>Specify pid file (default: bitcoind.pid)</source>
+        <translation>Указать pid-файл (по умолчанию: copperlarkd.pid)</translation>
     </message>
     <message>
-        <location line="-17"/>
-        <source>Specify wallet file (within data directory)</source>
-        <translation>Указать файл кошелька (в пределах DATA директории)</translation>
+        <location line="-48"/>
+        <source>Generate coins</source>
+        <translation>Генерировать монеты</translation>
     </message>
     <message>
-        <location line="+60"/>
+        <location line="-27"/>
+        <source>Don&apos;t generate coins</source>
+        <translation>Не генерировать монеты</translation>
+    </message>
+    <message>
+        <location line="+74"/>
         <source>Specify data directory</source>
         <translation>Укажите каталог данных</translation>
     </message>
     <message>
-        <location line="-8"/>
+        <location line="-7"/>
         <source>Set database cache size in megabytes (default: 25)</source>
         <translation>Установить размер кэша базы данных в мегабайтах (по умолчанию: 25)</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Set database disk log size in megabytes (default: 100)</source>
-        <translation>Установить размер лога базы данных в мегабайтах (по умолчанию: 100)</translation>
+        <location line="-27"/>
+        <source>Listen for connections on &lt;port&gt; (default: 8333 or testnet: 18333)</source>
+        <translation>Принимать входящие подключения на &lt;port&gt; (по умолчанию: 10333 или 20333 в тестовой сети)</translation>
     </message>
     <message>
-        <location line="-26"/>
-        <source>Listen for connections on &lt;port&gt; (default: 7777 or testnet: 17777)</source>
-        <translation>Принимать входящие подключения на &lt;port&gt; (по умолчанию: 7777 или 17777 в тестовой сети)</translation>
-    </message>
-    <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Maintain at most &lt;n&gt; connections to peers (default: 125)</source>
         <translation>Поддерживать не более &lt;n&gt; подключений к узлам (по умолчанию: 125)</translation>
     </message>
     <message>
-        <location line="-33"/>
+        <location line="-47"/>
         <source>Connect to a node to retrieve peer addresses, and disconnect</source>
         <translation>Подключиться к узлу, чтобы получить список адресов других участников и отключиться</translation>
     </message>
     <message>
-        <location line="+64"/>
+        <location line="+78"/>
         <source>Specify your own public address</source>
         <translation>Укажите ваш собственный публичный адрес</translation>
     </message>
     <message>
-        <location line="-75"/>
-        <source>Bind to given address. Use [host]:port notation for IPv6</source>
-        <translation>Привязаться (bind) к указанному адресу. Используйте запись вида [хост]:порт для IPv6</translation>
-    </message>
-    <message>
-        <location line="+77"/>
+        <location line="+3"/>
         <source>Threshold for disconnecting misbehaving peers (default: 100)</source>
         <translation>Порог для отключения неправильно ведущих себя узлов (по умолчанию: 100)</translation>
     </message>
     <message>
-        <location line="-112"/>
+        <location line="-130"/>
         <source>Number of seconds to keep misbehaving peers from reconnecting (default: 86400)</source>
         <translation>Число секунд блокирования неправильно ведущих себя узлов (по умолчанию: 86400)</translation>
     </message>
     <message>
-        <location line="-25"/>
+        <location line="-28"/>
         <source>An error occurred while setting up the RPC port %u for listening on IPv4: %s</source>
         <translation>Произошла ошибка при открытии RPC-порта %u для прослушивания на IPv4: %s</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>An error occurred while setting up the RPC port %u for listening on IPv6, falling back to IPv4: %s</source>
-        <translation>Произошла ошибка при открытии на прослушивание IPv6 RCP-порта %u, возвращаемся к IPv4: %s</translation>
+        <location line="+26"/>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 8332 or testnet: 18332)</source>
+        <translation>Прослушивать подключения JSON-RPC на &lt;порту&gt; (по умолчанию: 10332 или для testnet: 20332)</translation>
     </message>
     <message>
-        <location line="+6"/>
-        <source>Detach block and address databases. Increases shutdown time (default: 0)</source>
-        <translation>Отключить базы данных блоков и адресов. Увеличивает время завершения работы (по умолчанию: 0)</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Error initializing database environment %s! To recover, BACKUP THAT DIRECTORY, then remove everything from it except for wallet.dat.</source>
-        <translation>Ошибка инициализации окружения БД %s! Для восстановления СДЕЛАЙТЕ РЕЗЕРВНУЮ КОПИЮ этой директории, затем удалите из нее все, кроме wallet.dat.</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 8344 or testnet: 18344)</source>
-        <translation>Прослушивать подключения JSON-RPC на &lt;порту&gt; (по умолчанию: 8344 или для testnet: 18344)</translation>
-    </message>
-    <message>
-        <location line="+19"/>
-        <source>Warning: error reading wallet.dat! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
-        <translation>Внимание: ошибка чтения wallet.dat! Все ключи восстановлены, но записи в адресной книге и истории транзакций могут быть некорректными.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
-        <translation>Внимание: wallet.dat был поврежден, данные восстановлены! Оригинальный wallet.dat сохранен как wallet.{timestamp}.bak в %s;, если ваши транзакции или баланс отображаются неправильно, следует восстановить его из данной копии.</translation>
-    </message>
-    <message>
-        <location line="+9"/>
+        <location line="+36"/>
         <source>Accept command line and JSON-RPC commands</source>
         <translation>Принимать командную строку и команды JSON-RPC</translation>
     </message>
     <message>
-        <location line="+5"/>
-        <source>Attempt to recover private keys from a corrupt wallet.dat</source>
-        <translation>Попытка восстановления ключей из поврежденного wallet.dat</translation>
-    </message>
-    <message>
-        <location line="+32"/>
-        <source>Importing blockchain data file.</source>
-        <translation>Импортируется файл цепи блоков.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Importing bootstrap blockchain data file.</source>
-        <translation>Импортируется bootstrap-файл цепи блоков.</translation>
-    </message>
-    <message>
-        <location line="+23"/>
+        <location line="+75"/>
         <source>Run in the background as a daemon and accept commands</source>
         <translation>Запускаться в фоне как демон и принимать команды</translation>
     </message>
     <message>
-        <location line="+33"/>
+        <location line="+32"/>
         <source>Use the test network</source>
         <translation>Использовать тестовую сеть</translation>
     </message>
     <message>
-        <location line="-93"/>
+        <location line="-106"/>
         <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>
         <translation>Принимать подключения извне (по умолчанию: 1, если не используется -proxy или -connect)</translation>
     </message>
     <message>
-        <location line="-42"/>
-        <source>Error: The transaction was rejected.  This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Ошибка: В транзакции отказано.  Такое может произойти, если некоторые монеты уже были потрачены, например, если Вы используете одну копию файла wallet.dat, а монеты были потрачены из другой копии, но не были отмечены как потраченные в этой.</translation>
+        <location line="-76"/>
+        <source>%s, you must set a rpcpassword in the configuration file:
+ %s
+It is recommended you use the following random password:
+rpcuser=bitcoinrpc
+rpcpassword=%s
+(you do not need to remember this password)
+The username and password MUST NOT be the same.
+If the file does not exist, create it with owner-readable-only file permissions.
+</source>
+        <translation>%s, вы должны установить опцию rpcpassword в конфигурационном файле:
+ %s
+Рекомендуется использовать следующий случайный пароль:
+rpcuser=bitcoinrpc
+rpcpassword=%s
+(вам не нужно запоминать этот пароль)
+Имя и пароль ДОЛЖНЫ отличаться.
+Если файл не существует, создайте его и установите права доступа только для владельца, только для чтения.</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>An error occurred while setting up the RPC port %u for listening on IPv6, falling back to IPv4: %s</source>
+        <translation>Произошла ошибка при открытии на прослушивание IPv6 RCP-порта %u, возвращаемся к IPv4: %s</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
+        <translation>Привязаться к указанному адресу и всегда прослушивать только его. Используйте [хост]:порт для IPv6</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Cannot obtain a lock on data directory %s. Bitcoin is probably already running.</source>
+        <translation>Не удаётся установить блокировку на каталог данных %s.  Возможно, CopperLark уже работает.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Corrupted block database detected. Please restart the client with -reindex.</source>
+        <translation>Обнаружено повреждение базы данных блоков. Пожалуйста, перезапустите клиент с параметром -reindex.</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Error initializing database environment %s! To recover, BACKUP THAT DIRECTORY, then remove everything from it except for wallet.dat.</source>
+        <translation>Ошибка инициализации окружения базы данных %s! Чтобы восстановить работоспособность, СДЕЛАЙТЕ РЕЗЕРВНУЮ КОПИЮ ЭТОГО КАТАЛОГА, после чего удалите из него всё, кроме wallet.dat.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
+        <translation>Ошибка: транзакция была отклонена! Это могло произойти в случае, если некоторые монеты в вашем бумажнике уже были потрачены, например, если вы используете копию wallet.dat, и монеты были использованы в копии, но не отмечены как потраченные здесь.</translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds  </source>
-        <translation>Ошибка: эта транзакция требует комиссию в размере как минимум %s из-за её объёма, сложности или использования недавно полученных средств  </translation>
+        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!</source>
+        <translation>Ошибка: эта транзакция требует комиссию как минимум %s из-за суммы, сложности или использования недавно полученных средств!</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>Set maximum size of high-priority/low-fee transactions in bytes (default: 27000)</source>
         <translation>Максимальный размер высокоприоритетных/низкокомиссионных транзакций в байтах (по умолчанию: 27000)</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Set the number of script verification threads (1-16, 0=auto, default: 0)</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <translation>Это пре-релизная тестовая сборка - используйте на свой страх и риск - не используйте для добычи или торговых приложений</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -2322,11 +2688,26 @@ Address: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong HashCoin will not work properly.</source>
-        <translation>Внимание: убедитесь, что дата и время на Вашем компьютере выставлены верно. Если Ваши часы идут неправильно, HashCoin будет работать некорректно.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Bitcoin will not work properly.</source>
+        <translation>Внимание: убедитесь, что дата и время на Вашем компьютере выставлены верно. Если Ваши часы идут неправильно, CopperLark будет работать некорректно.</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+3"/>
+        <source>Warning: error reading wallet.dat! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
+        <translation>Внимание: ошибка чтения wallet.dat! Все ключи прочитаны верно, но данные транзакций или записи адресной книги могут отсутствовать или быть неправильными.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
+        <translation>Внимание: wallet.dat повреждён, данные спасены! Оригинальный wallet.dat сохранён как wallet.{timestamp}.bak в %s; если ваш баланс или транзакции некорректны, вы должны восстановить файл из резервной копии.</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Attempt to recover private keys from a corrupt wallet.dat</source>
+        <translation>Попытка восстановления приватных ключей из повреждённого wallet.dat</translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Block creation options:</source>
         <translation>Параметры создания блоков:</translation>
     </message>
@@ -2341,32 +2722,132 @@ Address: %4
         <translation>Определить свой IP (по умолчанию: 1 при прослушивании и если не используется -externalip)</translation>
     </message>
     <message>
-        <location line="+8"/>
-        <source>Error: Transaction creation failed  </source>
-        <translation>Ошибка: Создание транзакции не удалось  </translation>
+        <location line="+3"/>
+        <source>Error initializing block database</source>
+        <translation></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Error: Wallet locked, unable to create transaction  </source>
-        <translation>Ошибка: бумажник заблокирован, невозможно создать транзакцию  </translation>
+        <source>Error loading block database</source>
+        <translation>Ошибка чтения базы данных блоков</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Error: Disk space is low!</source>
+        <translation>Ошибка: мало места на диске!</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Error: Transaction creation failed!</source>
+        <translation>Ошибка: не удалось создать транзакцию!</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Error: Wallet locked, unable to create transaction!</source>
+        <translation>Ошибка: бумажник заблокирован, невозможно создать транзакцию!</translation>
     </message>
     <message>
         <location line="+2"/>
+        <source>Error: system error: </source>
+        <translation></translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>Не удалось начать прослушивание на порту. Используйте -listen=0 если вас это устраивает.</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Find peers using DNS lookup (default: 0 unless -connect)</source>
-        <translation>Искать узлы с помощью DNS (по умолчанию: 0)</translation>
+        <location line="+1"/>
+        <source>Failed to read block info</source>
+        <translation></translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+1"/>
+        <source>Failed to read block</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Failed to sync block index</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Failed to write block index</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Failed to write block info</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Failed to write block</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Failed to write file info</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Failed to write to coin database</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Failed to write transaction index</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Failed to write undo data</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Find peers using DNS lookup (default: 1 unless -connect)</source>
+        <translation>Искать узлы с помощью DNS (по умолчанию: 1, если не указан -connect)</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>How many blocks to check at startup (default: 288, 0 = all)</source>
+        <translation>Сколько блоков проверять при запуске (по умолчанию: 2500, 0 = все) {288, 0 ?}</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>How thorough the block verification is (0-4, default: 3)</source>
+        <translation>Насколько тщательно проверять блок (0-4, по умолчанию: 3)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Importing blocks from block database...</source>
+        <translation>Импортируются блоки из базы данных блоков...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Imports blocks from external blk000??.dat file</source>
+        <translation>Импортировать блоки из внешнего файла blk000??.dat</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Information</source>
+        <translation>Информация</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Invalid -tor address: &apos;%s&apos;</source>
         <translation>Неверный адрес -tor: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+8"/>
+        <source>Maintain a full transaction index (default: 0)</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: 5000)</source>
         <translation>Максимальный размер буфера приёма на соединение, &lt;n&gt;*1000 байт (по умолчанию: 5000)</translation>
     </message>
@@ -2374,6 +2855,11 @@ Address: %4
         <location line="+1"/>
         <source>Maximum per-connection send buffer, &lt;n&gt;*1000 bytes (default: 1000)</source>
         <translation>Максимальный размер буфера отправки на соединение, &lt;n&gt;*1000 байт (по умолчанию: 1000)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Only accept block chain matching built-in checkpoints (default: 1)</source>
+        <translation>Принимать цепь блоков, только если она соответствует встроенным контрольным точкам (по умолчанию: 1)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2394,6 +2880,11 @@ Address: %4
         <location line="+2"/>
         <source>Prepend debug output with timestamp</source>
         <translation>Дописывать отметки времени к отладочному выводу</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Rebuild blockchain index from current blk000??.dat files</source>
+        <translation>Перестроить индекс цепи блоков из текущих файлов blk000??.dat</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -2417,7 +2908,7 @@ Address: %4
         <translation>Отправлять информацию трассировки/отладки в отладчик</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+5"/>
         <source>Set maximum block size in bytes (default: 250000)</source>
         <translation>Максимальный размер блока в байтах (по умолчанию: 250000)</translation>
     </message>
@@ -2437,7 +2928,12 @@ Address: %4
         <translation>Таймаут соединения в миллисекундах (по умолчанию: 5000)</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+4"/>
+        <source>System error: </source>
+        <translation></translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>Use UPnP to map the listening port (default: 0)</source>
         <translation>Использовать UPnP для проброса порта (по умолчанию: 0)</translation>
     </message>
@@ -2457,14 +2953,9 @@ Address: %4
         <translation>Имя для подключений JSON-RPC</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Verifying database integrity...</source>
-        <translation>Проверка целостности базы данных...</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Warning: Disk space is low!</source>
-        <translation>Внимание: мало места на диске!</translation>
+        <location line="+4"/>
+        <source>Warning</source>
+        <translation>Внимание</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2473,66 +2964,55 @@ Address: %4
     </message>
     <message>
         <location line="+1"/>
-        <source>wallet.dat corrupt, salvage failed</source>
-        <translation>wallet.dat поврежден, восстановление не удалось</translation>
+        <source>You need to rebuild the databases using -reindex to change -txindex</source>
+        <translation></translation>
     </message>
     <message>
-        <location line="-43"/>
+        <location line="+1"/>
+        <source>wallet.dat corrupt, salvage failed</source>
+        <translation>wallet.dat повреждён, спасение данных не удалось</translation>
+    </message>
+    <message>
+        <location line="-45"/>
         <source>Password for JSON-RPC connections</source>
         <translation>Пароль для подключений JSON-RPC</translation>
     </message>
     <message>
-        <location line="-53"/>
+        <location line="-66"/>
         <source>Allow JSON-RPC connections from specified IP address</source>
         <translation>Разрешить подключения JSON-RPC с указанного IP</translation>
     </message>
     <message>
-        <location line="+61"/>
+        <location line="+75"/>
         <source>Send commands to node running on &lt;ip&gt; (default: 127.0.0.1)</source>
         <translation>Посылать команды узлу, запущенному на &lt;ip&gt; (по умолчанию: 127.0.0.1)</translation>
     </message>
     <message>
-        <location line="-99"/>
+        <location line="-118"/>
         <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
         <translation>Выполнить команду, когда появляется новый блок (%s в команде заменяется на хэш блока)</translation>
     </message>
     <message>
-        <location line="-97"/>
-        <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>
-        <translation>Выполнить команду, когда получена новая транзакция (%s в команде заменяется на ID транзакции)</translation>
-    </message>
-    <message>
-        <location line="+122"/>
+        <location line="+140"/>
         <source>Upgrade wallet to latest format</source>
         <translation>Обновить бумажник до последнего формата</translation>
     </message>
     <message>
-        <location line="-15"/>
+        <location line="-16"/>
         <source>Set key pool size to &lt;n&gt; (default: 100)</source>
         <translation>Установить размер запаса ключей в &lt;n&gt; (по умолчанию: 100)</translation>
     </message>
     <message>
-        <location line="-14"/>
+        <location line="-12"/>
         <source>Rescan the block chain for missing wallet transactions</source>
         <translation>Перепроверить цепь блоков на предмет отсутствующих в бумажнике транзакций</translation>
     </message>
     <message>
-        <location line="-24"/>
         <source>How many blocks to check at startup (default: 2500, 0 = all)</source>
-        <translation>Сколько блоков проверять при запуске (по умолчанию: 2500, 0 = все)</translation>
+        <translation type="obsolete">Сколько блоков проверять при запуске (по умолчанию: 2500, 0 = все)</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>How thorough the block verification is (0-6, default: 1)</source>
-        <translation>Насколько тщательно проверять блоки (0-6, по умолчанию: 1)</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Imports blocks from external blk000?.dat file</source>
-        <translation>Импортировать блоки из внешнего файла blk000?.dat</translation>
-    </message>
-    <message>
-        <location line="+51"/>
+        <location line="+30"/>
         <source>Use OpenSSL (https) for JSON-RPC connections</source>
         <translation>Использовать OpenSSL (https) для подключений JSON-RPC</translation>
     </message>
@@ -2547,82 +3027,72 @@ Address: %4
         <translation>Приватный ключ сервера (по умолчанию: server.pem)</translation>
     </message>
     <message>
-        <location line="-127"/>
+        <location line="-148"/>
         <source>Acceptable ciphers (default: TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH)</source>
         <translation>Разрешённые алгоритмы (по умолчанию: TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH)</translation>
     </message>
     <message>
-        <location line="+139"/>
+        <location line="+160"/>
         <source>This help message</source>
         <translation>Эта справка</translation>
     </message>
     <message>
-        <location line="-122"/>
-        <source>Wallet %s resides outside data directory %s.</source>
-        <translation>Кошелек %s находится вне рабочей директории %s.</translation>
-    </message>
-    <message>
-        <location line="-131"/>
-        <source>Cannot obtain a lock on data directory %s.  HashCoin is probably already running.</source>
-        <translation>Невозможно установить блокировку на рабочую директорию %s.  Возможно, бумажник уже запущен.</translation>
-    </message>
-    <message>
-        <location line="+57"/>
-        <source>HashCoin</source>
-        <translation>HashCoin</translation>
-    </message>
-    <message>
-        <location line="+77"/>
+        <location line="+3"/>
         <source>Unable to bind to %s on this computer (bind returned error %d, %s)</source>
         <translation>Невозможно привязаться к %s на этом компьютере (bind вернул ошибку %d, %s)</translation>
     </message>
     <message>
-        <location line="-69"/>
+        <location line="-84"/>
         <source>Connect through socks proxy</source>
         <translation>Подключаться через socks прокси</translation>
     </message>
     <message>
-        <location line="-13"/>
+        <location line="-11"/>
         <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
         <translation>Разрешить поиск в DNS для -addnode, -seednode и -connect</translation>
     </message>
     <message>
-        <location line="+44"/>
+        <location line="+55"/>
         <source>Loading addresses...</source>
         <translation>Загрузка адресов...</translation>
     </message>
     <message>
-        <location line="-26"/>
-        <source>Error loading blkindex.dat</source>
-        <translation>Ошибка чтения blkindex.dat</translation>
-    </message>
-    <message>
-        <location line="+2"/>
+        <location line="-36"/>
         <source>Error loading wallet.dat: Wallet corrupted</source>
         <translation>Ошибка загрузки wallet.dat: Бумажник поврежден</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of HashCoin</source>
-        <translation>Ошибка загрузки wallet.dat: бумажник требует более новую версию HashCoin</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of Bitcoin</source>
+        <translation>Ошибка загрузки wallet.dat: бумажник требует более новую версию Bitcoin</translation>
     </message>
     <message>
-        <location line="+73"/>
-        <source>Wallet needed to be rewritten: restart HashCoin to complete</source>
-        <translation>Необходимо перезаписать бумажник, перезапустите HashCoin для завершения операции.</translation>
+        <location line="+86"/>
+        <source>Verifying block database integrity...</source>
+        <translation>Проверка целостности базы данных блоков...</translation>
     </message>
     <message>
-        <location line="-75"/>
+        <location line="+1"/>
+        <source>Verifying wallet integrity...</source>
+        <translation>Проверка целостности бумажника...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Wallet needed to be rewritten: restart Bitcoin to complete</source>
+        <translation>Необходимо перезаписать бумажник, перезапустите Bitcoin для завершения операции.</translation>
+    </message>
+    <message>
+        <location line="-90"/>
         <source>Error loading wallet.dat</source>
         <translation>Ошибка при загрузке wallet.dat</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location line="+31"/>
         <source>Invalid -proxy address: &apos;%s&apos;</source>
         <translation>Неверный адрес -proxy: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+48"/>
         <source>Unknown network specified in -onlynet: &apos;%s&apos;</source>
         <translation>В параметре -onlynet указана неизвестная сеть: &apos;%s&apos;</translation>
     </message>
@@ -2632,7 +3102,7 @@ Address: %4
         <translation>В параметре -socks запрошена неизвестная версия: %i</translation>
     </message>
     <message>
-        <location line="-74"/>
+        <location line="-89"/>
         <source>Cannot resolve -bind address: &apos;%s&apos;</source>
         <translation>Не удаётся разрешить адрес в параметре -bind: &apos;%s&apos;</translation>
     </message>
@@ -2642,22 +3112,17 @@ Address: %4
         <translation>Не удаётся разрешить адрес в параметре -externalip: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location line="+43"/>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos;</source>
         <translation>Неверное количество в параметре -paytxfee=&lt;кол-во&gt;: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="-15"/>
+        <location line="-26"/>
         <source>Error: could not start node</source>
         <translation>Ошибка: не удалось запустить узел</translation>
     </message>
     <message>
-        <location line="+40"/>
-        <source>Sending...</source>
-        <translation>Отправка...</translation>
-    </message>
-    <message>
-        <location line="-24"/>
+        <location line="+27"/>
         <source>Invalid amount</source>
         <translation>Неверное количество</translation>
     </message>
@@ -2672,19 +3137,19 @@ Address: %4
         <translation>Загрузка индекса блоков...</translation>
     </message>
     <message>
-        <location line="-46"/>
+        <location line="-57"/>
         <source>Add a node to connect to and attempt to keep the connection open</source>
         <translation>Добавить узел для подключения и пытаться поддерживать соединение открытым</translation>
     </message>
     <message>
         <location line="-25"/>
-        <source>Unable to bind to %s on this computer. HashCoin is probably already running.</source>
-        <translation>Невозможно привязаться к %s на этом компьютере.  Возможно, HashCoin уже работает.</translation>
+        <source>Unable to bind to %s on this computer. Bitcoin is probably already running.</source>
+        <translation>Невозможно привязаться к %s на этом компьютере.  Возможно, Bitcoin уже работает.</translation>
     </message>
     <message>
-        <location line="+55"/>
-        <source>Find peers using internet relay chat (default: 1)</source>
-        <translation>Найти участников через IRC (по умолчанию: 1)</translation>
+        <location line="+66"/>
+        <source>Find peers using internet relay chat (default: 0)</source>
+        <translation>Найти участников через IRC (по умолчанию: 0)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -2697,7 +3162,7 @@ Address: %4
         <translation>Загрузка бумажника...</translation>
     </message>
     <message>
-        <location line="-39"/>
+        <location line="-52"/>
         <source>Cannot downgrade wallet</source>
         <translation>Не удаётся понизить версию бумажника</translation>
     </message>
@@ -2712,46 +3177,27 @@ Address: %4
         <translation>Не удаётся записать адрес по умолчанию</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+62"/>
         <source>Rescanning...</source>
         <translation>Сканирование...</translation>
     </message>
     <message>
-        <location line="-40"/>
+        <location line="-56"/>
         <source>Done loading</source>
         <translation>Загрузка завершена</translation>
     </message>
     <message>
-        <location line="+64"/>
+        <location line="+79"/>
         <source>To use the %s option</source>
         <translation>Чтобы использовать опцию %s</translation>
     </message>
     <message>
-        <location line="-150"/>
-        <source>%s, you must set a rpcpassword in the configuration file:
- %s
-It is recommended you use the following random password:
-rpcuser=bitcoinrpc
-rpcpassword=%s
-(you do not need to remember this password)
-If the file does not exist, create it with owner-readable-only file permissions.
-</source>
-        <translation>%s, вы должны установить опцию rpcpassword в конфигурационном файле:
- %s
-Рекомендуется использовать следующий случайный пароль:
-rpcuser=bitcoinrpc
-rpcpassword=%s
-(вам не нужно запоминать этот пароль)
-Если файл не существует, создайте его и установите права доступа только для владельца.
-</translation>
-    </message>
-    <message>
-        <location line="+91"/>
+        <location line="-73"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location line="-30"/>
+        <location line="-29"/>
         <source>You must set rpcpassword=&lt;password&gt; in the configuration file:
 %s
 If the file does not exist, create it with owner-readable-only file permissions.</source>
