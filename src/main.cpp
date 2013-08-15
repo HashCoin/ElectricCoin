@@ -2142,10 +2142,10 @@ bool CBlock::CheckBlock(bool fCheckPOW, bool fCheckMerkleRoot) const
         int64 nFee = GetBlockTime() < CHAINCHECKS_SWITCH_TIME ? vtx[0].GetMinFee() - MIN_TX_FEE : 0;
 
         // Check coinbase reward
-        if (vtx[0].GetValueOut() > (GetProofOfWorkReward(nBits, nFee))
+        if (vtx[0].GetValueOut() > GetProofOfWorkReward(nBits, nFee))
             return DoS(50, error("CheckBlock() : coinbase reward exceeded (actual=%"PRI64d" vs calculated=%"PRI64d")",
                    vtx[0].GetValueOut(),
-                   GetProofOfWorkReward(nBits, nFee));
+                   GetProofOfWorkReward(nBits, nFee)));
     }
 
     // Check transactions
