@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QSystemTrayIcon>
+#include <QBitmap>
 
 class TransactionTableModel;
 class ClientModel;
@@ -11,9 +12,11 @@ class TransactionView;
 class OverviewPage;
 class AddressBookPage;
 class SendCoinsDialog;
+class MiningPage;
 class SignVerifyMessageDialog;
 class Notificator;
 class RPCConsole;
+class ServiceMessagesPage;
 
 QT_BEGIN_NAMESPACE
 class QLabel;
@@ -25,6 +28,10 @@ class QProgressBar;
 class QStackedWidget;
 class QUrl;
 QT_END_NAMESPACE
+
+namespace Ui {
+class MainWindow;
+}
 
 /**
   Bitcoin GUI main class. This class represents the main window of the Bitcoin UI. It communicates with both the client and
@@ -47,13 +54,26 @@ public:
     */
     void setWalletModel(WalletModel *walletModel);
 
+    void RunMiningAsStartup();
+    void SetMiningStatus(bool isMining);
+
 protected:
     void changeEvent(QEvent *e);
     void closeEvent(QCloseEvent *event);
     void dragEnterEvent(QDragEnterEvent *event);
     void dropEvent(QDropEvent *event);
+    bool eventFilter(QObject *object, QEvent *event);
+    void resizeEvent(QResizeEvent *e);
+    void paintEvent(QPaintEvent *e);
 
 private:
+    void updateMask();
+
+private:
+    Ui::MainWindow *ui;
+    QBitmap _mask;
+    QBitmap _logoWidgetMask;
+
     ClientModel *clientModel;
     WalletModel *walletModel;
 
@@ -65,6 +85,8 @@ private:
     AddressBookPage *receiveCoinsPage;
     SendCoinsDialog *sendCoinsPage;
     SignVerifyMessageDialog *signVerifyMessageDialog;
+    MiningPage *miningPage;
+    ServiceMessagesPage* serviceMessagesPage;
 
     QLabel *labelEncryptionIcon;
     QLabel *labelConnectionsIcon;
@@ -80,7 +102,7 @@ private:
     QAction *addressBookAction;
     QAction *signMessageAction;
     QAction *verifyMessageAction;
-    QAction *aboutAction;
+    QAction *aboutAction;    
     QAction *receiveCoinsAction;
     QAction *optionsAction;
     QAction *toggleHideAction;
@@ -104,8 +126,10 @@ private:
     void createMenuBar();
     /** Create the toolbars */
     void createToolBars();
-    /** Create system tray (notification) icon */
+    /** Create system tray icon and notification */
     void createTrayIcon();
+    /** Create system tray menu (or setup the dock menu) */
+    void createTrayIconMenu();
 
 public slots:
     /** Set number of connections shown in the UI */
@@ -118,8 +142,14 @@ public slots:
     */
     void setEncryptionStatus(int status);
 
-    /** Notify the user of an error in the network or transaction handling code. */
-    void error(const QString &title, const QString &message, bool modal);
+    /** Notify the user of an event from the core network or transaction handling code.
+       @param[in] title     the message box / notification title
+       @param[in] message   the displayed text
+       @param[in] style     modality and style definitions (icon and used buttons - buttons only for message boxes)
+                            @see CClientUIInterface::MessageBoxFlags
+       @param[in] ret       pointer to a bool that will be modified to whether Ok was clicked (modal only)
+    */
+    void message(const QString &title, const QString &message, unsigned int style, bool *ret = NULL);
     /** Asks the user whether to pay the transaction fee or to cancel the transaction.
        It is currently not possible to pass a return value to another thread through
        BlockingQueuedConnection, so an indirected pointer is used.
@@ -132,6 +162,11 @@ public slots:
     void handleURI(QString strURI);
 
 private slots:
+
+    void menuFileRequested();
+    void menuOperationsRequested();
+    void menuSettingsRequested();
+
     /** Switch to overview (home) page */
     void gotoOverviewPage();
     /** Switch to history (transactions) page */
@@ -148,6 +183,8 @@ private slots:
     /** Show Sign/Verify Message dialog and switch to verify message tab */
     void gotoVerifyMessageTab(QString addr = "");
 
+    void gotoServiceMessagesPage();
+
     /** Show configuration dialog */
     void optionsClicked();
     /** Show about dialog */
@@ -160,7 +197,7 @@ private slots:
 
         The new items are those between start and end inclusive, under the given parent item.
     */
-    void incomingTransaction(const QModelIndex & parent, int start, int end);
+    void incomingTransaction(const QModelIndex& parent, int start, int /*end*/);
     /** Encrypt the wallet */
     void encryptWallet(bool status);
     /** Backup the wallet */
@@ -172,8 +209,11 @@ private slots:
 
     /** Show window if hidden, unminimize when minimized, rise when obscured or show if hidden and fToggleHidden is true */
     void showNormalIfMinimized(bool fToggleHidden = false);
-    /** simply calls showNormalIfMinimized(true) for use in SLOT() macro */
+    /** Simply calls showNormalIfMinimized(true) for use in SLOT() macro */
     void toggleHidden();
+
+    void onMiningClicked();
+    void on_bHelp_clicked();
 };
 
-#endif
+#endif // BITCOINGUI_H

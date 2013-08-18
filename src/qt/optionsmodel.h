@@ -28,12 +28,13 @@ public:
         Fee,               // qint64
         DisplayUnit,       // BitcoinUnits::Unit
         DisplayAddresses,  // bool
-        DetachDatabases,   // bool
+        StartMiningAtStartup, //bool
         Language,          // QString
-        OptionIDRowCount,
+        OptionIDRowCount
     };
 
     void Init();
+    void Reset();
 
     /* Migrate settings from wallet.dat after app initialization */
     bool Upgrade(); /* returns true if settings upgraded */
@@ -44,10 +45,11 @@ public:
 
     /* Explicit getters */
     qint64 getTransactionFee();
-    bool getMinimizeToTray();
-    bool getMinimizeOnClose();
-    int getDisplayUnit();
-    bool getDisplayAddresses();
+    bool getMinimizeToTray() { return fMinimizeToTray; }
+    bool getMinimizeOnClose() { return fMinimizeOnClose; }
+    int getDisplayUnit() { return nDisplayUnit; }
+    bool getDisplayAddresses() { return bDisplayAddresses; }
+    bool getStartMiningAtStartup() { return bStartMiningAtStartup; }
     QString getLanguage() { return language; }
 
 private:
@@ -55,6 +57,7 @@ private:
     bool bDisplayAddresses;
     bool fMinimizeToTray;
     bool fMinimizeOnClose;
+    bool bStartMiningAtStartup;
     QString language;
 
 signals:

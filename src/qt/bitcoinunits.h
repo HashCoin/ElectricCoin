@@ -17,9 +17,9 @@ public:
      */
     enum Unit
     {
-        BTC,
-        mBTC,
-        uBTC
+        LARK,
+        mLARK,
+        uLARK
     };
 
     //! @name Static API
