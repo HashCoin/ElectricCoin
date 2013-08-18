@@ -124,22 +124,23 @@ Value getmininginfo(const Array& params, bool fHelp)
     int nNetworkWeight = GetDifficulty(GetLastBlockIndex(pindexBest, true)) * 4294967296 / nTargetSpacingStake;
 
     Object obj;
-    obj.push_back(Pair("blocks",        (int)nBestHeight));
+    obj.push_back(Pair("blocks",          (int)nBestHeight));
     obj.push_back(Pair("currentblocksize",(uint64_t)nLastBlockSize));
-    obj.push_back(Pair("currentblocktx",(uint64_t)nLastBlockTx));
-    obj.push_back(Pair("difficulty",    (double)GetDifficulty()));
-    obj.push_back(Pair("networkhashps", getnetworkhashps(params, false)));
-    obj.push_back(Pair("hashespersec",  gethashespersec(params, false)));
-    obj.push_back(Pair("netstakeweight", (uint64_t) nNetworkWeight));
-    obj.push_back(Pair("errors",        GetWarnings("statusbar")));
-    obj.push_back(Pair("generate",      GetBoolArg("-gen")));
-    obj.push_back(Pair("pooledtx",      (uint64_t)mempool.size()));
-    obj.push_back(Pair("stakeweight",    (uint64_t)pwalletMain->GetStakeMintPower(*pwalletMain, STAKE_NORMAL)));
-    obj.push_back(Pair("minweight",    (uint64_t)pwalletMain->GetStakeMintPower(*pwalletMain, STAKE_MINWEIGHT)));
-    obj.push_back(Pair("maxweight",    (uint64_t)pwalletMain->GetStakeMintPower(*pwalletMain, STAKE_MAXWEIGHT)));
-    obj.push_back(Pair("passiveweight",    (uint64_t)pwalletMain->GetStakeMintPower(*pwalletMain, STAKE_BELOWMIN)));
-    obj.push_back(Pair("stakeinterest",    (uint64_t)GetProofOfStakeReward(0, GetLastBlockIndex(pindexBest, true)->nBits, GetLastBlockIndex(pindexBest, true)->nTime, true)));
-    obj.push_back(Pair("testnet",       fTestNet));
+    obj.push_back(Pair("currentblocktx",  (uint64_t)nLastBlockTx));
+    obj.push_back(Pair("difficulty",      (double)GetDifficulty()));
+    obj.push_back(Pair("networkhashps",   getnetworkhashps(params, false)));
+    obj.push_back(Pair("hashespersec",    gethashespersec(params, false)));
+    obj.push_back(Pair("errors",          GetWarnings("statusbar")));
+    obj.push_back(Pair("generate",        GetBoolArg("-gen")));
+    obj.push_back(Pair("genproclimit",    (int)GetArg("-genproclimit", -1)));
+    obj.push_back(Pair("pooledtx",        (uint64_t)mempool.size()));
+    obj.push_back(Pair("netstakeweight",  (uint64_t) nNetworkWeight));
+    obj.push_back(Pair("stakeweight",     (uint64_t)pwalletMain->GetStakeMintPower(*pwalletMain, STAKE_NORMAL)));
+    obj.push_back(Pair("minweight",       (uint64_t)pwalletMain->GetStakeMintPower(*pwalletMain, STAKE_MINWEIGHT)));
+    obj.push_back(Pair("maxweight",       (uint64_t)pwalletMain->GetStakeMintPower(*pwalletMain, STAKE_MAXWEIGHT)));
+    obj.push_back(Pair("passiveweight",   (uint64_t)pwalletMain->GetStakeMintPower(*pwalletMain, STAKE_BELOWMIN)));
+    obj.push_back(Pair("stakeinterest",   (uint64_t)GetProofOfStakeReward(0, GetLastBlockIndex(pindexBest, true)->nBits, GetLastBlockIndex(pindexBest, true)->nTime, true)));
+    obj.push_back(Pair("testnet",         fTestNet));
     return obj;
 }
 
@@ -202,21 +203,39 @@ Value getworkex(const Array& params, bool fHelp)
         // Save
         mapNewBlock[pblock->hashMerkleRoot] = make_pair(pblock, pblock->vtx[0].vin[0].scriptSig);
 
-        // Prebuild hash buffers
-        char pmidstate[32];
-        char pdata[128];
-        char phash1[64];
-        FormatHashBuffers(pblock, pmidstate, pdata, phash1);
-
-        uint256 hashTarget = CBigNum().SetCompact(pblock->nBits).getuint256();
-
         CTransaction coinbaseTx = pblock->vtx[0];
         std::vector<uint256> merkle = pblock->GetMerkleBranch(0);
+
+		// Create work data
+        char pdata[80];
+
+        struct unnamed2
+                {
+                    int nVersion;
+                    uint256 hashPrevBlock;
+                    uint256 hashMerkleRoot;
+                    unsigned int nTime;
+                    unsigned int nBits;
+                    unsigned int nNonce;
+                }
+                block;
+
+        block.nVersion       = pblock->nVersion;
+        block.hashPrevBlock  = pblock->hashPrevBlock;
+        block.hashMerkleRoot = pblock->hashMerkleRoot;
+        block.nTime          = pblock->nTime;
+        block.nBits          = pblock->nBits;
+        block.nNonce         = pblock->nNonce;
+
+        memcpy(pdata, &block, 80);
+
+        uint256 hashTarget = CBigNum().SetCompact(pblock->nBits).getuint256();
 
         Object result;
         result.push_back(Pair("data",     HexStr(BEGIN(pdata), END(pdata))));
         result.push_back(Pair("target",   HexStr(BEGIN(hashTarget), END(hashTarget))));
 
+		// Add coinbase and merkle
         CDataStream ssTx(SER_NETWORK, PROTOCOL_VERSION);
         ssTx << coinbaseTx;
         result.push_back(Pair("coinbase", HexStr(ssTx.begin(), ssTx.end())));
@@ -347,18 +366,33 @@ Value getwork(const Array& params, bool fHelp)
         // Save
         mapNewBlock[pblock->hashMerkleRoot] = make_pair(pblock, pblock->vtx[0].vin[0].scriptSig);
 
-        // Pre-build hash buffers
-        char pmidstate[32];
-        char pdata[128];
-        char phash1[64];
-        FormatHashBuffers(pblock, pmidstate, pdata, phash1);
+		// Create work data
+        char pdata[80];
+
+        struct unnamed2
+                {
+                    int nVersion;
+                    uint256 hashPrevBlock;
+                    uint256 hashMerkleRoot;
+                    unsigned int nTime;
+                    unsigned int nBits;
+                    unsigned int nNonce;
+                }
+                block;
+
+        block.nVersion       = pblock->nVersion;
+        block.hashPrevBlock  = pblock->hashPrevBlock;
+        block.hashMerkleRoot = pblock->hashMerkleRoot;
+        block.nTime          = pblock->nTime;
+        block.nBits          = pblock->nBits;
+        block.nNonce         = pblock->nNonce;
+
+        memcpy(pdata, &block, 80);
 
         uint256 hashTarget = CBigNum().SetCompact(pblock->nBits).getuint256();
 
         Object result;
-        result.push_back(Pair("midstate", HexStr(BEGIN(pmidstate), END(pmidstate)))); // deprecated
         result.push_back(Pair("data",     HexStr(BEGIN(pdata), END(pdata))));
-        result.push_back(Pair("hash1",    HexStr(BEGIN(phash1), END(phash1)))); // deprecated
         result.push_back(Pair("target",   HexStr(BEGIN(hashTarget), END(hashTarget))));
         return result;
     }

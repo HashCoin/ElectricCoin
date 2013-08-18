@@ -39,7 +39,7 @@ CBigNum bnProofOfStakeHardLimit(~uint256(0) >> 30); // disabled temporarily, wil
 uint256 nPoWBase = uint256("0x00000000ffff0000000000000000000000000000000000000000000000000000"); // difficulty-1 target
 
 static const bool fCalculatingGenesisBlockHash = false;
-static const int64 nChainStartTime = 1376460000; // 2013-08-14 6:00:00 GMT
+static const int64 nChainStartTime = 1376812800; // 2013-08-18 8:00:00 GMT
 
 CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
 
@@ -2182,7 +2182,7 @@ bool CBlock::CheckBlock(bool fCheckPOW, bool fCheckMerkleRoot) const
         return DoS(100, error("CheckBlock() : hashMerkleRoot mismatch"));
 
     // HashCoin: check proof-of-stake block signature
-    if (IsProofOfStake() || (!fTestNet && GetBlockTime() < CHAINCHECKS_SWITCH_TIME))
+    if (IsProofOfStake())
     {
         if (!CheckBlockSignature())
             return DoS(100, error("CheckBlock() : bad block signature"));
@@ -2688,23 +2688,27 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nVersion = 1;
         block.nTime    = nChainStartTime;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 37241;
+        block.nNonce   = 3006048;
 
 		// Calculate genesis block hash
-        if (fCalculatingGenesisBlockHash && (block.GetHash() != hashGenesisBlock)) {
+        if (fCalculatingGenesisBlockHash && (block.GetHash() != hashGenesisBlock))
+		{
 			block.nNonce = 0;
 
             // This will figure out a valid hash and Nonce if you're
             // creating a different genesis block:
             uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();
             while (block.GetHash() > hashTarget)
-            {
+			{
                 ++block.nNonce;
                 if (block.nNonce == 0)
-                {
-                    printf("NONCE WRAPPED, incrementing time");
-                    ++block.nTime;
+				{
+                    printf("NONCE WRAPPED, please change time manually");
+					assert(block.nNonce != 0);
+					return false;
                 }
+
+                // Print progress
 				if (block.nNonce % 10000 == 0)
 				{
 					printf("nonce %08u: hash = %s \n", block.nNonce, block.GetHash().ToString().c_str());
@@ -2721,7 +2725,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.nBits = %u \n", block.nBits);
 
 		// Result verify
-        assert(block.hashMerkleRoot == uint256("0x83ce21a9b887815f99b2e3d2f5e0db5e1683df875d14aaa7d2330d0ffc3da184"));
+        assert(block.hashMerkleRoot == uint256("0xf0a07d41ff0f44ce673eaf8605501d2f14d4f825e50412f12dce784351e65133"));
         assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
         assert(block.CheckBlock());
 
@@ -4361,20 +4365,25 @@ CBlock* CreateNewBlock(CWallet* pwallet, bool fProofOfStake)
 }
 
 
-static unsigned int ScanHash_CryptoPP(CBlock* tBlock, unsigned char* phash, unsigned int& nHashesDone)
+static unsigned int ScanHash_CryptoPP(CBlock* tBlock, uint256 &hashResult, const uint256 &hashTarget, unsigned int& nHashesDone)
 {
-    for (;;)
+    while (true)
     {
-        tBlock->nNonce = tBlock->nNonce + 1;
-        uint256 h = tBlock->GetHash();
-        memcpy(phash, &h, 32);
-        if (((unsigned short*)phash)[14] == 0)
-            return tBlock->nNonce;
+        ++tBlock->nNonce;
+        hashResult = tBlock->GetHash();
+        ++nHashesDone;
 
-        if ((tBlock->nNonce & 0xffff) == 0)
-        {
-            nHashesDone = 0xffff+1;
-            return (unsigned int) -1;
+        // Return the nonce if found
+		if (hashResult <= hashTarget)
+		{
+			return tBlock->nNonce;
+		}
+
+		// If nothing found after trying for a while, return -1
+        if ((tBlock->nNonce & 0xFFFF) == 0)
+		{
+            nHashesDone = 0xFFFF + 1;
+            return (unsigned int)-1;
         }
     }
 }
@@ -4449,11 +4458,11 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
     uint256 hashTarget = CBigNum().SetCompact(pblock->nBits).getuint256();
 
     if (hash > hashTarget && pblock->IsProofOfWork())
-        return error("BitcoinMiner : proof-of-work not meeting target");
+        return error("HashCoinMiner: proof-of-work not meeting target");
 
     //// debug print
-    printf("BitcoinMiner:\n");
-    printf("new block found  \n  hash: %s  \ntarget: %s\n", hash.GetHex().c_str(), hashTarget.GetHex().c_str());
+    printf("HashCoinMiner:\n");
+    printf("new block found\n  hash: %s  \ntarget: %s\n", hash.GetHex().c_str(), hashTarget.GetHex().c_str());
     pblock->print();
     printf("generated %s\n", FormatMoney(pblock->vtx[0].vout[0].nValue).c_str());
 
@@ -4461,7 +4470,7 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
     {
         LOCK(cs_main);
         if (pblock->hashPrevBlock != hashBestChain)
-            return error("BitcoinMiner : generated block is stale");
+            return error("HashCoinMiner: generated block is stale");
 
         // Remove key from key pool
         reservekey.KeepKey();
@@ -4474,7 +4483,7 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
 
         // Process this block the same as if we had received it from another node
         if (!ProcessBlock(NULL, pblock))
-            return error("BitcoinMiner : ProcessBlock, block not accepted");
+            return error("HashCoinMiner: ProcessBlock, block not accepted");
     }
 
     return true;
@@ -4488,6 +4497,7 @@ static int nLimitProcessors = -1;
 
 void BitcoinMiner(CWallet *pwallet, bool fProofOfStake)
 {
+    printf("CPUMiner started for proof-of-%s\n", fProofOfStake? "stake" : "work");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
 
     // Make this thread recognisable as the mining thread
@@ -4556,24 +4566,24 @@ void BitcoinMiner(CWallet *pwallet, bool fProofOfStake)
         //
         int64 nStart = GetTime();
         uint256 hashTarget = CBigNum().SetCompact(pblock->nBits).getuint256();
-        uint256 hashbuf[2];
-        uint256& hash = *alignup<16>(hashbuf);
+        uint256 hashResult;
         loop
         {
             unsigned int nHashesDone = 0;
             unsigned int nNonceFound;
 
             // SHA3
-            nNonceFound = ScanHash_CryptoPP(pblock.get(), (unsigned char*)&hash, nHashesDone);
+            nNonceFound = ScanHash_CryptoPP(pblock.get(), hashResult, hashTarget, nHashesDone);
 
             // Check if something found
-            if (nNonceFound != (unsigned int) -1)
+            if (nNonceFound != (unsigned int)-1)
             {
-                if (hash <= hashTarget)
+				// Double check the result
+                if (hashResult <= hashTarget)
                 {
                     // Found a solution
                     assert(pblock->nNonce == nNonceFound);
-                    assert(hash == pblock->GetHash());
+                    assert(hashResult == pblock->GetHash());
 
                     SetThreadPriority(THREAD_PRIORITY_NORMAL);
                     CheckWork(pblock.get(), *pwalletMain, reservekey);
@@ -4587,10 +4597,12 @@ void BitcoinMiner(CWallet *pwallet, bool fProofOfStake)
             if (nHPSTimerStart == 0)
             {
                 nHPSTimerStart = GetTimeMillis();
-                nHashCounter = 0;
+                nHashCounter = nHashesDone;
             }
             else
+			{
                 nHashCounter += nHashesDone;
+			}
             if (GetTimeMillis() - nHPSTimerStart > 4000)
             {
                 static CCriticalSection cs;
@@ -4644,15 +4656,15 @@ void static ThreadBitcoinMiner(void* parg)
     }
     catch (std::exception& e) {
         vnThreadsRunning[THREAD_MINER]--;
-        PrintException(&e, "ThreadCopperLarkMiner()");
+        PrintException(&e, "ThreadHashCoinMiner()");
     } catch (...) {
         vnThreadsRunning[THREAD_MINER]--;
-        PrintException(NULL, "CopperLarkMiner()");
+        PrintException(NULL, "HashCoinMiner()");
     }
     nHPSTimerStart = 0;
     if (vnThreadsRunning[THREAD_MINER] == 0)
         dHashesPerSec = 0;
-    printf("ThreadCopperLarkMiner exiting, %d threads remaining\n", vnThreadsRunning[THREAD_MINER]);
+    printf("ThreadHashCoinMiner exiting, %d threads remaining\n", vnThreadsRunning[THREAD_MINER]);
 }
 
 void GenerateBitcoins(bool fGenerate, CWallet* pwallet)
