@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=ElectricCoin
+Comment=ElectricCoin P2P Cryptocurrency
+Comment[fr]=ElectricCoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=ElectricCoin, eşten eşe kriptografik sanal para birimi
+Exec=/usr/bin/electriccoin-qt
+Terminal=false
+Type=Application
+Icon=/usr/share/pixmaps/bitcoin80.xpm
+MimeType=x-scheme-handler/electriccoin;
+Categories=Office;

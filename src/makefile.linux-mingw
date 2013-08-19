@@ -16,7 +16,7 @@ INCLUDEPATHS= \
  -I"$(DEPSDIR)"
 
 LIBPATHS= \
- -L"$(DEPSDIR)/boost_1_50_0/stage/lib" \
+ -L"$(DEPSDIR)/boost_1_54_0/stage/lib" \
  -L"$(DEPSDIR)/db-4.8.30.NC/build_unix" \
  -L"$(DEPSDIR)/openssl-1.0.1e"
 
@@ -86,7 +86,7 @@ OBJS= \
     obj/kernel.o \
     obj/keccak.o
 
-all: hashcoind.exe
+all: electriccoind.exe
 
 obj/build.h: FORCE
 	/bin/sh ../share/genbuild.sh obj/build.h
@@ -104,14 +104,14 @@ TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
 obj-test/%.o: test/%.cpp $(HEADERS)
 	i586-mingw32msvc-g++ -c $(TESTDEFS) $(CFLAGS) -o $@ $<
 
-test_hashcoin.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
+test_electriccoin.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	i586-mingw32msvc-g++ $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ -lboost_unit_test_framework-mt-s $(LIBS)
 
 clean:
 	-rm -f obj/*.o
-	-rm -f hashcoind.exe
+	-rm -f electriccoind.exe
 	-rm -f obj-test/*.o
-	-rm -f test_hashcoin.exe
+	-rm -f test_electriccoin.exe
 	-rm -f obj/build.h
 
 FORCE:

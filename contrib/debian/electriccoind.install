@@ -1,0 +1,2 @@
+debian/bin/electriccoind usr/bin
+src/electriccoind usr/lib/electriccoin

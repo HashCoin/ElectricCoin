@@ -1,6 +1,6 @@
 [Protocol]
-exec=hashcoin-qt '%u'
-protocol=hashcoin
+exec=electriccoin-qt '%u'
+protocol=electriccoin
 input=none
 output=none
 helper=true

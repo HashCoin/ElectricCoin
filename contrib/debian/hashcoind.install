@@ -1,2 +1,0 @@
-debian/bin/hashcoind usr/bin
-src/hashcoind usr/lib/hashcoin

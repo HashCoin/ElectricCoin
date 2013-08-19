@@ -84,15 +84,15 @@ OBJS= \
     obj/kernel.o \
     obj/keccak.o
 
-all: hashcoind.exe
+all: electriccoind.exe
 
-test check: test_hashcoin.exe FORCE
-	test_hashcoin.exe
+test check: test_electriccoin.exe FORCE
+	test_electriccoin.exe
 
 obj/%.o: %.cpp $(HEADERS)
 	g++ -c $(CFLAGS) -o $@ $<
 
-hashcoind.exe: $(OBJS:obj/%=obj/%)
+electriccoind.exe: $(OBJS:obj/%=obj/%)
 	g++ $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
 TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
@@ -104,7 +104,7 @@ test_bitcoin.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	g++ $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ -lboost_unit_test_framework $(LIBS)
 
 clean:
-	-del /Q hashcoind test_hashcoin
+	-del /Q electriccoind test_electriccoin
 	-del /Q obj\*
 	-del /Q obj-test\*
 
