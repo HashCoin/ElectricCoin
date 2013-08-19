@@ -38,7 +38,7 @@ CBigNum bnProofOfStakeLimit(~uint256(0) >> 27); // proof of stake target limit s
 CBigNum bnProofOfStakeHardLimit(~uint256(0) >> 30); // disabled temporarily, will be used in the future to fix minimal proof of stake difficulty at 0.25
 uint256 nPoWBase = uint256("0x00000000ffff0000000000000000000000000000000000000000000000000000"); // difficulty-1 target
 
-static const bool fCalculatingGenesisBlockHash = true;
+static const bool fCalculatingGenesisBlockHash = false;
 static const int64 nChainStartTime = 1376812800; // 2013-08-18 8:00:00 GMT
 
 CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
@@ -2676,12 +2676,12 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nVersion = 1;
         block.nTime    = nChainStartTime;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 1109783;
+        block.nNonce   = 1592768445;
 
 		// Calculate genesis block hash
         if (fCalculatingGenesisBlockHash && (block.GetHash() != hashGenesisBlock))
 		{
-			block.nNonce = 1101140000;	//TODO: Paused while calculating
+			block.nNonce = 0;
 
             // This will figure out a valid hash and Nonce if you're
             // creating a different genesis block:
