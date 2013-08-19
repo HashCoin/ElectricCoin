@@ -32,13 +32,13 @@ unsigned int nTransactionsUpdated = 0;
 map<uint256, CBlockIndex*> mapBlockIndex;
 set<pair<COutPoint, unsigned int> > setStakeSeen;
 
-CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // start diff is 0
+CBigNum bnProofOfWorkLimit(~uint256(0) >> 30); // start diff is roughly 0.25
 CBigNum bnProofOfStakeLegacyLimit(~uint256(0) >> 24); // proof of stake target limit from block #15000 and until 20 June 2013, results with 0,00390625 proof of stake difficulty
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 27); // proof of stake target limit since 20 June 2013, equal to 0.03125  proof of stake difficulty
 CBigNum bnProofOfStakeHardLimit(~uint256(0) >> 30); // disabled temporarily, will be used in the future to fix minimal proof of stake difficulty at 0.25
 uint256 nPoWBase = uint256("0x00000000ffff0000000000000000000000000000000000000000000000000000"); // difficulty-1 target
 
-static const bool fCalculatingGenesisBlockHash = false;
+static const bool fCalculatingGenesisBlockHash = true;
 static const int64 nChainStartTime = 1376812800; // 2013-08-18 8:00:00 GMT
 
 CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
@@ -88,7 +88,6 @@ int64 nTransactionFee = MIN_TX_FEE;
 //
 
 // These functions dispatch to one or all registered wallets
-
 
 void RegisterWallet(CWallet* pwalletIn)
 {
@@ -261,11 +260,6 @@ unsigned int LimitOrphanTxSize(unsigned int nMaxOrphans)
     }
     return nEvicted;
 }
-
-
-
-
-
 
 
 //////////////////////////////////////////////////////////////////////////////
@@ -882,12 +876,6 @@ bool GetTransaction(const uint256 &hash, CTransaction &tx, uint256 &hashBlock)
     }
     return false;
 }
-
-
-
-
-
-
 
 
 //////////////////////////////////////////////////////////////////////////////
@@ -2688,12 +2676,12 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nVersion = 1;
         block.nTime    = nChainStartTime;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 3006048;
+        block.nNonce   = 1109783;
 
 		// Calculate genesis block hash
         if (fCalculatingGenesisBlockHash && (block.GetHash() != hashGenesisBlock))
 		{
-			block.nNonce = 0;
+			block.nNonce = 1101140000;	//TODO: Paused while calculating
 
             // This will figure out a valid hash and Nonce if you're
             // creating a different genesis block:
@@ -4365,29 +4353,6 @@ CBlock* CreateNewBlock(CWallet* pwallet, bool fProofOfStake)
 }
 
 
-static unsigned int ScanHash_CryptoPP(CBlock* tBlock, uint256 &hashResult, const uint256 &hashTarget, unsigned int& nHashesDone)
-{
-    while (true)
-    {
-        ++tBlock->nNonce;
-        hashResult = tBlock->GetHash();
-        ++nHashesDone;
-
-        // Return the nonce if found
-		if (hashResult <= hashTarget)
-		{
-			return tBlock->nNonce;
-		}
-
-		// If nothing found after trying for a while, return -1
-        if ((tBlock->nNonce & 0xFFFF) == 0)
-		{
-            nHashesDone = 0xFFFF + 1;
-            return (unsigned int)-1;
-        }
-    }
-}
-
 void IncrementExtraNonce(CBlock* pblock, CBlockIndex* pindexPrev, unsigned int& nExtraNonce)
 {
     // Update nExtraNonce
@@ -4489,11 +4454,40 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
     return true;
 }
 
-void static ThreadBitcoinMiner(void* parg);
+
+/**
+ * Solo miner
+ */
 
 static bool fGenerateBitcoins = false;
 static bool fLimitProcessors = false;
 static int nLimitProcessors = -1;
+
+static unsigned int ScanHash_CryptoPP(CBlock* tBlock, uint256 &hashResult, const uint256 &hashTarget, unsigned int& nHashesDone)
+{
+    while (true)
+    {
+        ++tBlock->nNonce;
+        hashResult = tBlock->GetHash();
+        ++nHashesDone;
+
+        // Return the nonce if found
+		if (hashResult <= hashTarget)
+		{
+			return tBlock->nNonce;
+		}
+
+		// If nothing found after trying for a while, return -1
+        if ((tBlock->nNonce & 0xFFFF) == 0)
+		{
+            nHashesDone = 0xFFFF + 1;
+            return (unsigned int)-1;
+        }
+    }
+}
+
+static void InitializeMining();
+static void UninitializeMining();
 
 void BitcoinMiner(CWallet *pwallet, bool fProofOfStake)
 {
@@ -4506,6 +4500,9 @@ void BitcoinMiner(CWallet *pwallet, bool fProofOfStake)
     // Each thread has its own key and counter
     CReserveKey reservekey(pwallet);
     unsigned int nExtraNonce = 0;
+
+    // Initialize before mining start
+    InitializeMining();
 
     while (fGenerateBitcoins || fProofOfStake)
     {
@@ -4643,6 +4640,9 @@ void BitcoinMiner(CWallet *pwallet, bool fProofOfStake)
             // pblock->UpdateTime(pindexPrev);
         }
 	}
+
+	// Clean up after mining stopped
+	UninitializeMining();
 }
 
 void static ThreadBitcoinMiner(void* parg)
@@ -4694,3 +4694,16 @@ void GenerateBitcoins(bool fGenerate, CWallet* pwallet)
     }
 }
 
+/*
+ * TODO: Some informational work need to be done before and after solo mining process
+ */
+
+static void InitializeMining()
+{
+
+}
+
+static void UninitializeMining()
+{
+
+}

@@ -54,7 +54,7 @@ static const int fHaveUPnP = true;
 static const int fHaveUPnP = false;
 #endif
 
-static const uint256 hashGenesisBlock("0x000003a21916b167af5048dc7c4d72bef1aefeca5aff7a5c2e06b67410ccf494");
+static const uint256 hashGenesisBlock("0xf82c6cbcd8839199eb9d6f29b834fc952336742c0f510551551e8dbd99700934");
 static const uint256 hashGenesisBlockTestNet("0x0");
 
 static const int64 nMaxClockDrift = 2 * 60 * 60;        // two hours
@@ -821,7 +821,19 @@ public:
 };
 
 
+/**
+ * Header data of a block
+ */
 
+struct CBlockHeader
+{
+	int nVersion;
+	uint256 hashPrevBlock;
+	uint256 hashMerkleRoot;
+	unsigned int nTime;
+	unsigned int nBits;
+	unsigned int nNonce;
+};
 
 
 /** Nodes collect new transactions into a block, hash them into a hash tree,
@@ -834,17 +846,11 @@ public:
  * Blocks are appended to blk0001.dat files on disk.  Their location on disk
  * is indexed by CBlockIndex objects in memory.
  */
-class CBlock
+class CBlock : public CBlockHeader
 {
 public:
     // header
-    static const int CURRENT_VERSION=6;
-    int nVersion;
-    uint256 hashPrevBlock;
-    uint256 hashMerkleRoot;
-    unsigned int nTime;
-    unsigned int nBits;
-    unsigned int nNonce;
+    static const int CURRENT_VERSION = 6;
 
     // network and disk
     std::vector<CTransaction> vtx;

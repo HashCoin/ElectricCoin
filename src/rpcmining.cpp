@@ -208,32 +208,14 @@ Value getworkex(const Array& params, bool fHelp)
 
 		// Create work data
         char pdata[80];
-
-        struct unnamed2
-                {
-                    int nVersion;
-                    uint256 hashPrevBlock;
-                    uint256 hashMerkleRoot;
-                    unsigned int nTime;
-                    unsigned int nBits;
-                    unsigned int nNonce;
-                }
-                block;
-
-        block.nVersion       = pblock->nVersion;
-        block.hashPrevBlock  = pblock->hashPrevBlock;
-        block.hashMerkleRoot = pblock->hashMerkleRoot;
-        block.nTime          = pblock->nTime;
-        block.nBits          = pblock->nBits;
-        block.nNonce         = pblock->nNonce;
-
-        memcpy(pdata, &block, 80);
+        CBlockHeader *blockTemplate = pblock;
+        memcpy(pdata, &blockTemplate, 80);
 
         uint256 hashTarget = CBigNum().SetCompact(pblock->nBits).getuint256();
 
         Object result;
-        result.push_back(Pair("data",     HexStr(BEGIN(pdata), END(pdata))));
-        result.push_back(Pair("target",   HexStr(BEGIN(hashTarget), END(hashTarget))));
+        result.push_back(Pair("data",   HexStr(BEGIN(pdata), END(pdata))));
+        result.push_back(Pair("target", HexStr(BEGIN(hashTarget), END(hashTarget))));
 
 		// Add coinbase and merkle
         CDataStream ssTx(SER_NETWORK, PROTOCOL_VERSION);
@@ -368,32 +350,14 @@ Value getwork(const Array& params, bool fHelp)
 
 		// Create work data
         char pdata[80];
-
-        struct unnamed2
-                {
-                    int nVersion;
-                    uint256 hashPrevBlock;
-                    uint256 hashMerkleRoot;
-                    unsigned int nTime;
-                    unsigned int nBits;
-                    unsigned int nNonce;
-                }
-                block;
-
-        block.nVersion       = pblock->nVersion;
-        block.hashPrevBlock  = pblock->hashPrevBlock;
-        block.hashMerkleRoot = pblock->hashMerkleRoot;
-        block.nTime          = pblock->nTime;
-        block.nBits          = pblock->nBits;
-        block.nNonce         = pblock->nNonce;
-
-        memcpy(pdata, &block, 80);
+        CBlockHeader *blockTemplate = pblock;
+        memcpy(pdata, &blockTemplate, 80);
 
         uint256 hashTarget = CBigNum().SetCompact(pblock->nBits).getuint256();
 
         Object result;
-        result.push_back(Pair("data",     HexStr(BEGIN(pdata), END(pdata))));
-        result.push_back(Pair("target",   HexStr(BEGIN(hashTarget), END(hashTarget))));
+        result.push_back(Pair("data",   HexStr(BEGIN(pdata), END(pdata))));
+        result.push_back(Pair("target", HexStr(BEGIN(hashTarget), END(hashTarget))));
         return result;
     }
     else
