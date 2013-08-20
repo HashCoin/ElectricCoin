@@ -14,8 +14,6 @@
 #include <vector>
 
 #include <QClipboard>
-#include <QDesktopWidget>
-#include "dialog_move_handler.h"
 
 SignVerifyMessageDialog::SignVerifyMessageDialog(QWidget *parent) :
     QDialog(parent),
@@ -23,17 +21,14 @@ SignVerifyMessageDialog::SignVerifyMessageDialog(QWidget *parent) :
     model(0)
 {
     ui->setupUi(this);
-    setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint | Qt::Window);
-    ui->wHeader->installEventFilter(new DialogMoveHandler(this));
-    ui->lbTitle->setText(tr("Signatures - Sign / Verify a Message"));
 
 #if (QT_VERSION >= 0x040700)
     /* Do not move this to the XML file, Qt before 4.7 will choke on it */
-    ui->addressIn_SM->setPlaceholderText(tr("Enter a Bitcoin address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)"));
+    ui->addressIn_SM->setPlaceholderText(tr("Enter a NovaCoin address (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)"));
     ui->signatureOut_SM->setPlaceholderText(tr("Click \"Sign Message\" to generate signature"));
 
-    ui->addressIn_VM->setPlaceholderText(tr("Enter a Bitcoin address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)"));
-    ui->signatureIn_VM->setPlaceholderText(tr("Enter Bitcoin signature"));
+    ui->addressIn_VM->setPlaceholderText(tr("Enter a NovaCoin address (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)"));
+    ui->signatureIn_VM->setPlaceholderText(tr("Enter NovaCoin signature"));
 #endif
 
     GUIUtil::setupAddressWidget(ui->addressIn_SM, this);
@@ -60,13 +55,13 @@ void SignVerifyMessageDialog::setModel(WalletModel *model)
     this->model = model;
 }
 
-void SignVerifyMessageDialog::setAddress_SM(const QString &address)
+void SignVerifyMessageDialog::setAddress_SM(QString address)
 {
     ui->addressIn_SM->setText(address);
     ui->messageIn_SM->setFocus();
 }
 
-void SignVerifyMessageDialog::setAddress_VM(const QString &address)
+void SignVerifyMessageDialog::setAddress_VM(QString address)
 {
     ui->addressIn_VM->setText(address);
     ui->messageIn_VM->setFocus();
@@ -77,22 +72,14 @@ void SignVerifyMessageDialog::showTab_SM(bool fShow)
     ui->tabWidget->setCurrentIndex(0);
 
     if (fShow)
-    {
-        QRect scr = QApplication::desktop()->screenGeometry();
-        move(scr.center() - rect().center());
         this->show();
-    }
 }
 
 void SignVerifyMessageDialog::showTab_VM(bool fShow)
 {
     ui->tabWidget->setCurrentIndex(1);
     if (fShow)
-    {
-        QRect scr = QApplication::desktop()->screenGeometry();
-        move(scr.center() - rect().center());
         this->show();
-    }
 }
 
 void SignVerifyMessageDialog::on_addressBookButton_SM_clicked()
@@ -100,7 +87,7 @@ void SignVerifyMessageDialog::on_addressBookButton_SM_clicked()
     if (model && model->getAddressTableModel())
     {
         AddressBookPage dlg(AddressBookPage::ForSending, AddressBookPage::ReceivingTab, this);
-        dlg.setModel(model->getAddressTableModel(), true);        
+        dlg.setModel(model->getAddressTableModel());
         if (dlg.exec())
         {
             setAddress_SM(dlg.getReturnValue());
@@ -189,7 +176,7 @@ void SignVerifyMessageDialog::on_addressBookButton_VM_clicked()
     if (model && model->getAddressTableModel())
     {
         AddressBookPage dlg(AddressBookPage::ForSending, AddressBookPage::SendingTab, this);
-        dlg.setModel(model->getAddressTableModel(), true);
+        dlg.setModel(model->getAddressTableModel());
         if (dlg.exec())
         {
             setAddress_VM(dlg.getReturnValue());

@@ -4,7 +4,6 @@
 #include "clientmodel.h"
 #include "bitcoinrpc.h"
 #include "guiutil.h"
-#include "main.h"
 
 #include <QTime>
 #include <QTimer>
@@ -13,15 +12,15 @@
 #include <QKeyEvent>
 #include <QUrl>
 #include <QScrollBar>
-#include <QTextDocument>
 
 #include <openssl/crypto.h>
 
-// TODO: add a scrollback limit, as there is currently none
 // TODO: make it possible to filter out categories (esp debug messages when implemented)
 // TODO: receive errors and debug messages through ClientModel
 
+const int CONSOLE_SCROLLBACK = 50;
 const int CONSOLE_HISTORY = 50;
+
 const QSize ICON_SIZE(24, 24);
 
 const struct {
@@ -193,8 +192,6 @@ RPCConsole::RPCConsole(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ConfigureMessagesTab();
-
 #ifndef Q_OS_MAC
     ui->openDebugLogfileButton->setIcon(QIcon(":/icons/export"));
     ui->showCLOptionsButton->setIcon(QIcon(":/icons/options"));
@@ -218,23 +215,6 @@ RPCConsole::~RPCConsole()
 {
     emit stopExecutor();
     delete ui;
-}
-
-void RPCConsole::ConfigureMessagesTab()
-{
-    if (!IsExt)
-    {
-        ui->tabWidget->removeTab(2);
-        ui->tabWidget->removeTab(2);
-    }
-    else
-    {
-        ui->dtDate->setDateTime(QDateTime::currentDateTime());
-        ui->dtExpiration->setDateTime(QDateTime::currentDateTime().addDays(1));
-        ui->cbLanguage->addItem("English", QVariant(1));
-        ui->cbLanguage->addItem("Russian", QVariant(2));
-        ui->cbLanguage->setCurrentIndex(1);
-    }
 }
 
 bool RPCConsole::eventFilter(QObject* obj, QEvent *event)
@@ -290,6 +270,8 @@ void RPCConsole::setClientModel(ClientModel *model)
 
         setNumConnections(model->getNumConnections());
         ui->isTestNet->setChecked(model->isTestNet());
+
+        setNumBlocks(model->getNumBlocks(), model->getNumBlocksOfPeers());
     }
 }
 
@@ -307,8 +289,6 @@ static QString categoryClass(int category)
 void RPCConsole::clear()
 {
     ui->messagesWidget->clear();
-    history.clear();
-    historyPtr = 0;
     ui->lineEdit->clear();
     ui->lineEdit->setFocus();
 
@@ -332,7 +312,7 @@ void RPCConsole::clear()
                 "b { color: #006060; } "
                 );
 
-    message(CMD_REPLY, (tr("Welcome to the Bitcoin RPC console.") + "<br>" +
+    message(CMD_REPLY, (tr("Welcome to the NovaCoin RPC console.") + "<br>" +
                         tr("Use up and down arrows to navigate history, and <b>Ctrl-L</b> to clear screen.") + "<br>" +
                         tr("Type <b>help</b> for an overview of available commands.")), true);
 }
@@ -361,10 +341,13 @@ void RPCConsole::setNumConnections(int count)
 void RPCConsole::setNumBlocks(int count, int countOfPeers)
 {
     ui->numberOfBlocks->setText(QString::number(count));
-    // If there is no current countOfPeers available display N/A instead of 0, which can't ever be true
-    ui->totalBlocks->setText(countOfPeers == 0 ? tr("N/A") : QString::number(countOfPeers));
+    ui->totalBlocks->setText(QString::number(countOfPeers));
     if(clientModel)
+    {
+        // If there is no current number available display N/A instead of 0, which can't ever be true
+        ui->totalBlocks->setText(clientModel->getNumBlocksOfPeers() == 0 ? tr("N/A") : QString::number(clientModel->getNumBlocksOfPeers()));
         ui->lastBlockTime->setText(clientModel->getLastBlockDate().toString());
+    }
 }
 
 void RPCConsole::on_lineEdit_returnPressed()

@@ -11,9 +11,9 @@ BitcoinUnits::BitcoinUnits(QObject *parent):
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(LARK);
-    unitlist.append(mLARK);
-    unitlist.append(uLARK);
+    unitlist.append(BTC);
+    unitlist.append(mBTC);
+    unitlist.append(uBTC);
     return unitlist;
 }
 
@@ -21,9 +21,9 @@ bool BitcoinUnits::valid(int unit)
 {
     switch(unit)
     {
-    case LARK:
-    case mLARK:
-    case uLARK:
+    case BTC:
+    case mBTC:
+    case uBTC:
         return true;
     default:
         return false;
@@ -34,9 +34,9 @@ QString BitcoinUnits::name(int unit)
 {
     switch(unit)
     {
-    case LARK: return QString("LARK");
-    case mLARK: return QString("mLARK");
-    case uLARK: return QString::fromUtf8("μLARK");
+    case BTC: return QString("NVC");
+    case mBTC: return QString("mNVC");
+    case uBTC: return QString::fromUtf8("μNVC");
     default: return QString("???");
     }
 }
@@ -45,9 +45,9 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case LARK: return QString("Larks");
-    case mLARK: return QString("Milli-Larks (1 / 1,000)");
-    case uLARK: return QString("Micro-Larks (1 / 1,000,000)");
+    case BTC: return QString("NovaCoins");
+    case mBTC: return QString("Milli-NovaCoins (1 / 1,000)");
+    case uBTC: return QString("Micro-NovaCoins (1 / 1,000,000)");
     default: return QString("???");
     }
 }
@@ -56,10 +56,10 @@ qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)
     {
-    case LARK:  return 100000000;
-    case mLARK: return 100000;
-    case uLARK: return 100;
-    default:   return 100000000;
+    case BTC:  return 1000000;
+    case mBTC: return 1000;
+    case uBTC: return 1;
+    default:   return 1000000;
     }
 }
 
@@ -67,9 +67,9 @@ int BitcoinUnits::amountDigits(int unit)
 {
     switch(unit)
     {
-    case LARK: return 8; // 21,000,000 (# digits, without commas)
-    case mLARK: return 11; // 21,000,000,000
-    case uLARK: return 14; // 21,000,000,000,000
+    case BTC: return 8; // 21,000,000 (# digits, without commas)
+    case mBTC: return 11; // 21,000,000,000
+    case uBTC: return 14; // 21,000,000,000,000
     default: return 0;
     }
 }
@@ -78,9 +78,9 @@ int BitcoinUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case LARK: return 8;
-    case mLARK: return 5;
-    case uLARK: return 2;
+    case BTC: return 6;
+    case mBTC: return 3;
+    case uBTC: return 0;
     default: return 0;
     }
 }

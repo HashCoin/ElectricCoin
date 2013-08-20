@@ -83,7 +83,7 @@ void QRCodeDialog::genCode()
 
 QString QRCodeDialog::getURI()
 {
-    QString ret = QString("bitcoin:%1").arg(address);
+    QString ret = QString("novacoin:%1").arg(address);
     int paramCount = 0;
 
     ui->outUri->clear();
@@ -93,7 +93,7 @@ QString QRCodeDialog::getURI()
         if (ui->lnReqAmount->validate())
         {
             // even if we allow a non BTC unit input in lnReqAmount, we generate the URI with BTC as unit (as defined in BIP21)
-            ret += QString("?amount=%1").arg(BitcoinUnits::format(BitcoinUnits::LARK, ui->lnReqAmount->value()));
+            ret += QString("?amount=%1").arg(BitcoinUnits::format(BitcoinUnits::BTC, ui->lnReqAmount->value()));
             paramCount++;
         }
         else

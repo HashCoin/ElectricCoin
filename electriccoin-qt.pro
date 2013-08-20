@@ -1,6 +1,6 @@
 TEMPLATE = app
-TARGET = electriccoin-qt
-VERSION = 0.1.0
+TARGET = novacoin-qt
+VERSION = 0.7.5
 INCLUDEPATH += src src/json src/qt
 DEFINES += QT_GUI BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE
 CONFIG += no_include_pwd
@@ -20,34 +20,26 @@ OBJECTS_DIR = build
 MOC_DIR = build
 UI_DIR = build
 
-MINIUPNPC_INCLUDE_PATH=C:\miniupnpc-1.6
-MINIUPNPC_LIB_PATH=C:\miniupnpc-1.6
-
 # use: qmake "RELEASE=1"
 contains(RELEASE, 1) {
     # Mac: compile for maximum compatibility (10.5, 32-bit)
     macx:QMAKE_CXXFLAGS += -mmacosx-version-min=10.5 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.5.sdk
-    macx:QMAKE_CFLAGS += -mmacosx-version-min=10.5 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.5.sdk
 
-    !win32:!macx {
+    !windows:!macx {
         # Linux: static link
-        LIBS += -Wl,-Bstatic -Wl,-z,relro -Wl,-z,now
-        # for extra security (see: https://wiki.debian.org/Hardening)
-        QMAKE_CXXFLAGS *= -D_FORTIFY_SOURCE=2
+        LIBS += -Wl,-Bstatic
     }
 }
 
 !win32 {
-    # for extra security against potential buffer overflows: enable GCCs Stack Smashing Protection
-    QMAKE_CXXFLAGS *= -fstack-protector-all
-    QMAKE_LFLAGS *= -fstack-protector-all
-    # Exclude on Windows cross compile with MinGW 4.2.x, as it will result in a non-working executable!
-    # This can be enabled for Windows, when we switch to MinGW >= 4.4.x.
+# for extra security against potential buffer overflows: enable GCCs Stack Smashing Protection
+QMAKE_CXXFLAGS *= -fstack-protector-all --param ssp-buffer-size=1
+QMAKE_LFLAGS *= -fstack-protector-all --param ssp-buffer-size=1
+# We need to exclude this for Windows cross compile with MinGW 4.2.x, as it will result in a non-working executable!
+# This can be enabled for Windows, when we switch to MinGW >= 4.4.x.
 }
 # for extra security on Windows: enable ASLR and DEP via GCC linker flags
 win32:QMAKE_LFLAGS *= -Wl,--dynamicbase -Wl,--nxcompat
-# on Windows: enable GCC large address aware linker flag
-win32:QMAKE_LFLAGS *= -Wl,--large-address-aware
 
 # use: qmake "USE_QRCODE=1"
 # libqrencode (http://fukuchi.org/works/qrencode/index.en.html) must be installed for support
@@ -100,7 +92,7 @@ contains(BITCOIN_NEED_QT_PLUGINS, 1) {
 
 
 # regenerate src/build.h
-!win32|contains(USE_BUILD_INFO, 1) {
+!windows|contains(USE_BUILD_INFO, 1) {
     genbuild.depends = FORCE
     genbuild.commands = cd $$PWD; /bin/sh share/genbuild.sh $$OUT_PWD/build/build.h
     genbuild.target = $$OUT_PWD/build/build.h
@@ -135,7 +127,8 @@ HEADERS += src/qt/bitcoingui.h \
     src/util.h \
     src/uint256.h \
     src/kernel.h \
-    src/hash3.h \
+    src/scrypt_mine.h \
+    src/pbkdf2.h \
     src/serialize.h \
     src/strlcpy.h \
     src/main.h \
@@ -187,11 +180,7 @@ HEADERS += src/qt/bitcoingui.h \
     src/qt/rpcconsole.h \
     src/version.h \
     src/netbase.h \
-    src/clientversion.h \
-    src/qt/dialog_move_handler.h \    
-    src/qt/miningpage.h \
-    src/qt/servicemessagespage.h \
-    src/qt/servicemessagedialog.h
+    src/clientversion.h
 
 SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/qt/transactiontablemodel.cpp \
@@ -253,15 +242,13 @@ SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/qt/rpcconsole.cpp \
     src/noui.cpp \
     src/kernel.cpp \
-    src/keccak.cpp \
-    src/qt/dialog_move_handler.cpp \    
-    src/qt/miningpage.cpp \   
-    src/qt/servicemessagespage.cpp \
-    src/qt/servicemessagedialog.cpp
+    src/scrypt-x86.S \
+    src/scrypt-x86_64.S \
+    src/scrypt_mine.cpp \
+    src/pbkdf2.cpp
 
 RESOURCES += \
-    src/qt/bitcoin.qrc \
-    src/qt/res.qrc
+    src/qt/bitcoin.qrc
 
 FORMS += \
     src/qt/forms/sendcoinsdialog.ui \
@@ -274,11 +261,7 @@ FORMS += \
     src/qt/forms/sendcoinsentry.ui \
     src/qt/forms/askpassphrasedialog.ui \
     src/qt/forms/rpcconsole.ui \
-    src/qt/forms/optionsdialog.ui \
-    src/qt/forms/mainwindow.ui \
-    src/qt/forms/transactionspage.ui \   
-    src/qt/forms/miningpage.ui \
-    src/qt/forms/servicemessagespage.ui
+    src/qt/forms/optionsdialog.ui
 
 contains(USE_QRCODE, 1) {
 HEADERS += src/qt/qrcodedialog.h
@@ -292,7 +275,7 @@ SOURCES += src/qt/test/test_main.cpp \
 HEADERS += src/qt/test/uritests.h
 DEPENDPATH += src/qt/test
 QT += testlib
-TARGET = electriccoin-qt_test
+TARGET = novacoin-qt_test
 DEFINES += BITCOIN_QT_TEST
 }
 
@@ -322,7 +305,7 @@ OTHER_FILES += \
 # platform specific defaults, if not overridden on command line
 isEmpty(BOOST_LIB_SUFFIX) {
     macx:BOOST_LIB_SUFFIX = -mt
-    win32:BOOST_LIB_SUFFIX = -mgw46-mt-s-1_54
+    windows:BOOST_LIB_SUFFIX = -mgw44-mt-1_53
 }
 
 isEmpty(BOOST_THREAD_LIB_SUFFIX) {
@@ -331,7 +314,6 @@ isEmpty(BOOST_THREAD_LIB_SUFFIX) {
 
 isEmpty(BDB_LIB_PATH) {
     macx:BDB_LIB_PATH = /opt/local/lib/db48
-	win32:BDB_LIB_PATH = C:\db-4.8.30.NC\build_unix
 }
 
 isEmpty(BDB_LIB_SUFFIX) {
@@ -340,32 +322,20 @@ isEmpty(BDB_LIB_SUFFIX) {
 
 isEmpty(BDB_INCLUDE_PATH) {
     macx:BDB_INCLUDE_PATH = /opt/local/include/db48
-	win32:BDB_INCLUDE_PATH = C:\db-4.8.30.NC\build_unix
 }
 
 isEmpty(BOOST_LIB_PATH) {
     macx:BOOST_LIB_PATH = /opt/local/lib
-	win32:BOOST_LIB_PATH = C:\boost_1_54_0\stage\lib
 }
 
 isEmpty(BOOST_INCLUDE_PATH) {
     macx:BOOST_INCLUDE_PATH = /opt/local/include
-	win32:BOOST_INCLUDE_PATH = C:\boost_1_54_0
 }
 
-isEmpty(OPENSSL_LIB_PATH) {
-	win32:OPENSSL_LIB_PATH = C:\openssl-1.0.1e
-}
+windows:DEFINES += WIN32
+windows:RC_FILE = src/qt/res/bitcoin-qt.rc
 
-isEmpty(OPENSSL_INCLUDE_PATH) {
-	win32:OPENSSL_INCLUDE_PATH = C:\openssl-1.0.1e\include
-}
-
-
-win32:DEFINES += WIN32
-win32:RC_FILE = src/qt/res/bitcoin-qt.rc
-
-win32:!contains(MINGW_THREAD_BUGFIX, 0) {
+windows:!contains(MINGW_THREAD_BUGFIX, 0) {
     # At least qmake's win32-g++-cross profile is missing the -lmingwthrd
     # thread-safety flag. GCC has -mthreads to enable this, but it doesn't
     # work with static linking. -lmingwthrd must come BEFORE -lmingw, so
@@ -376,7 +346,7 @@ win32:!contains(MINGW_THREAD_BUGFIX, 0) {
     QMAKE_LIBS_QT_ENTRY = -lmingwthrd $$QMAKE_LIBS_QT_ENTRY
 }
 
-!win32:!macx {
+!windows:!macx {
     DEFINES += LINUX
     LIBS += -lrt
 }
@@ -386,7 +356,7 @@ macx:OBJECTIVE_SOURCES += src/qt/macdockiconhandler.mm
 macx:LIBS += -framework Foundation -framework ApplicationServices -framework AppKit
 macx:DEFINES += MAC_OSX MSG_NOSIGNAL=0
 macx:ICON = src/qt/res/icons/bitcoin.icns
-macx:TARGET = "ElectricCoin-Qt"
+macx:TARGET = "NovaCoin-Qt"
 macx:QMAKE_CFLAGS_THREAD += -pthread
 macx:QMAKE_LFLAGS_THREAD += -pthread
 macx:QMAKE_CXXFLAGS_THREAD += -pthread
@@ -396,12 +366,12 @@ INCLUDEPATH += $$BOOST_INCLUDE_PATH $$BDB_INCLUDE_PATH $$OPENSSL_INCLUDE_PATH $$
 LIBS += $$join(BOOST_LIB_PATH,,-L,) $$join(BDB_LIB_PATH,,-L,) $$join(OPENSSL_LIB_PATH,,-L,) $$join(QRENCODE_LIB_PATH,,-L,)
 LIBS += -lssl -lcrypto -ldb_cxx$$BDB_LIB_SUFFIX
 # -lgdi32 has to happen after -lcrypto (see  #681)
-win32:LIBS += -lws2_32 -lshlwapi -lmswsock -lole32 -loleaut32 -luuid -lgdi32
+windows:LIBS += -lws2_32 -lshlwapi -lmswsock -lole32 -loleaut32 -luuid -lgdi32
 LIBS += -lboost_system$$BOOST_LIB_SUFFIX -lboost_filesystem$$BOOST_LIB_SUFFIX -lboost_program_options$$BOOST_LIB_SUFFIX -lboost_thread$$BOOST_THREAD_LIB_SUFFIX
-win32:LIBS += -lboost_chrono$$BOOST_LIB_SUFFIX
+windows:LIBS += -lboost_chrono$$BOOST_LIB_SUFFIX
 
 contains(RELEASE, 1) {
-    !win32:!macx {
+    !windows:!macx {
         # Linux: turn dynamic linking back on for c/c++ runtime libraries
         LIBS += -Wl,-Bdynamic
     }

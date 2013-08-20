@@ -61,7 +61,6 @@ private:
     int historyPtr;
 
     void startExecutor();
-    void ConfigureMessagesTab();
 };
 
 #endif // RPCCONSOLE_H

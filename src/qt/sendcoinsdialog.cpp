@@ -8,7 +8,6 @@
 #include "guiutil.h"
 #include "askpassphrasedialog.h"
 #include "base58.h"
-#include "net.h"
 
 #include <QMessageBox>
 #include <QLocale>
@@ -21,6 +20,7 @@ SendCoinsDialog::SendCoinsDialog(QWidget *parent) :
     model(0)
 {
     ui->setupUi(this);
+
 #ifdef Q_OS_MAC // Icons on push buttons are very uncommon on Mac
     ui->addButton->setIcon(QIcon());
     ui->clearButton->setIcon(QIcon());
@@ -49,8 +49,8 @@ void SendCoinsDialog::setModel(WalletModel *model)
     }
     if(model && model->getOptionsModel())
     {
-        setBalance(model->getBalance(), model->getUnconfirmedBalance(), model->getImmatureBalance());
-        connect(model, SIGNAL(balanceChanged(qint64, qint64, qint64)), this, SLOT(setBalance(qint64, qint64, qint64)));
+        setBalance(model->getBalance(), model->getStake(), model->getUnconfirmedBalance(), model->getImmatureBalance());
+        connect(model, SIGNAL(balanceChanged(qint64, qint64, qint64, qint64)), this, SLOT(setBalance(qint64, qint64, qint64, qint64)));
         connect(model->getOptionsModel(), SIGNAL(displayUnitChanged(int)), this, SLOT(updateDisplayUnit()));
     }
 }
@@ -93,7 +93,7 @@ void SendCoinsDialog::on_sendButton_clicked()
     QStringList formatted;
     foreach(const SendCoinsRecipient &rcp, recipients)
     {
-        formatted.append(tr("<b>%1</b> to %2 (%3)").arg(BitcoinUnits::formatWithUnit(BitcoinUnits::LARK, rcp.amount), Qt::escape(rcp.label), rcp.address));
+        formatted.append(tr("<b>%1</b> to %2 (%3)").arg(BitcoinUnits::formatWithUnit(BitcoinUnits::BTC, rcp.amount), Qt::escape(rcp.label), rcp.address));
     }
 
     fNewRecipientAllowed = false;
@@ -120,12 +120,6 @@ void SendCoinsDialog::on_sendButton_clicked()
     WalletModel::SendCoinsReturn sendstatus = model->sendCoins(recipients);
     switch(sendstatus.status)
     {
-    case WalletModel::NotAccess:
-        QMessageBox::warning(this, tr("Send Coins"),
-            tr("Send Larks will be avaible after creating 16200 blocks. Current block %1. (about next %2 day(s)).").
-            arg(nBestHeight).arg((16200-nBestHeight)/360),
-            QMessageBox::Ok, QMessageBox::Ok);
-        break;
     case WalletModel::InvalidAddress:
         QMessageBox::warning(this, tr("Send Coins"),
             tr("The recipient address is not valid, please recheck."),
@@ -144,7 +138,7 @@ void SendCoinsDialog::on_sendButton_clicked()
     case WalletModel::AmountWithFeeExceedsBalance:
         QMessageBox::warning(this, tr("Send Coins"),
             tr("The total exceeds your balance when the %1 transaction fee is included.").
-            arg(BitcoinUnits::formatWithUnit(BitcoinUnits::LARK, sendstatus.fee)),
+            arg(BitcoinUnits::formatWithUnit(BitcoinUnits::BTC, sendstatus.fee)),
             QMessageBox::Ok, QMessageBox::Ok);
         break;
     case WalletModel::DuplicateAddress:
@@ -154,7 +148,7 @@ void SendCoinsDialog::on_sendButton_clicked()
         break;
     case WalletModel::TransactionCreationFailed:
         QMessageBox::warning(this, tr("Send Coins"),
-            tr("Error: Transaction creation failed!"),
+            tr("Error: Transaction creation failed."),
             QMessageBox::Ok, QMessageBox::Ok);
         break;
     case WalletModel::TransactionCommitFailed:
@@ -290,8 +284,9 @@ bool SendCoinsDialog::handleURI(const QString &uri)
     return false;
 }
 
-void SendCoinsDialog::setBalance(qint64 balance, qint64 unconfirmedBalance, qint64 immatureBalance)
+void SendCoinsDialog::setBalance(qint64 balance, qint64 stake, qint64 unconfirmedBalance, qint64 immatureBalance)
 {
+    Q_UNUSED(stake);
     Q_UNUSED(unconfirmedBalance);
     Q_UNUSED(immatureBalance);
     if(!model || !model->getOptionsModel())

@@ -4,11 +4,9 @@
 #include "guiconstants.h"
 #include "walletmodel.h"
 
-#include <QDesktopWidget>
 #include <QMessageBox>
 #include <QPushButton>
 #include <QKeyEvent>
-#include "dialog_move_handler.h"
 
 AskPassphraseDialog::AskPassphraseDialog(Mode mode, QWidget *parent) :
     QDialog(parent),
@@ -18,12 +16,10 @@ AskPassphraseDialog::AskPassphraseDialog(Mode mode, QWidget *parent) :
     fCapsLock(false)
 {
     ui->setupUi(this);
-    setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint | Qt::Window);
-    ui->wCaption->installEventFilter(new DialogMoveHandler(this));
     ui->passEdit1->setMaxLength(MAX_PASSPHRASE_SIZE);
     ui->passEdit2->setMaxLength(MAX_PASSPHRASE_SIZE);
     ui->passEdit3->setMaxLength(MAX_PASSPHRASE_SIZE);
-
+    
     // Setup Caps Lock detection.
     ui->passEdit1->installEventFilter(this);
     ui->passEdit2->installEventFilter(this);
@@ -35,7 +31,6 @@ AskPassphraseDialog::AskPassphraseDialog(Mode mode, QWidget *parent) :
             ui->passLabel1->hide();
             ui->passEdit1->hide();
             ui->warningLabel->setText(tr("Enter the new passphrase to the wallet.<br/>Please use a passphrase of <b>10 or more random characters</b>, or <b>eight or more words</b>."));
-            ui->lbTitle->setText(tr("Encrypt wallet"));
             setWindowTitle(tr("Encrypt wallet"));
             break;
         case Unlock: // Ask passphrase
@@ -44,7 +39,6 @@ AskPassphraseDialog::AskPassphraseDialog(Mode mode, QWidget *parent) :
             ui->passEdit2->hide();
             ui->passLabel3->hide();
             ui->passEdit3->hide();
-            ui->lbTitle->setText(tr("Unlock wallet"));
             setWindowTitle(tr("Unlock wallet"));
             break;
         case Decrypt:   // Ask passphrase
@@ -53,11 +47,9 @@ AskPassphraseDialog::AskPassphraseDialog(Mode mode, QWidget *parent) :
             ui->passEdit2->hide();
             ui->passLabel3->hide();
             ui->passEdit3->hide();
-            ui->lbTitle->setText(tr("Decrypt wallet"));
             setWindowTitle(tr("Decrypt wallet"));
             break;
         case ChangePass: // Ask old passphrase + new passphrase x2
-            ui->lbTitle->setText(tr("Change passphrase"));
             setWindowTitle(tr("Change passphrase"));
             ui->warningLabel->setText(tr("Enter the old and new passphrase to the wallet."));
             break;
@@ -67,9 +59,6 @@ AskPassphraseDialog::AskPassphraseDialog(Mode mode, QWidget *parent) :
     connect(ui->passEdit1, SIGNAL(textChanged(QString)), this, SLOT(textChanged()));
     connect(ui->passEdit2, SIGNAL(textChanged(QString)), this, SLOT(textChanged()));
     connect(ui->passEdit3, SIGNAL(textChanged(QString)), this, SLOT(textChanged()));
-
-    QRect scr = QApplication::desktop()->screenGeometry();
-    move(scr.center() - rect().center());
 }
 
 AskPassphraseDialog::~AskPassphraseDialog()
@@ -109,7 +98,7 @@ void AskPassphraseDialog::accept()
             break;
         }
         QMessageBox::StandardButton retval = QMessageBox::question(this, tr("Confirm wallet encryption"),
-                 tr("Warning: If you encrypt your wallet and lose your passphrase, you will <b>LOSE ALL OF YOUR BITCOINS</b>!") + "<br><br>" + tr("Are you sure you wish to encrypt your wallet?"),
+                 tr("Warning: If you encrypt your wallet and lose your passphrase, you will <b>LOSE ALL OF YOUR COINS</b>!") + "<br><br>" + tr("Are you sure you wish to encrypt your wallet?"),
                  QMessageBox::Yes|QMessageBox::Cancel,
                  QMessageBox::Cancel);
         if(retval == QMessageBox::Yes)
@@ -119,15 +108,15 @@ void AskPassphraseDialog::accept()
                 if(model->setWalletEncrypted(true, newpass1))
                 {
                     QMessageBox::warning(this, tr("Wallet encrypted"),
-                                         "<qt>" +
-                                         tr("Bitcoin will close now to finish the encryption process. "
+                                         "<qt>" + 
+                                         tr("NovaCoin will close now to finish the encryption process. "
                                          "Remember that encrypting your wallet cannot fully protect "
-                                         "your bitcoins from being stolen by malware infecting your computer.") +
-                                         "<br><br><b>" +
+                                         "your coins from being stolen by malware infecting your computer.") + 
+                                         "<br><br><b>" + 
                                          tr("IMPORTANT: Any previous backups you have made of your wallet file "
                                          "should be replaced with the newly generated, encrypted wallet file. "
                                          "For security reasons, previous backups of the unencrypted wallet file "
-                                         "will become useless as soon as you start using the new, encrypted wallet.") +
+                                         "will become useless as soon as you start using the new, encrypted wallet.") + 
                                          "</b></qt>");
                     QApplication::quit();
                 }

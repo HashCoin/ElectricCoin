@@ -1,14 +1,8 @@
 #ifndef QTIPCSERVER_H
 #define QTIPCSERVER_H
 
-#include <string>
-
-// Define Bitcoin-Qt message queue name for mainnet
-#define BITCOINURI_QUEUE_NAME_MAINNET "BitcoinURI"
-// Define Bitcoin-Qt message queue name for testnet
-#define BITCOINURI_QUEUE_NAME_TESTNET "BitcoinURI-testnet"
-
-extern std::string strBitcoinURIQueueName;
+// Define Bitcoin-Qt message queue name
+#define BITCOINURI_QUEUE_NAME "BitcoinURI"
 
 void ipcScanRelay(int argc, char *argv[]);
 void ipcInit(int argc, char *argv[]);

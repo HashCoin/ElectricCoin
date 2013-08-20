@@ -44,7 +44,7 @@ namespace GUIUtil {
 
 QString dateTimeStr(const QDateTime &date)
 {
-    return date.toString("hh:mm") + QString(", ") + date.date().toString(Qt::SystemLocaleShortDate);
+    return date.date().toString(Qt::SystemLocaleShortDate) + QString(" ") + date.toString("hh:mm");
 }
 
 QString dateTimeStr(qint64 nTime)
@@ -77,8 +77,8 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
 
 bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
-    // return if URI is not valid or is no bitcoin URI
-    if(!uri.isValid() || uri.scheme() != QString("bitcoin"))
+    // NovaCoin: check prefix
+    if(uri.scheme() != QString("novacoin"))
         return false;
 
     SendCoinsRecipient rv;
@@ -103,7 +103,7 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
         {
             if(!i->second.isEmpty())
             {
-                if(!BitcoinUnits::parse(BitcoinUnits::LARK, i->second, &rv.amount))
+                if(!BitcoinUnits::parse(BitcoinUnits::BTC, i->second, &rv.amount))
                 {
                     return false;
                 }
@@ -123,13 +123,13 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 
 bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 {
-    // Convert bitcoin:// to bitcoin:
+    // Convert novacoin:// to novacoin:
     //
     //    Cannot handle this later, because bitcoin:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
-    if(uri.startsWith("bitcoin://"))
+    if(uri.startsWith("novacoin://"))
     {
-        uri.replace(0, 10, "bitcoin:");
+        uri.replace(0, 10, "novacoin:");
     }
     QUrl uriInstance(uri);
     return parseBitcoinURI(uriInstance, out);
@@ -273,7 +273,7 @@ bool ToolTipToRichTextFilter::eventFilter(QObject *obj, QEvent *evt)
 #ifdef WIN32
 boost::filesystem::path static StartupShortcutPath()
 {
-    return GetSpecialFolderPath(CSIDL_STARTUP) / "Bitcoin.lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / "NovaCoin.lnk";
 }
 
 bool GetStartOnSystemStartup()
@@ -355,7 +355,7 @@ boost::filesystem::path static GetAutostartDir()
 
 boost::filesystem::path static GetAutostartFilePath()
 {
-    return GetAutostartDir() / "bitcoin.desktop";
+    return GetAutostartDir() / "novacoin.desktop";
 }
 
 bool GetStartOnSystemStartup()
@@ -396,7 +396,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         // Write a bitcoin.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
-        optionFile << "Name=Bitcoin\n";
+        optionFile << "Name=NovaCoin\n";
         optionFile << "Exec=" << pszExePath << " -min\n";
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";
@@ -417,10 +417,10 @@ bool SetStartOnSystemStartup(bool fAutoStart) { return false; }
 HelpMessageBox::HelpMessageBox(QWidget *parent) :
     QMessageBox(parent)
 {
-    header = tr("Bitcoin-Qt") + " " + tr("version") + " " +
+    header = tr("NovaCoin-Qt") + " " + tr("version") + " " +
         QString::fromStdString(FormatFullVersion()) + "\n\n" +
         tr("Usage:") + "\n" +
-        "  CopperLark [" + tr("command-line options") + "]                     " + "\n";
+        "  novacoin-qt [" + tr("command-line options") + "]                     " + "\n";
 
     coreOptions = QString::fromStdString(HelpMessage());
 
@@ -429,7 +429,7 @@ HelpMessageBox::HelpMessageBox(QWidget *parent) :
         "  -min                   " + tr("Start minimized") + "\n" +
         "  -splash                " + tr("Show splash screen on startup (default: 1)") + "\n";
 
-    setWindowTitle(tr("Bitcoin-Qt"));
+    setWindowTitle(tr("NovaCoin-Qt"));
     setTextFormat(Qt::PlainText);
     // setMinimumWidth is ignored for QMessageBox so put in non-breaking spaces to make it wider.
     setText(header + QString(QChar(0x2003)).repeated(50));
