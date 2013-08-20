@@ -129,7 +129,7 @@ OBJS= \
     obj/walletdb.o \
     obj/noui.o \
     obj/kernel.o \
-    obj/keccak.o
+    obj/hash3.o
 
 
 all: electriccoind
