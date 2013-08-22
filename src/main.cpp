@@ -32,14 +32,14 @@ unsigned int nTransactionsUpdated = 0;
 map<uint256, CBlockIndex*> mapBlockIndex;
 set<pair<COutPoint, unsigned int> > setStakeSeen;
 
-CBigNum bnProofOfWorkLimit(~uint256(0) >> 30); // start diff is roughly 0.25
+CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // starting difficulty is 1 / (2 ^ (32 - 20) = 0.000244140625
 CBigNum bnProofOfStakeLegacyLimit(~uint256(0) >> 24); // proof of stake target limit from block #15000 and until 20 June 2013, results with 0,00390625 proof of stake difficulty
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 27); // proof of stake target limit since 20 June 2013, equal to 0.03125  proof of stake difficulty
 CBigNum bnProofOfStakeHardLimit(~uint256(0) >> 30); // disabled temporarily, will be used in the future to fix minimal proof of stake difficulty at 0.25
 uint256 nPoWBase = uint256("0x00000000ffff0000000000000000000000000000000000000000000000000000"); // difficulty-1 target
 
 static const bool fCalculatingGenesisBlockHash = false;
-static const int64 nChainStartTime = 1376812800; // 2013-08-18 8:00:00 GMT
+static const int64 nChainStartTime = 1377151200; // 2013-08-22 6:00:00 GMT
 
 CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
 
@@ -2676,7 +2676,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nVersion = 1;
         block.nTime    = nChainStartTime;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 1592768445;
+        block.nNonce   = 617699;
 
 		// Calculate genesis block hash
         if (fCalculatingGenesisBlockHash && (block.GetHash() != hashGenesisBlock))
@@ -2713,7 +2713,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.nBits = %u \n", block.nBits);
 
 		// Result verify
-        assert(block.hashMerkleRoot == uint256("0xf0a07d41ff0f44ce673eaf8605501d2f14d4f825e50412f12dce784351e65133"));
+        assert(block.hashMerkleRoot == uint256("0x542e09c86a28cfd438a167bf40c62364efb86b996b19ce40a1e2310a7ed3893d"));
         assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
         assert(block.CheckBlock());
 
@@ -2934,7 +2934,8 @@ string GetWarnings(string strFor)
     if (Checkpoints::IsSyncCheckpointTooOld(60 * 60 * 24 * 10) && !fTestNet && !IsInitialBlockDownload())
     {
         nPriority = 100;
-        strStatusBar = "WARNING: Checkpoint is too old. Wait for block chain to download, or notify developers.";
+//      strStatusBar = "WARNING: Checkpoint is too old. Wait for block chain to download, or notify developers.";
+		strStatusBar = "";
     }
 
     // ppcoin: if detected invalid checkpoint enter safe mode

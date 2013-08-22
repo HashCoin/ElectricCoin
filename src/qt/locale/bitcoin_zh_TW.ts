@@ -351,6 +351,11 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-7"/>
+        <source>&amp;Mining</source>
+        <translation>&amp;挖礦</translation>
+    </message>
+    <message>
+        <location line="-7"/>
         <source>&amp;Send coins</source>
         <translation>&amp;發送貨幣</translation>
     </message>
@@ -1048,6 +1053,69 @@ Address: %4
         <source>out of sync</source>
         <translation>來自同步過程</translation>
     </message>
+</context>
+<context>
+	<name>MiningPage</name>
+	<message>
+		<location line="+14" />
+		<source>Mining</source>
+		<translation>挖礦</translation>
+	</message>
+	<message>
+		<location line="+33" />
+		<source>Username</source>
+		<translation>用戶名</translation>
+	</message>
+	<message>
+		<location line="+43" />
+		<source>Server</source>
+		<translation>伺服器</translation>
+	</message>
+	<message>
+		<location line="+63" />
+		<source>Password</source>
+		<translation>密碼</translation>
+	</message>
+	<message>
+		<location line="+73" />
+		<source>Port</source>
+		<translation>埠</translation>
+	</message>
+	<message>
+		<location line="+86" />
+		<source>Start Mining</source>
+		<translation>開始挖礦</translation>
+	</message>
+	<message>
+		<location line="+151" />
+		<source>Scantime</source>
+		<translation>掃描時間</translation>
+	</message>
+	<message>
+		<location line="+161" />
+		<source>Threads</source>
+		<translation>執行緒數</translation>
+	</message>
+	<message>
+		<location line="+168" />
+		<source>Debug Logging</source>
+		<translation>調試記錄</translation>
+	</message>
+	<message>
+		<location line="+175" />
+		<source>Type</source>
+		<translation>類型</translation>
+	</message>
+	<message>
+		<location line="+205" />
+		<source>Solo Mining</source>
+		<translation>單獨挖礦</translation>
+	</message>
+	<message>
+		<location line="+210" />
+		<source>Pool Mining</source>
+		<translation>礦池挖礦</translation>
+	</message>
 </context>
 <context>
     <name>QRCodeDialog</name>

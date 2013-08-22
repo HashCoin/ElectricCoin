@@ -20,7 +20,7 @@
    <item row="7" column="1">
     <widget class="QLineEdit" name="serverLine">
      <property name="enabled">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
     </widget>
    </item>
@@ -47,7 +47,7 @@
    <item row="7" column="3">
     <widget class="QLineEdit" name="usernameLine">
      <property name="enabled">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="text">
       <string/>
@@ -185,7 +185,7 @@
       <number>1</number>
      </property>
      <property name="maximum">
-      <number>99</number>
+      <number>8</number>
      </property>
      <property name="singleStep">
       <number>1</number>
@@ -215,7 +215,7 @@
    <item row="4" column="3">
     <widget class="QSpinBox" name="scantimeBox">
      <property name="enabled">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="minimum">
       <number>1</number>
@@ -228,20 +228,20 @@
    <item row="7" column="2">
     <widget class="QLineEdit" name="portLine">
      <property name="enabled">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="text">
-      <string>9332</string>
+      <string>11384</string>
      </property>
      <property name="value" stdset="0">
-      <number>9332</number>
+      <number>11384</number>
      </property>
     </widget>
    </item>
    <item row="7" column="4">
     <widget class="QLineEdit" name="passwordLine">
      <property name="enabled">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
     </widget>
    </item>

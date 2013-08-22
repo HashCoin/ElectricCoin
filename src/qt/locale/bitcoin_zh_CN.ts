@@ -351,6 +351,11 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-7"/>
+        <source>&amp;Mining</source>
+        <translation>&amp;挖矿</translation>
+    </message>
+    <message>
+        <location line="-7"/>
         <source>&amp;Send coins</source>
         <translation>&amp;发送货币</translation>
     </message>
@@ -1050,9 +1055,72 @@ Address: %4
     </message>
 </context>
 <context>
+	<name>MiningPage</name>
+	<message>
+		<location line="+14" />
+		<source>Mining</source>
+		<translation>挖矿</translation>
+	</message>
+	<message>
+		<location line="+33" />
+		<source>Username</source>
+		<translation>用户名</translation>
+	</message>
+	<message>
+		<location line="+43" />
+		<source>Server</source>
+		<translation>服务器</translation>
+	</message>
+	<message>
+		<location line="+63" />
+		<source>Password</source>
+		<translation>密码</translation>
+	</message>
+	<message>
+		<location line="+73" />
+		<source>Port</source>
+		<translation>端口</translation>
+	</message>
+	<message>
+		<location line="+86" />
+		<source>Start Mining</source>
+		<translation>开始挖矿</translation>
+	</message>
+	<message>
+		<location line="+151" />
+		<source>Scantime</source>
+		<translation>扫描时间</translation>
+	</message>
+	<message>
+		<location line="+161" />
+		<source>Threads</source>
+		<translation>线程数</translation>
+	</message>
+	<message>
+		<location line="+168" />
+		<source>Debug Logging</source>
+		<translation>调试记录</translation>
+	</message>
+	<message>
+		<location line="+175" />
+		<source>Type</source>
+		<translation>类型</translation>
+	</message>
+	<message>
+		<location line="+205" />
+		<source>Solo Mining</source>
+		<translation>单独挖矿</translation>
+	</message>
+	<message>
+		<location line="+210" />
+		<source>Pool Mining</source>
+		<translation>矿池挖矿</translation>
+	</message>
+</context>
+<context>
     <name>QRCodeDialog</name>
     <message>
-        <location filename="../forms/qrcodedialog.ui" line="+14"/>
+        <location line="+14"/>
         <source>QR Code Dialog</source>
         <translation>二维码对话框</translation>
     </message>
