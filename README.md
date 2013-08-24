@@ -1,8 +1,9 @@
-PoW+PoS
-1 minute block spacing
-20 coins per block
-0.001 transcation fee
-500 million total coins
-1% stake interest
-sha384
-rpcport=11384
+- PoW+PoS
+- 1 minute block spacing
+- 8 coins per block, halves every 2 years, 2 coins minimal
+- 0.0001 transcation fee
+- 500 million total coins
+- 1% stake interest
+- SHA384
+- p2p port: 10384
+- rpc port: 11384
