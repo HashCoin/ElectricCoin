@@ -20,8 +20,8 @@ OBJECTS_DIR = build
 MOC_DIR = build
 UI_DIR = build
 
-MINIUPNPC_INCLUDE_PATH=C:\miniupnpc-1.6
-MINIUPNPC_LIB_PATH=C:\miniupnpc-1.6
+MINIUPNPC_INCLUDE_PATH=\miniupnpc-1.6
+MINIUPNPC_LIB_PATH=\miniupnpc-1.6
 
 # use: qmake "RELEASE=1"
 contains(RELEASE, 1) {
@@ -317,7 +317,7 @@ isEmpty(BOOST_THREAD_LIB_SUFFIX) {
 
 isEmpty(BDB_LIB_PATH) {
     macx:BDB_LIB_PATH = /opt/local/lib/db48
-	win32:BDB_LIB_PATH = C:\db-4.8.30.NC\build_unix
+	win32:BDB_LIB_PATH = \db-4.8.30.NC\build_unix
 }
 
 isEmpty(BDB_LIB_SUFFIX) {
@@ -326,25 +326,25 @@ isEmpty(BDB_LIB_SUFFIX) {
 
 isEmpty(BDB_INCLUDE_PATH) {
     macx:BDB_INCLUDE_PATH = /opt/local/include/db48
-	win32:BDB_INCLUDE_PATH = C:\db-4.8.30.NC\build_unix
+	win32:BDB_INCLUDE_PATH = \db-4.8.30.NC\build_unix
 }
 
 isEmpty(BOOST_LIB_PATH) {
     macx:BOOST_LIB_PATH = /opt/local/lib
-	win32:BOOST_LIB_PATH = C:\boost_1_54_0\stage\lib
+	win32:BOOST_LIB_PATH = \boost_1_54_0\stage\lib
 }
 
 isEmpty(BOOST_INCLUDE_PATH) {
     macx:BOOST_INCLUDE_PATH = /opt/local/include
-	win32:BOOST_INCLUDE_PATH = C:\boost_1_54_0
+	win32:BOOST_INCLUDE_PATH = \boost_1_54_0
 }
 
 isEmpty(OPENSSL_LIB_PATH) {
-	win32:OPENSSL_LIB_PATH = C:\openssl-1.0.1e
+	win32:OPENSSL_LIB_PATH = \openssl-1.0.1e
 }
 
 isEmpty(OPENSSL_INCLUDE_PATH) {
-	win32:OPENSSL_INCLUDE_PATH = C:\openssl-1.0.1e\include
+	win32:OPENSSL_INCLUDE_PATH = \openssl-1.0.1e\include
 }
 
 
