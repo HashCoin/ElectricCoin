@@ -38,8 +38,8 @@ ifndef USE_UPNP
 	override USE_UPNP = -
 endif
 ifneq (${USE_UPNP}, -)
- INCLUDEPATHS += -I"/c/miniupnpc-1.6"
- LIBPATHS += -L"/c/miniupnpc-1.6"
+ INCLUDEPATHS += -I"\miniupnpc-1.6"
+ LIBPATHS += -L"\miniupnpc-1.6"
  LIBS += -l miniupnpc -l iphlpapi
  DEFS += -DSTATICLIB -DUSE_UPNP=$(USE_UPNP)
 endif

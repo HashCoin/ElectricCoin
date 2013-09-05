@@ -38,8 +38,8 @@ CBigNum bnProofOfStakeLimit(~uint256(0) >> 27); // proof of stake target limit s
 CBigNum bnProofOfStakeHardLimit(~uint256(0) >> 30); // disabled temporarily, will be used in the future to fix minimal proof of stake difficulty at 0.25
 uint256 nPoWBase = uint256("0x00000000ffff0000000000000000000000000000000000000000000000000000"); // difficulty-1 target
 
-static const bool fCalculatingGenesisBlockHash = false;
-static const int64 nChainStartTime = 1377302400; // 2013-08-24 0:00:00 GMT
+static const bool fCalcGBHash = false;
+static const int64 nChainStartTime = 1378771200; // 2013-09-10 0:00:00 GMT
 
 CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
 
@@ -2599,7 +2599,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nNonce   = 17391826;
 
 		// Calculate genesis block hash
-        if (fCalculatingGenesisBlockHash && (block.GetHash() != hashGenesisBlock))
+        if (fCalcGBHash && (block.GetHash() != hashGenesisBlock))
 		{
 			block.nNonce = 0;
 
@@ -2633,7 +2633,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.nBits = %u \n", block.nBits);
 
 		// Result verify
-        assert(block.hashMerkleRoot == uint256("0xe4b6cb6914de99f9ad2432839eae38b6a2b40f11b1ab22133af26417299eb11b"));
+        assert(block.hashMerkleRoot == uint256("0x18c98be69763259c49057ab2efd6ce7579c2c16a2177763ff650027fa327023f"));
         assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
         assert(block.CheckBlock());
 
