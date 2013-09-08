@@ -2596,7 +2596,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nVersion = 1;
         block.nTime    = nChainStartTime;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 17391826;
+        block.nNonce   = 19316351;
 
 		// Calculate genesis block hash
         if (fCalcGBHash && (block.GetHash() != hashGenesisBlock))
