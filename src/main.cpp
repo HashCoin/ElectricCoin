@@ -73,7 +73,7 @@ map<uint256, map<uint256, CDataStream*> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "ElectricCoin Signed Message:\n";
+const string strMessageMagic = "SoccerCoin Signed Message:\n";
 
 double dHashesPerSec;
 int64 nHPSTimerStart;
@@ -476,7 +476,7 @@ bool CTransaction::CheckTransaction() const
         if (txout.IsEmpty() && !IsCoinBase() && !IsCoinStake())
             return DoS(100, error("CTransaction::CheckTransaction() : txout empty for user transaction"));
 
-        // ElectricCoin: enforce minimum output amount for user transactions
+        // SoccerCoin: enforce minimum output amount for user transactions
         // (and for all transactions until 20 Sep 2013)
         if ((!IsCoinBase() || nTime < CHAINCHECKS_SWITCH_TIME)
                 && (!txout.IsEmpty()) && txout.nValue < MIN_TXOUT_AMOUNT)
@@ -1474,8 +1474,8 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
     // Now that the whole chain is irreversibly beyond that time it is applied to all blocks except the
     // two in the chain that violate it. This prevents exploiting the issue against nodes in their
     // initial block download.
-    bool fEnforceBIP30 = true; // Always active in ElectricCoin
-    bool fStrictPayToScriptHash = true; // Always active in ElectricCoin
+    bool fEnforceBIP30 = true; // Always active in SoccerCoin
+    bool fStrictPayToScriptHash = true; // Always active in SoccerCoin
 
     //// issue here: it doesn't know the version
     unsigned int nTxPos;
@@ -2089,7 +2089,7 @@ bool CBlock::CheckBlock(bool fCheckPOW, bool fCheckMerkleRoot) const
     if (fCheckMerkleRoot && hashMerkleRoot != BuildMerkleTree())
         return DoS(100, error("CheckBlock() : hashMerkleRoot mismatch"));
 
-    // ElectricCoin: check proof-of-stake block signature
+    // SoccerCoin: check proof-of-stake block signature
     if (IsProofOfStake())
     {
         if (!CheckBlockSignature())
@@ -2509,7 +2509,7 @@ bool CheckDiskSpace(uint64 nAdditionalBytes)
         string strMessage = _("Warning: Disk space is low!");
         strMiscWarning = strMessage;
         printf("*** %s\n", strMessage.c_str());
-        uiInterface.ThreadSafeMessageBox(strMessage, "ElectricCoin", CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
+        uiInterface.ThreadSafeMessageBox(strMessage, "SoccerCoin", CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
         StartShutdown();
         return false;
     }
@@ -4344,10 +4344,10 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
     uint256 hashTarget = CBigNum().SetCompact(pblock->nBits).getuint256();
 
     if (hash > hashTarget && pblock->IsProofOfWork())
-        return error("ElectricCoinMiner: proof-of-work not meeting target");
+        return error("SoccerCoinMiner: proof-of-work not meeting target");
 
     //// debug print
-    printf("ElectricCoinMiner:\n");
+    printf("SoccerCoinMiner:\n");
     printf("new block found\n  hash: %s  \ntarget: %s\n", hash.GetHex().c_str(), hashTarget.GetHex().c_str());
     pblock->print();
     printf("generated %s\n", FormatMoney(pblock->vtx[0].vout[0].nValue).c_str());
@@ -4356,7 +4356,7 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
     {
         LOCK(cs_main);
         if (pblock->hashPrevBlock != hashBestChain)
-            return error("ElectricCoinMiner: generated block is stale");
+            return error("SoccerCoinMiner: generated block is stale");
 
         // Remove key from key pool
         reservekey.KeepKey();
@@ -4369,7 +4369,7 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
 
         // Process this block the same as if we had received it from another node
         if (!ProcessBlock(NULL, pblock))
-            return error("ElectricCoinMiner: ProcessBlock, block not accepted");
+            return error("SoccerCoinMiner: ProcessBlock, block not accepted");
     }
 
     return true;
@@ -4476,7 +4476,7 @@ void BitcoinMiner(CWallet *pwallet, bool fProofOfStake)
             continue;
         }
 
-        printf("Running ElectricCoinMiner with %"PRIszu" transactions in block (%u bytes)\n", pblock->vtx.size(),
+        printf("Running SoccerCoinMiner with %"PRIszu" transactions in block (%u bytes)\n", pblock->vtx.size(),
                ::GetSerializeSize(*pblock, SER_NETWORK, PROTOCOL_VERSION));
 
         //
@@ -4577,15 +4577,15 @@ void static ThreadBitcoinMiner(void* parg)
     }
     catch (std::exception& e) {
         vnThreadsRunning[THREAD_MINER]--;
-        PrintException(&e, "ThreadElectricCoinMiner()");
+        PrintException(&e, "ThreadSoccerCoinMiner()");
     } catch (...) {
         vnThreadsRunning[THREAD_MINER]--;
-        PrintException(NULL, "ElectricCoinMiner()");
+        PrintException(NULL, "SoccerCoinMiner()");
     }
     nHPSTimerStart = 0;
     if (vnThreadsRunning[THREAD_MINER] == 0)
         dHashesPerSec = 0;
-    printf("ThreadElectricCoinMiner exiting, %d threads remaining\n", vnThreadsRunning[THREAD_MINER]);
+    printf("ThreadSoccerCoinMiner exiting, %d threads remaining\n", vnThreadsRunning[THREAD_MINER]);
 }
 
 void GenerateBitcoins(bool fGenerate, CWallet* pwallet)
@@ -4605,11 +4605,11 @@ void GenerateBitcoins(bool fGenerate, CWallet* pwallet)
         if (fLimitProcessors && nProcessors > nLimitProcessors)
             nProcessors = nLimitProcessors;
         int nAddThreads = nProcessors - vnThreadsRunning[THREAD_MINER];
-        printf("Starting %d ElectricCoinMiner threads\n", nAddThreads);
+        printf("Starting %d SoccerCoinMiner threads\n", nAddThreads);
         for (int i = 0; i < nAddThreads; i++)
         {
             if (!NewThread(ThreadBitcoinMiner, pwallet))
-                printf("Error: NewThread(ThreadElectricCoinMiner) failed\n");
+                printf("Error: NewThread(ThreadSoccerCoinMiner) failed\n");
             Sleep(10);
         }
     }

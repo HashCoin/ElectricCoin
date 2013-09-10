@@ -76,9 +76,9 @@ make -f Makefile.mingw
 mkdir miniupnpc
 cp *.h miniupnpc/
 
-ElectricCoin
+SoccerCoin
 -------
 DOS prompt:
-cd \ElectricCoin\src
+cd \SoccerCoin\src
 mingw32-make -f makefile.mingw
 strip bitcoind.exe

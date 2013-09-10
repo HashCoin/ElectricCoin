@@ -6,18 +6,18 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="14"/>
-        <source>About ElectricCoin</source>
-        <translation>關於電子幣</translation>
+        <source>About SoccerCoin</source>
+        <translation>關於足球幣</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;ElectricCoin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;電子幣&lt;/b&gt;版本</translation>
+        <source>&lt;b&gt;SoccerCoin&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;足球幣&lt;/b&gt;版本</translation>
     </message>
     <message>
         <location line="+41"/>
-        <source>Copyright © 2013 The ElectricCoin developers</source>
-        <translation>Copyright © 2013 The ElectricCoin developers</translation>
+        <source>Copyright © 2013 The SoccerCoin developers</source>
+        <translation>Copyright © 2013 The SoccerCoin developers</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -64,8 +64,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-46"/>
-        <source>These are your ElectricCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>這些是你接受支付的電子幣位址。當支付時你可以給出不同的位址，以便追蹤不同的支付者。</translation>
+        <source>These are your SoccerCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>這些是你接受支付的足球幣位址。當支付時你可以給出不同的位址，以便追蹤不同的支付者。</translation>
     </message>
     <message>
         <location line="+60"/>
@@ -79,8 +79,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a ElectricCoin address</source>
-        <translation>發送簽名消息以證明您是該電子幣位址的擁有者</translation>
+        <source>Sign a message to prove you own a SoccerCoin address</source>
+        <translation>發送簽名消息以證明您是該足球幣位址的擁有者</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -94,8 +94,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-14"/>
-        <source>Verify a message to ensure it was signed with a specified ElectricCoin address</source>
-        <translation>進行消息驗證，以確認該消息是被某一電子幣位址簽名的。</translation>
+        <source>Verify a message to ensure it was signed with a specified SoccerCoin address</source>
+        <translation>進行消息驗證，以確認該消息是被某一足球幣位址簽名的。</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -226,7 +226,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+1"/>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR COINS&lt;/b&gt;!</source>
-        <translation>警告：如果您加密了您的錢包之後忘記了口令，您將會&lt;b&gt;失去所有的電子幣&lt;/b&gt;！確定要加密錢包嗎？</translation>
+        <translation>警告：如果您加密了您的錢包之後忘記了口令，您將會&lt;b&gt;失去所有的足球幣&lt;/b&gt;！確定要加密錢包嗎？</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -252,8 +252,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-56"/>
-        <source>ElectricCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>軟體將關閉以完成加密過程。 請您謹記：錢包加密並不是萬能的，電腦中毒，您的電子幣還是有可能丟失。</translation>
+        <source>SoccerCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>軟體將關閉以完成加密過程。 請您謹記：錢包加密並不是萬能的，電腦中毒，您的足球幣還是有可能丟失。</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -371,8 +371,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about ElectricCoin</source>
-        <translation>顯示電子幣的相關資訊</translation>
+        <source>Show information about SoccerCoin</source>
+        <translation>顯示足球幣的相關資訊</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -423,12 +423,12 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-58"/>
-        <source>Send coins to a ElectricCoin address</source>
-        <translation>向一個電子幣位址發送電子幣</translation>
+        <source>Send coins to a SoccerCoin address</source>
+        <translation>向一個足球幣位址發送足球幣</translation>
     </message>
     <message>
         <location line="+45"/>
-        <source>Modify configuration options for ElectricCoin</source>
+        <source>Modify configuration options for SoccerCoin</source>
         <translation>設置選項</translation>
     </message>
     <message>
@@ -468,8 +468,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-186"/>
-        <source>ElectricCoin</source>
-        <translation>電子幣</translation>
+        <source>SoccerCoin</source>
+        <translation>足球幣</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -478,8 +478,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+168"/>
-        <source>&amp;About ElectricCoin</source>
-        <translation>&amp;關於電子幣</translation>
+        <source>&amp;About SoccerCoin</source>
+        <translation>&amp;關於足球幣</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -520,14 +520,14 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+0"/>
         <location line="+60"/>
-        <source>ElectricCoin client</source>
-        <translation>電子幣用戶端</translation>
+        <source>SoccerCoin client</source>
+        <translation>足球幣用戶端</translation>
     </message>
     <message numerus="yes">
         <location line="+69"/>
-        <source>%n active connection(s) to ElectricCoin network</source>
+        <source>%n active connection(s) to SoccerCoin network</source>
         <translation>
-			<numerusform>%n 個到電子幣網路的活動連接</numerusform>
+			<numerusform>%n 個到足球幣網路的活動連接</numerusform>
 		</translation>
     </message>
     <message>
@@ -581,7 +581,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+59"/>
         <source>This transaction is over the size limit.  You can still send it for a fee of %1, which goes to the nodes that process your transaction and helps to support the network.  Do you want to pay the fee?</source>
-        <translation>該筆交易的資料量超限.您可以選擇支付 %1 交易費， 交易費將支付給處理該筆交易的網路節點，有助於維持電子幣網路的運行.  您願意支付交易費用嗎？</translation>
+        <translation>該筆交易的資料量超限.您可以選擇支付 %1 交易費， 交易費將支付給處理該筆交易的網路節點，有助於維持足球幣網路的運行.  您願意支付交易費用嗎？</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -620,8 +620,8 @@ Address: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid ElectricCoin address or malformed URI parameters.</source>
-        <translation>URI無法解析! 可能是因為電子幣位址無效或URI參數不正確。</translation>
+        <source>URI can not be parsed! This can be caused by an invalid SoccerCoin address or malformed URI parameters.</source>
+        <translation>URI無法解析! 可能是因為足球幣位址無效或URI參數不正確。</translation>
     </message>
     <message>
         <location line="+16"/>
@@ -655,8 +655,8 @@ Address: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+109"/>
-        <source>A fatal error occurred. ElectricCoin can no longer continue safely and will quit.</source>
-        <translation>發生致命錯誤. 電子幣用戶端的安全存在問題，將退出.</translation>
+        <source>A fatal error occurred. SoccerCoin can no longer continue safely and will quit.</source>
+        <translation>發生致命錯誤. 足球幣用戶端的安全存在問題，將退出.</translation>
     </message>
 </context>
 <context>
@@ -721,8 +721,8 @@ Address: %4
     </message>
     <message>
         <location line="+5"/>
-        <source>The entered address &quot;%1&quot; is not a valid ElectricCoin address.</source>
-        <translation>您輸入的 &quot;%1&quot; 不是合法的電子幣位址.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid SoccerCoin address.</source>
+        <translation>您輸入的 &quot;%1&quot; 不是合法的足球幣位址.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -740,8 +740,8 @@ Address: %4
     <message>
         <location filename="../guiutil.cpp" line="+419"/>
         <location line="+12"/>
-        <source>ElectricCoin-Qt</source>
-        <translation>ElectricCoin-Qt</translation>
+        <source>SoccerCoin-Qt</source>
+        <translation>SoccerCoin-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -794,7 +794,7 @@ Address: %4
     <message>
         <location line="+6"/>
         <source>Optional transaction fee per kB that helps make sure your transactions are processed quickly. Most transactions are 1 kB. Fee 0.001 recommended.</source>
-        <translation>建議支付交易費用，有助於您的交易得到儘快處理.  絕大多數交易的位元組數為 1 kB. 建議支付0.001個電子幣.</translation>
+        <translation>建議支付交易費用，有助於您的交易得到儘快處理.  絕大多數交易的位元組數為 1 kB. 建議支付0.001個足球幣.</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -803,12 +803,12 @@ Address: %4
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start ElectricCoin after logging in to the system.</source>
-        <translation>系統啟動後自動運行電子幣用戶端軟體</translation>
+        <source>Automatically start SoccerCoin after logging in to the system.</source>
+        <translation>系統啟動後自動運行足球幣用戶端軟體</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start ElectricCoin on system login</source>
+        <source>&amp;Start SoccerCoin on system login</source>
         <translation>啟動時&amp;運行</translation>
     </message>
     <message>
@@ -828,8 +828,8 @@ Address: %4
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the ElectricCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>自動在路由器中打開電子幣埠。只有當您的路由器開啟 UPnP 選項時此功能才有效。</translation>
+        <source>Automatically open the SoccerCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>自動在路由器中打開足球幣埠。只有當您的路由器開啟 UPnP 選項時此功能才有效。</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -838,8 +838,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the ElectricCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>通過一個SOCKS4代理連接到電子幣網路 (如使用Tor連接時)</translation>
+        <source>Connect to the SoccerCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>通過一個SOCKS4代理連接到足球幣網路 (如使用Tor連接時)</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -913,7 +913,7 @@ Address: %4
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting ElectricCoin.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting SoccerCoin.</source>
         <translation>設置語言選項。需重啟用戶端軟體才能生效。</translation>
     </message>
     <message>
@@ -928,7 +928,7 @@ Address: %4
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show ElectricCoin addresses in the transaction list or not.</source>
+        <source>Whether to show SoccerCoin addresses in the transaction list or not.</source>
         <translation>是否在交易清單中顯示比特幣位址</translation>
     </message>
     <message>
@@ -965,7 +965,7 @@ Address: %4
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting ElectricCoin.</source>
+        <source>This setting will take effect after restarting SoccerCoin.</source>
         <translation>需要重啟用戶端軟體才能生效。</translation>
     </message>
     <message>
@@ -984,8 +984,8 @@ Address: %4
     <message>
         <location line="+33"/>
         <location line="+183"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ElectricCoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>現在顯示的消息可能是過期的. 在連接上電子幣網路節點後，您的錢包將自動與網路同步，但是這個過程還沒有完成.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the SoccerCoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>現在顯示的消息可能是過期的. 在連接上足球幣網路節點後，您的錢包將自動與網路同步，但是這個過程還沒有完成.</translation>
     </message>
     <message>
         <location line="-141"/>
@@ -1229,7 +1229,7 @@ Address: %4
     <message>
         <location line="+23"/>
         <source>On testnet</source>
-        <translation>當前為電子幣測試網路</translation>
+        <translation>當前為足球幣測試網路</translation>
     </message>
     <message>
         <location line="+23"/>
@@ -1263,8 +1263,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the ElectricCoin-Qt help message to get a list with possible ElectricCoin command-line options.</source>
-        <translation>Show the ElectricCoin-Qt help message to get a list with possible ElectricCoin command-line options.</translation>
+        <source>Show the SoccerCoin-Qt help message to get a list with possible SoccerCoin command-line options.</source>
+        <translation>Show the SoccerCoin-Qt help message to get a list with possible SoccerCoin command-line options.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1283,13 +1283,13 @@ Address: %4
     </message>
     <message>
         <location line="-104"/>
-        <source>ElectricCoin - Debug window</source>
-        <translation>ElectricCoin - 調試窗口</translation>
+        <source>SoccerCoin - Debug window</source>
+        <translation>SoccerCoin - 調試窗口</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>ElectricCoin Core</source>
-        <translation>ElectricCoin Core</translation>
+        <source>SoccerCoin Core</source>
+        <translation>SoccerCoin Core</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1298,7 +1298,7 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the ElectricCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the SoccerCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation>在當前資料目錄打開調試日誌檔。若檔較大則需要等待幾秒。</translation>
     </message>
     <message>
@@ -1308,8 +1308,8 @@ Address: %4
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-33"/>
-        <source>Welcome to the ElectricCoin RPC console.</source>
-        <translation>歡迎來到電子幣RPC控制台.</translation>
+        <source>Welcome to the SoccerCoin RPC console.</source>
+        <translation>歡迎來到足球幣RPC控制台.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1429,7 +1429,7 @@ Address: %4
     <message>
         <location line="+5"/>
         <source>Error: The transaction was rejected. This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>錯誤: 交易被拒絕. 如果您使用的是備份錢包，可能存在兩個錢包不同步的情況，另一個錢包中的電子幣已經被使用，但本地的這個錢包尚沒有記錄。</translation>
+        <translation>錯誤: 交易被拒絕. 如果您使用的是備份錢包，可能存在兩個錢包不同步的情況，另一個錢包中的足球幣已經被使用，但本地的這個錢包尚沒有記錄。</translation>
     </message>
 </context>
 <context>
@@ -1492,8 +1492,8 @@ Address: %4
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a ElectricCoin address (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</source>
-        <translation>請輸入電子幣位址 (例如: 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
+        <source>Enter a SoccerCoin address (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</source>
+        <translation>請輸入足球幣位址 (例如: 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
     </message>
 </context>
 <context>
@@ -1517,7 +1517,7 @@ Address: %4
     <message>
         <location line="+18"/>
         <source>The address to sign the message with (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</source>
-        <translation>用來簽名電子幣的位址  (例如 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
+        <translation>用來簽名足球幣的位址  (例如 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1553,8 +1553,8 @@ Address: %4
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this ElectricCoin address</source>
-        <translation>發送簽名消息以證明您是該電子幣位址的擁有者</translation>
+        <source>Sign the message to prove you own this SoccerCoin address</source>
+        <translation>發送簽名消息以證明您是該足球幣位址的擁有者</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -1585,7 +1585,7 @@ Address: %4
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified ElectricCoin address</source>
+        <source>Verify the message to ensure it was signed with the specified SoccerCoin address</source>
         <translation>驗證該消息是否由特定的賞金幣位址簽名的</translation>
     </message>
     <message>
@@ -1596,8 +1596,8 @@ Address: %4
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a ElectricCoin address (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</source>
-        <translation>輸入有效的電子幣位址 (例如 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
+        <source>Enter a SoccerCoin address (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</source>
+        <translation>輸入有效的足球幣位址 (例如 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -1606,8 +1606,8 @@ Address: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter ElectricCoin signature</source>
-        <translation>輸入電子幣簽名</translation>
+        <source>Enter SoccerCoin signature</source>
+        <translation>輸入足球幣簽名</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -1813,12 +1813,12 @@ Address: %4
     <message>
         <location line="+3"/>
         <source>Generated coins must mature 30 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>新生產的電子幣必須等待30個資料塊之後才能被使用. 當您生產出此資料塊,它將被廣播至賞金幣網路並添加至資料鏈. 如果添加到資料鏈失敗, 它的狀態將變成"不被接受"，生產的電子幣將不能使用. 在您生產新資料塊的幾秒鐘內, 如果其它節點也生產出同樣的資料塊，有可能會發生這種情況.</translation>
+        <translation>新生產的足球幣必須等待30個資料塊之後才能被使用. 當您生產出此資料塊,它將被廣播至賞金幣網路並添加至資料鏈. 如果添加到資料鏈失敗, 它的狀態將變成"不被接受"，生產的足球幣將不能使用. 在您生產新資料塊的幾秒鐘內, 如果其它節點也生產出同樣的資料塊，有可能會發生這種情況.</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Staked coins must wait 30 blocks before they can return to balance and be spent.  When you generated this proof-of-stake block, it was broadcast to the network to be added to the block chain.  If it fails to get into the chain, it will change to \"not accepted\" and not be a valid stake.  This may occasionally happen if another node generates a proof-of-stake block within a few seconds of yours.</source>
-        <translation>通過利息獲得的電子幣必須等待30個資料塊之後才能被使用. 當您生產出此資料塊,它將被廣播至賞金幣網路並添加至資料鏈. 如果添加到資料鏈失敗, 它的狀態將變成"不被接受"，生產的電子幣將不能使用. 在您生產新資料塊的幾秒鐘內, 如果其它節點也生產出同樣的資料塊，有可能會發生這種情況.</translation>
+        <translation>通過利息獲得的足球幣必須等待30個資料塊之後才能被使用. 當您生產出此資料塊,它將被廣播至賞金幣網路並添加至資料鏈. 如果添加到資料鏈失敗, 它的狀態將變成"不被接受"，生產的足球幣將不能使用. 在您生產新資料塊的幾秒鐘內, 如果其它節點也生產出同樣的資料塊，有可能會發生這種情況.</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -2177,8 +2177,8 @@ Address: %4
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+82"/>
-        <source>ElectricCoin version</source>
-        <translation>電子幣版本</translation>
+        <source>SoccerCoin version</source>
+        <translation>足球幣版本</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -2207,13 +2207,13 @@ Address: %4
     </message>
     <message>
         <location line="+23"/>
-        <source>Specify configuration file (default: ElectricCoin.conf)</source>
-        <translation>指定設定檔 (默認為 ElectricCoin.conf)</translation>
+        <source>Specify configuration file (default: SoccerCoin.conf)</source>
+        <translation>指定設定檔 (默認為 SoccerCoin.conf)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: electriccoind.pid)</source>
-        <translation>指定 pid 檔 (默認為 electriccoind.pid)</translation>
+        <source>Specify pid file (default: soccercoind.pid)</source>
+        <translation>指定 pid 檔 (默認為 soccercoind.pid)</translation>
     </message>
     <message>
         <location line="-17"/>
@@ -2362,8 +2362,8 @@ Address: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong ElectricCoin will not work properly.</source>
-        <translation>警告: 請檢查電腦的時間與日期設置正確。如果時鐘不準確電子幣可能無法正確工作。</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong SoccerCoin will not work properly.</source>
+        <translation>警告: 請檢查電腦的時間與日期設置正確。如果時鐘不準確足球幣可能無法正確工作。</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2403,7 +2403,7 @@ Address: %4
     <message>
         <location line="+2"/>
         <source>Find peers using DNS lookup (default: 1)</source>
-        <translation>通過DNS查找網路上的電子幣節點 (缺省: 1)</translation>
+        <translation>通過DNS查找網路上的足球幣節點 (缺省: 1)</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -2612,13 +2612,13 @@ Address: %4
     </message>
     <message>
         <location line="-131"/>
-        <source>Cannot obtain a lock on data directory %s.  ElectricCoin is probably already running.</source>
-        <translation>無法給資料目錄 %s 加鎖。電子幣進程可能已在運行。</translation>
+        <source>Cannot obtain a lock on data directory %s.  SoccerCoin is probably already running.</source>
+        <translation>無法給資料目錄 %s 加鎖。足球幣進程可能已在運行。</translation>
     </message>
     <message>
         <location line="+57"/>
-        <source>ElectricCoin</source>
-        <translation>電子幣</translation>
+        <source>SoccerCoin</source>
+        <translation>足球幣</translation>
     </message>
     <message>
         <location line="+77"/>
@@ -2652,12 +2652,12 @@ Address: %4
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of ElectricCoin</source>
+        <source>Error loading wallet.dat: Wallet requires newer version of SoccerCoin</source>
         <translation>wallet.dat錢包檔載入錯誤：請升級到最新Bitcoin用戶端</translation>
     </message>
     <message>
         <location line="+73"/>
-        <source>Wallet needed to be rewritten: restart ElectricCoin to complete</source>
+        <source>Wallet needed to be rewritten: restart SoccerCoin to complete</source>
         <translation>錢包檔需要重寫：請退出並重新啟動Bitcoin用戶端</translation>
     </message>
     <message>
@@ -2727,13 +2727,13 @@ Address: %4
     </message>
     <message>
         <location line="-25"/>
-        <source>Unable to bind to %s on this computer. ElectricCoin is probably already running.</source>
-        <translation>無法在本機綁定 %s 埠 . 電子幣用戶端軟體可能已經在運行.</translation>
+        <source>Unable to bind to %s on this computer. SoccerCoin is probably already running.</source>
+        <translation>無法在本機綁定 %s 埠 . 足球幣用戶端軟體可能已經在運行.</translation>
     </message>
     <message>
         <location line="+55"/>
         <source>Find peers using internet relay chat (default: 1)</source>
-        <translation>通過IRC聊天室查找網路上的電子幣節點 (缺省: 1)</translation>
+        <translation>通過IRC聊天室查找網路上的足球幣節點 (缺省: 1)</translation>
     </message>
     <message>
         <location line="-2"/>

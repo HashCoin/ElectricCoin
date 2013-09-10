@@ -1,2 +1,2 @@
-debian/bin/electriccoind usr/bin
-src/electriccoind usr/lib/electriccoin
+debian/bin/soccercoind usr/bin
+src/soccercoind usr/lib/soccercoin

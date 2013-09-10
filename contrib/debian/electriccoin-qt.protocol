@@ -1,6 +1,6 @@
 [Protocol]
-exec=electriccoin-qt '%u'
-protocol=electriccoin
+exec=soccercoin-qt '%u'
+protocol=soccercoin
 input=none
 output=none
 helper=true

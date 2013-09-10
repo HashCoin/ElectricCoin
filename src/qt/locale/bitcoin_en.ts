@@ -6,18 +6,18 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About ElectricCoin</source>
-        <translation>About ElectricCoin</translation>
+        <source>About SoccerCoin</source>
+        <translation>About SoccerCoin</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;ElectricCoin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;ElectricCoin&lt;/b&gt; version</translation>
+        <source>&lt;b&gt;SoccerCoin&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;SoccerCoin&lt;/b&gt; version</translation>
     </message>
     <message>
         <location line="+41"/>
-        <source>Copyright © 2013 The ElectricCoin developers</source>
-        <translation>Copyright © 2013 The ElectricCoin developers</translation>
+        <source>Copyright © 2013 The SoccerCoin developers</source>
+        <translation>Copyright © 2013 The SoccerCoin developers</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -64,8 +64,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-46"/>
-        <source>These are your ElectricCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>These are your ElectricCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</translation>
+        <source>These are your SoccerCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>These are your SoccerCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</translation>
     </message>
     <message>
         <location line="+60"/>
@@ -79,8 +79,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a ElectricCoin address</source>
-        <translation>Sign a message to prove you own a ElectricCoin address</translation>
+        <source>Sign a message to prove you own a SoccerCoin address</source>
+        <translation>Sign a message to prove you own a SoccerCoin address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -94,8 +94,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-14"/>
-        <source>Verify a message to ensure it was signed with a specified ElectricCoin address</source>
-        <translation>Verify a message to ensure it was signed with a specified ElectricCoin address</translation>
+        <source>Verify a message to ensure it was signed with a specified SoccerCoin address</source>
+        <translation>Verify a message to ensure it was signed with a specified SoccerCoin address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -252,8 +252,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-56"/>
-        <source>ElectricCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>ElectricCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</translation>
+        <source>SoccerCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>SoccerCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -366,8 +366,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about ElectricCoin</source>
-        <translation>Show information about ElectricCoin</translation>
+        <source>Show information about SoccerCoin</source>
+        <translation>Show information about SoccerCoin</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -419,13 +419,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-58"/>
-        <source>Send coins to a ElectricCoin address</source>
-        <translation>Send coins to a ElectricCoin address</translation>
+        <source>Send coins to a SoccerCoin address</source>
+        <translation>Send coins to a SoccerCoin address</translation>
     </message>
     <message>
         <location line="+45"/>
-        <source>Modify configuration options for ElectricCoin</source>
-        <translation>Modify configuration options for ElectricCoin</translation>
+        <source>Modify configuration options for SoccerCoin</source>
+        <translation>Modify configuration options for SoccerCoin</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -464,8 +464,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-186"/>
-        <source>ElectricCoin</source>
-        <translation>ElectricCoin</translation>
+        <source>SoccerCoin</source>
+        <translation>SoccerCoin</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -474,8 +474,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+168"/>
-        <source>&amp;About ElectricCoin</source>
-        <translation>&amp;About ElectricCoin</translation>
+        <source>&amp;About SoccerCoin</source>
+        <translation>&amp;About SoccerCoin</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -516,15 +516,15 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+0"/>
         <location line="+60"/>
-        <source>ElectricCoin client</source>
-        <translation>ElectricCoin client</translation>
+        <source>SoccerCoin client</source>
+        <translation>SoccerCoin client</translation>
     </message>
     <message numerus="yes">
         <location line="+69"/>
-        <source>%n active connection(s) to ElectricCoin network</source>
+        <source>%n active connection(s) to SoccerCoin network</source>
         <translation>
-            <numerusform>%n active connection to ElectricCoin network</numerusform>
-            <numerusform>%n active connections to ElectricCoin network</numerusform>
+            <numerusform>%n active connection to SoccerCoin network</numerusform>
+            <numerusform>%n active connections to SoccerCoin network</numerusform>
         </translation>
     </message>
     <message>
@@ -621,8 +621,8 @@ Address: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid ElectricCoin address or malformed URI parameters.</source>
-        <translation>URI can not be parsed! This can be caused by an invalid ElectricCoin address or malformed URI parameters.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid SoccerCoin address or malformed URI parameters.</source>
+        <translation>URI can not be parsed! This can be caused by an invalid SoccerCoin address or malformed URI parameters.</translation>
     </message>
     <message>
         <location line="+16"/>
@@ -656,8 +656,8 @@ Address: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+109"/>
-        <source>A fatal error occurred. ElectricCoin can no longer continue safely and will quit.</source>
-        <translation>A fatal error occurred. ElectricCoin can no longer continue safely and will quit.</translation>
+        <source>A fatal error occurred. SoccerCoin can no longer continue safely and will quit.</source>
+        <translation>A fatal error occurred. SoccerCoin can no longer continue safely and will quit.</translation>
     </message>
 </context>
 <context>
@@ -722,8 +722,8 @@ Address: %4
     </message>
     <message>
         <location line="+5"/>
-        <source>The entered address &quot;%1&quot; is not a valid ElectricCoin address.</source>
-        <translation>The entered address &quot;%1&quot; is not a valid ElectricCoin address.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid SoccerCoin address.</source>
+        <translation>The entered address &quot;%1&quot; is not a valid SoccerCoin address.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -741,8 +741,8 @@ Address: %4
     <message>
         <location filename="../guiutil.cpp" line="+419"/>
         <location line="+12"/>
-        <source>ElectricCoin-Qt</source>
-        <translation>ElectricCoin-Qt</translation>
+        <source>SoccerCoin-Qt</source>
+        <translation>SoccerCoin-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -804,13 +804,13 @@ Address: %4
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start ElectricCoin after logging in to the system.</source>
-        <translation>Automatically start ElectricCoin after logging in to the system.</translation>
+        <source>Automatically start SoccerCoin after logging in to the system.</source>
+        <translation>Automatically start SoccerCoin after logging in to the system.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start ElectricCoin on system login</source>
-        <translation>&amp;Start ElectricCoin on system login</translation>
+        <source>&amp;Start SoccerCoin on system login</source>
+        <translation>&amp;Start SoccerCoin on system login</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -829,8 +829,8 @@ Address: %4
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the ElectricCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatically open the ElectricCoin client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
+        <source>Automatically open the SoccerCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatically open the SoccerCoin client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -839,8 +839,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the ElectricCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Connect to the ElectricCoin network through a SOCKS proxy (e.g. when connecting through Tor).</translation>
+        <source>Connect to the SoccerCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Connect to the SoccerCoin network through a SOCKS proxy (e.g. when connecting through Tor).</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -914,8 +914,8 @@ Address: %4
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting ElectricCoin.</source>
-        <translation>The user interface language can be set here. This setting will take effect after restarting ElectricCoin.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting SoccerCoin.</source>
+        <translation>The user interface language can be set here. This setting will take effect after restarting SoccerCoin.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -929,8 +929,8 @@ Address: %4
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show ElectricCoin addresses in the transaction list or not.</source>
-        <translation>Whether to show ElectricCoin addresses in the transaction list or not.</translation>
+        <source>Whether to show SoccerCoin addresses in the transaction list or not.</source>
+        <translation>Whether to show SoccerCoin addresses in the transaction list or not.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -966,8 +966,8 @@ Address: %4
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting ElectricCoin.</source>
-        <translation>This setting will take effect after restarting ElectricCoin.</translation>
+        <source>This setting will take effect after restarting SoccerCoin.</source>
+        <translation>This setting will take effect after restarting SoccerCoin.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -985,8 +985,8 @@ Address: %4
     <message>
         <location line="+33"/>
         <location line="+183"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ElectricCoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the ElectricCoin network after a connection is established, but this process has not completed yet.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the SoccerCoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the SoccerCoin network after a connection is established, but this process has not completed yet.</translation>
     </message>
     <message>
         <location line="-141"/>
@@ -1201,8 +1201,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the ElectricCoin-Qt help message to get a list with possible ElectricCoin command-line options.</source>
-        <translation>Show the ElectricCoin-Qt help message to get a list with possible ElectricCoin command-line options.</translation>
+        <source>Show the SoccerCoin-Qt help message to get a list with possible SoccerCoin command-line options.</source>
+        <translation>Show the SoccerCoin-Qt help message to get a list with possible SoccerCoin command-line options.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1221,13 +1221,13 @@ Address: %4
     </message>
     <message>
         <location line="-104"/>
-        <source>ElectricCoin - Debug window</source>
-        <translation>ElectricCoin - Debug window</translation>
+        <source>SoccerCoin - Debug window</source>
+        <translation>SoccerCoin - Debug window</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>ElectricCoin Core</source>
-        <translation>ElectricCoin Core</translation>
+        <source>SoccerCoin Core</source>
+        <translation>SoccerCoin Core</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1236,8 +1236,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the ElectricCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Open the ElectricCoin debug log file from the current data directory. This can take a few seconds for large log files.</translation>
+        <source>Open the SoccerCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Open the SoccerCoin debug log file from the current data directory. This can take a few seconds for large log files.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1246,8 +1246,8 @@ Address: %4
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-33"/>
-        <source>Welcome to the ElectricCoin RPC console.</source>
-        <translation>Welcome to the ElectricCoin RPC console.</translation>
+        <source>Welcome to the SoccerCoin RPC console.</source>
+        <translation>Welcome to the SoccerCoin RPC console.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1430,8 +1430,8 @@ Address: %4
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a ElectricCoin address (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</source>
-        <translation>Enter a ElectricCoin address (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
+        <source>Enter a SoccerCoin address (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</source>
+        <translation>Enter a SoccerCoin address (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
     </message>
 </context>
 <context>
@@ -1491,8 +1491,8 @@ Address: %4
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this ElectricCoin address</source>
-        <translation>Sign the message to prove you own this ElectricCoin address</translation>
+        <source>Sign the message to prove you own this SoccerCoin address</source>
+        <translation>Sign the message to prove you own this SoccerCoin address</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -1523,8 +1523,8 @@ Address: %4
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified ElectricCoin address</source>
-        <translation>Verify the message to ensure it was signed with the specified ElectricCoin address</translation>
+        <source>Verify the message to ensure it was signed with the specified SoccerCoin address</source>
+        <translation>Verify the message to ensure it was signed with the specified SoccerCoin address</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -1534,8 +1534,8 @@ Address: %4
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a ElectricCoin address (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</source>
-        <translation>Enter a ElectricCoin address (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
+        <source>Enter a SoccerCoin address (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</source>
+        <translation>Enter a SoccerCoin address (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -1544,8 +1544,8 @@ Address: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter ElectricCoin signature</source>
-        <translation>Enter ElectricCoin signature</translation>
+        <source>Enter SoccerCoin signature</source>
+        <translation>Enter SoccerCoin signature</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -2120,8 +2120,8 @@ Address: %4
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+82"/>
-        <source>ElectricCoin version</source>
-        <translation>ElectricCoin version</translation>
+        <source>SoccerCoin version</source>
+        <translation>SoccerCoin version</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -2150,13 +2150,13 @@ Address: %4
     </message>
     <message>
         <location line="+23"/>
-        <source>Specify configuration file (default: ElectricCoin.conf)</source>
-        <translation>Specify configuration file (default: ElectricCoin.conf)</translation>
+        <source>Specify configuration file (default: SoccerCoin.conf)</source>
+        <translation>Specify configuration file (default: SoccerCoin.conf)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: electriccoind.pid)</source>
-        <translation>Specify pid file (default: electriccoind.pid)</translation>
+        <source>Specify pid file (default: soccercoind.pid)</source>
+        <translation>Specify pid file (default: soccercoind.pid)</translation>
     </message>
     <message>
         <location line="-17"/>
@@ -2305,8 +2305,8 @@ Address: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong ElectricCoin will not work properly.</source>
-        <translation>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong ElectricCoin will not work properly.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong SoccerCoin will not work properly.</source>
+        <translation>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong SoccerCoin will not work properly.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2555,13 +2555,13 @@ Address: %4
     </message>
     <message>
         <location line="-131"/>
-        <source>Cannot obtain a lock on data directory %s.  ElectricCoin is probably already running.</source>
-        <translation>Cannot obtain a lock on data directory %s.  ElectricCoin is probably already running.</translation>
+        <source>Cannot obtain a lock on data directory %s.  SoccerCoin is probably already running.</source>
+        <translation>Cannot obtain a lock on data directory %s.  SoccerCoin is probably already running.</translation>
     </message>
     <message>
         <location line="+57"/>
-        <source>ElectricCoin</source>
-        <translation>ElectricCoin</translation>
+        <source>SoccerCoin</source>
+        <translation>SoccerCoin</translation>
     </message>
     <message>
         <location line="+77"/>
@@ -2595,13 +2595,13 @@ Address: %4
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of ElectricCoin</source>
-        <translation>Error loading wallet.dat: Wallet requires newer version of ElectricCoin</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of SoccerCoin</source>
+        <translation>Error loading wallet.dat: Wallet requires newer version of SoccerCoin</translation>
     </message>
     <message>
         <location line="+73"/>
-        <source>Wallet needed to be rewritten: restart ElectricCoin to complete</source>
-        <translation>Wallet needed to be rewritten: restart ElectricCoin to complete</translation>
+        <source>Wallet needed to be rewritten: restart SoccerCoin to complete</source>
+        <translation>Wallet needed to be rewritten: restart SoccerCoin to complete</translation>
     </message>
     <message>
         <location line="-75"/>
@@ -2670,8 +2670,8 @@ Address: %4
     </message>
     <message>
         <location line="-25"/>
-        <source>Unable to bind to %s on this computer. ElectricCoin is probably already running.</source>
-        <translation>Unable to bind to %s on this computer. ElectricCoin is probably already running.</translation>
+        <source>Unable to bind to %s on this computer. SoccerCoin is probably already running.</source>
+        <translation>Unable to bind to %s on this computer. SoccerCoin is probably already running.</translation>
     </message>
     <message>
         <location line="+55"/>

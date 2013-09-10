@@ -1,4 +1,4 @@
-IDI_ICON1 ICON DISCARDABLE "icons/electriccoin.ico"
+IDI_ICON1 ICON DISCARDABLE "icons/soccercoin.ico"
 
 #include <windows.h>             // needed for VERSIONINFO
 #include "../../clientversion.h" // holds the needed client version information
@@ -18,14 +18,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "ElectricCoin"
-            VALUE "FileDescription",    "ElectricCoin-Qt (OSS GUI client for ElectricCoin)"
+            VALUE "CompanyName",        "SoccerCoin"
+            VALUE "FileDescription",    "SoccerCoin-Qt (OSS GUI client for SoccerCoin)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "ElectricCoin-qt"
-            VALUE "LegalCopyright",     "2009-2012 The Bitcoin developers, 2013 The ElectricCoin developers"
+            VALUE "InternalName",       "SoccerCoin-qt"
+            VALUE "LegalCopyright",     "2009-2012 The Bitcoin developers, 2013 The SoccerCoin developers"
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "ElectricCoin-Qt.exe"
-            VALUE "ProductName",        "ElectricCoin-Qt"
+            VALUE "OriginalFilename",   "SoccerCoin-Qt.exe"
+            VALUE "ProductName",        "SoccerCoin-Qt"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

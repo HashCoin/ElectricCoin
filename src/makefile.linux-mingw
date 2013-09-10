@@ -86,7 +86,7 @@ OBJS= \
     obj/kernel.o \
     obj/hash3.o
 
-all: electriccoind.exe
+all: soccercoind.exe
 
 obj/build.h: FORCE
 	/bin/sh ../share/genbuild.sh obj/build.h
@@ -104,14 +104,14 @@ TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
 obj-test/%.o: test/%.cpp $(HEADERS)
 	i586-mingw32msvc-g++ -c $(TESTDEFS) $(CFLAGS) -o $@ $<
 
-test_electriccoin.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
+test_soccercoin.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	i586-mingw32msvc-g++ $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ -lboost_unit_test_framework-mt-s $(LIBS)
 
 clean:
 	-rm -f obj/*.o
-	-rm -f electriccoind.exe
+	-rm -f soccercoind.exe
 	-rm -f obj-test/*.o
-	-rm -f test_electriccoin.exe
+	-rm -f test_soccercoin.exe
 	-rm -f obj/build.h
 
 FORCE:

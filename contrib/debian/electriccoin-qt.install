@@ -1,5 +1,5 @@
-electriccoin-qt usr/bin
+soccercoin-qt usr/bin
 share/pixmaps/bitcoin32.xpm usr/share/pixmaps
 share/pixmaps/bitcoin80.xpm usr/share/pixmaps
-debian/electriccoin-qt.desktop usr/share/applications
-debian/electriccoin-qt.protocol usr/share/kde4/services/
+debian/soccercoin-qt.desktop usr/share/applications
+debian/soccercoin-qt.protocol usr/share/kde4/services/

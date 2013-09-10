@@ -1,2 +1,2 @@
 # Linked code is Expat - only Debian packaging is GPL-2+
-electriccoind: possible-gpl-code-linked-with-openssl
+soccercoind: possible-gpl-code-linked-with-openssl

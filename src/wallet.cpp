@@ -1368,7 +1368,7 @@ bool CWallet::CreateTransaction(CScript scriptPubKey, int64 nValue, CWalletTx& w
     return CreateTransaction(vecSend, wtxNew, reservekey, nFeeRet);
 }
 
-// ElectricCoin: get current stake generation power
+// SoccerCoin: get current stake generation power
 uint64 CWallet::GetStakeMintPower(const CKeyStore& keystore, enum StakeWeightMode mode)
 {
     LOCK2(cs_main, cs_wallet);

@@ -84,15 +84,15 @@ OBJS= \
     obj/kernel.o \
     obj/hash3.o
 
-all: electriccoind.exe
+all: soccercoind.exe
 
-test check: test_electriccoin.exe FORCE
-	test_electriccoin.exe
+test check: test_soccercoin.exe FORCE
+	test_soccercoin.exe
 
 obj/%.o: %.cpp $(HEADERS)
 	g++ -c $(CFLAGS) -o $@ $<
 
-electriccoind.exe: $(OBJS:obj/%=obj/%)
+soccercoind.exe: $(OBJS:obj/%=obj/%)
 	g++ $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
 TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
@@ -104,7 +104,7 @@ test_bitcoin.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	g++ $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ -lboost_unit_test_framework $(LIBS)
 
 clean:
-	-del /Q electriccoind test_electriccoin
+	-del /Q soccercoind test_soccercoin
 	-del /Q obj\*
 	-del /Q obj-test\*
 
